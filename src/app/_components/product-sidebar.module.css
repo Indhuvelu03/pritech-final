@@ -1,0 +1,86 @@
+.sidebarWrap {
+  background: color-mix(in srgb, var(--surface-tint) 88%, transparent);
+}
+
+.header {
+  align-items: center;
+  background: linear-gradient(90deg, var(--brand-blue-deep), var(--brand-blue));
+  color: var(--text-on-brand);
+  display: flex;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 8px;
+  letter-spacing: 0.08em;
+  min-height: 42px;
+  padding: 0 14px;
+  text-transform: uppercase;
+}
+
+.categoryBlock + .categoryBlock {
+  border-top: 1px solid var(--border);
+}
+
+.categoryTitle {
+  align-items: center;
+  color: var(--foreground);
+  display: flex;
+  font-size: 12px;
+  font-weight: 700;
+  justify-content: space-between;
+  letter-spacing: 0.08em;
+  min-height: 44px;
+  padding: 0 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.categoryCurrent {
+  background: color-mix(in srgb, var(--surface-soft) 90%, transparent);
+}
+
+.productLinks {
+  display: grid;
+}
+
+.productLink {
+  align-items: center;
+  color: var(--text-muted);
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  min-height: 46px;
+  padding: 0 14px 0 22px;
+  text-decoration: none;
+}
+
+.productLink:hover,
+.productLink:focus-visible {
+  background: color-mix(in srgb, var(--surface-soft) 92%, transparent);
+  color: var(--foreground);
+}
+
+.productCurrent {
+  background: color-mix(in srgb, var(--brand-accent-soft) 82%, transparent);
+  border-left: 3px solid var(--brand-accent);
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.categoryArrow {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  height: 10px;
+  transition: transform 200ms ease;
+  width: 10px;
+}
+
+.categoryCurrent .categoryArrow {
+  transform: rotate(180deg);
+}
+
+.chevron {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  height: 16px;
+  width: 16px;
+}
