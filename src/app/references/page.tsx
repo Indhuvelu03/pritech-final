@@ -1,6 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
 import { SiteFrame } from "../_components/SiteFrame";
 import styles from "../_components/page-styles.module.css";
-import { customers, references } from "../siteData";
+import { references } from "../siteData";
 
 export default function ReferencesPage() {
   return (
@@ -12,89 +14,79 @@ export default function ReferencesPage() {
       currentPath="/references"
       navSection="references"
     >
-      <section className={styles.companyHero}>
-        <h1>References</h1>
-        <div className={styles.titleUnderline} />
-        <p>
-          Pritech Engineering has successfully delivered special purpose machines,
-          fixtures, and manufacturing solutions to leading automotive and industrial
-          organizations.
-        </p>
-      </section>
-
-      <section className={styles.catalogInfoGrid}>
-        <article className={styles.catalogLeadCard}>
-          <h2>Execution references, not generic claims</h2>
-          <p>
-            This page is now positioned as proof of delivery across machine categories,
-            customer types, and production applications.
-          </p>
-        </article>
-        <article className={styles.catalogLeadCard}>
-          <h2>Quick buyer validation</h2>
-          <p>
-            Visitors can see which companies, machine types, and solution segments align
-            with their own manufacturing context.
-          </p>
-        </article>
-      </section>
-
-      <section className={styles.referenceIntroBand}>
-        <div className={styles.referenceIntroLead}>
-          <p className={styles.eyebrow}>Proof of Delivery</p>
-          <h2>References should help buyers validate fit quickly.</h2>
-          <p>
-            This page now prioritizes customer proof, machine context, and a clearer scan
-            path across project types instead of a plain data dump.
-          </p>
-        </div>
-        <div className={styles.referenceStats}>
-          <div>
-            <strong>{references.length}</strong>
-            <span>Listed project references</span>
-          </div>
-          <div>
-            <strong>{customers.length}+</strong>
-            <span>Recognized customer names</span>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.customerStrip}>
-        <div className={styles.sectionPanelHeader}>
-          <h2>Customer Names In Motion</h2>
-          <p>Industrial trust should feel active, not static.</p>
-        </div>
-        <div className={styles.marqueeWrap}>
-          <div className={styles.marqueeTrack}>
-            {[...customers, ...customers].map((customer, index) => (
-              <div key={`${customer}-ref-${index}`} className={styles.marqueeItem}>
-                {customer}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.contentCard}>
-        <h2>Selected Project References</h2>
-        <div className={styles.referenceTable}>
-          <div className={styles.referenceHead}>
-            <span>Sl. No</span>
-            <span>Customer</span>
-            <span>Machine / Project</span>
-            <span>Segment</span>
-          </div>
-          {references.map(([customer, machine, segment], index) => (
-            <div key={`${customer}-${machine}`} className={styles.referenceBodyRow}>
-              <span>{index + 1}</span>
-              <span>{customer}</span>
-              <span>{machine}</span>
-              <span>{segment}</span>
+      <div className={styles.aboutMinimalLayout}>
+        <section className={styles.aboutSection}>
+          <div className={styles.aboutEditorialSplit}>
+            <div className={styles.aboutEditorialLead}>
+              <p className={styles.eyebrow}>Our Track Record</p>
+              <h1 style={{ maxWidth: "none" }}>Project References</h1>
+              <p className={styles.aboutEditorialIntro}>
+                A proven track record of delivering special purpose machines,
+                fixtures, and manufacturing solutions to leading automotive and industrial
+                organizations.
+              </p>
+              <Link href="/products/testing-machines" className={styles.aboutProfileCta}>
+                Explore Products
+              </Link>
             </div>
-          ))}
-        </div>
-      </section>
+
+            <aside className={styles.aboutEditorialPanel}>
+              <Image
+                src="/hero-machine.png"
+                alt="Industrial Machine"
+                width={600}
+                height={320}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: "320px",
+                  objectFit: "cover",
+                  borderRadius: "0",
+                  border: "1px solid var(--border)",
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.06)",
+                }}
+              />
+            </aside>
+          </div>
+        </section>
+
+        <section className={styles.aboutSection} style={{ marginTop: '40px' }}>
+          <p className={styles.eyebrow}>Detailed Track Record</p>
+          <h2 style={{ fontSize: "1.6rem", color: "var(--foreground)", marginBottom: "32px", fontWeight: "700" }}>
+            Operational Portfolio
+          </h2>
+          
+          <div className={styles.referenceTable}>
+            <div className={styles.referenceHead}>
+              <span className={styles.referenceId}>#</span>
+              <span>Customer</span>
+              <span>Solution Delivered</span>
+              <span className={styles.referenceSectorHide}>Sector</span>
+            </div>
+            <div className={styles.referenceBody}>
+              {references.map((ref, idx) => (
+                <div key={idx} className={styles.referenceBodyRow}>
+                  <span className={styles.referenceId}>{(idx + 1).toString().padStart(2, '0')}</span>
+                  <span className={styles.referenceCustomer}>{ref[0]}</span>
+                  <span className={styles.referenceSolution}>{ref[1]}</span>
+                  <span className={styles.referenceSector}>{ref[2]}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.aboutSection} style={{ textAlign: 'center', borderTop: '1px solid var(--border)', paddingTop: '60px', marginTop: '60px' }}>
+          <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+            <span className={styles.eyebrow}>Technical Excellence</span>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '12px 0' }}>Quality Commitment</h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.7' }}>
+              Each reference listed represents a partnership built on technical precision and production-oriented results. 
+              We maintain long-term relationships with our clients by providing continuous support and iterative improvements to their manufacturing workflows.
+            </p>
+          </div>
+        </section>
+      </div>
     </SiteFrame>
   );
 }

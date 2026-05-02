@@ -3,12 +3,13 @@
 }
 
 .eyebrow {
-  color: var(--brand-red);
-  font-size: 0.75rem;
+  color: var(--brand-red) !important;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.15em;
-  margin: 0 0 16px;
   text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+  display: block;
 }
 
 .pageTitle,
@@ -20,12 +21,20 @@
   margin: 0;
 }
 
-.titleUnderline {
+.titleUnderline,
+.titleOverline {
   background: var(--brand-red);
-  border-radius: 999px;
+  border-radius: 0;
   height: 3px;
-  margin-top: 12px;
   width: 54px;
+}
+
+.titleUnderline {
+  margin-top: 12px;
+}
+
+.titleOverline {
+  margin-bottom: 12px;
 }
 
 .heroBanner {
@@ -35,7 +44,7 @@
   overflow: hidden;
   padding: 34px 34px 26px;
   position: relative;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .homeHero,
@@ -43,7 +52,7 @@
 .processBand,
 .homeClosing {
   margin-top: 8px;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .homeSignalRow,
@@ -59,7 +68,7 @@
   padding: 32px 24px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .productCategoriesSectionHeader {
@@ -75,7 +84,7 @@
   margin: 0;
 }
 
-.productCategoriesSectionHeader p {
+.productCategoriesSectionHeader .sectionDescription {
   color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.7;
@@ -85,18 +94,18 @@
 .productCategoriesGrid {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .productCategoryCard {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 0;
   color: inherit;
   display: flex;
   flex-direction: column;
-  min-height: 260px;
-  padding: 28px 24px;
+  min-height: 220px;
+  padding: 24px 20px;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   position: relative;
@@ -109,48 +118,49 @@
   border-color: var(--brand-blue);
 }
 
-.productCategoryIconWrap {
-  position: relative;
-  width: 56px;
-  height: 56px;
-  margin-bottom: 20px;
+.productCategoryCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
 }
 
 .productCategoryIcon {
-  align-items: center;
-  background: color-mix(in srgb, var(--brand-blue) 10%, transparent);
-  border-radius: 12px;
-  color: var(--brand-blue);
   display: flex;
-  height: 56px;
+  align-items: center;
   justify-content: center;
-  position: relative;
-  width: 56px;
-  z-index: 2;
+  color: var(--brand-blue-deep);
 }
 
 .productCategoryIcon svg {
-  height: 24px;
-  width: 24px;
+  width: 32px;
+  height: 32px;
+}
+
+.productCategoryIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .productCategoryCard:nth-child(1) .productCategoryIcon {
-  background: color-mix(in srgb, var(--brand-yellow) 14%, transparent);
+  background: transparent !important;
   color: var(--brand-yellow);
 }
 
 .productCategoryCard:nth-child(2) .productCategoryIcon {
-  background: color-mix(in srgb, var(--brand-red) 10%, transparent);
+  background: transparent !important;
   color: var(--brand-red);
 }
 
 .productCategoryCard:nth-child(3) .productCategoryIcon {
-  background: color-mix(in srgb, var(--brand-blue) 10%, transparent);
+  background: transparent !important;
   color: var(--brand-blue);
 }
 
 .productCategoryCard:nth-child(4) .productCategoryIcon {
-  background: color-mix(in srgb, var(--brand-green) 12%, transparent);
+  background: transparent !important;
   color: var(--brand-green);
 }
 
@@ -185,16 +195,17 @@
 
 .productCategoryCard h3 {
   color: var(--foreground);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  margin: 0 0 10px;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .productCategoryCard p {
   color: var(--text-muted);
-  font-size: 0.88rem;
-  line-height: 1.7;
-  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-top: 10px;
   flex: 1;
 }
 
@@ -217,7 +228,7 @@
   padding: 32px 24px;
   background: color-mix(in srgb, var(--brand-blue) 4%, transparent);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .featuredProductsHeader {
@@ -249,7 +260,7 @@
 .featuredProductCard {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 0;
   color: inherit;
   display: flex;
   flex-direction: column;
@@ -342,7 +353,7 @@
   padding: 40px 24px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .clientLogosHeader {
@@ -369,7 +380,7 @@
 .clientLogoItem {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -389,12 +400,12 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: grayscale(100%) opacity(0.7);
-  transition: filter 0.3s ease, opacity 0.3s ease;
+  filter: grayscale(0%) opacity(1);
+  transition: transform 0.3s ease;
 }
 
 .clientLogoItem:hover img {
-  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
 }
 
 .homeHero {
@@ -422,6 +433,11 @@
   grid-template-columns: 1.15fr 0.85fr;
   position: relative;
   z-index: 1;
+}
+
+.heroLead .eyebrow {
+  color: var(--brand-red) !important;
+  opacity: 1 !important;
 }
 
 .heroLead h1 {
@@ -532,7 +548,7 @@
 .visualFrameLarge {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 0;
   min-height: 400px;
   height: 400px;
   overflow: hidden;
@@ -585,7 +601,7 @@
   border: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 24px;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .discoveryHeader {
@@ -630,7 +646,7 @@
   text-decoration: none;
   transition: transform 180ms ease, background-color 180ms ease;
   word-break: break-word;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .discoveryCard:hover {
@@ -686,7 +702,7 @@
   border: 1px solid var(--border);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   padding: 18px 20px;
-  border-radius: 12px;
+  border-radius: 0;
   position: relative;
   overflow: hidden;
 }
@@ -740,13 +756,13 @@
   background: color-mix(in srgb, var(--surface) 94%, transparent);
   border: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .machineShowcaseMain,
 .homeSplitLead {
   padding: 26px;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .machineShowcaseMain h2,
@@ -774,7 +790,7 @@
   display: grid;
   gap: 1px;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .machineMiniCard {
@@ -782,7 +798,7 @@
   display: grid;
   gap: 6px;
   padding: 18px;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .machineMiniCard span {
@@ -812,7 +828,208 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   min-height: 210px;
   padding: 22px;
-  border-radius: 12px;
+  border-radius: 0;
+}
+
+.capabilityTag {
+  color: var(--brand-blue);
+  display: inline-flex;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.capabilityCard h3 {
+  color: var(--foreground);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.capabilityCard p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin: 12px 0 0;
+}
+.discoveryIcon {
+  align-items: center;
+  background: color-mix(in srgb, var(--brand-green) 12%, transparent);
+  border-radius: 50%;
+  color: var(--brand-green);
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  width: 48px;
+}
+
+.discoveryIcon svg {
+  height: 20px;
+  width: 20px;
+}
+
+.discoveryCard h3 {
+  color: var(--foreground);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 5px;
+}
+
+.discoveryCard p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 60ch;
+}
+
+.discoveryArrow {
+  color: var(--brand-blue);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.homeSignalRow {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.signalCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  padding: 18px 20px;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.signalCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--brand-blue);
+}
+
+.signalCard:nth-child(2)::before {
+  background: var(--brand-green);
+}
+
+.signalCard:nth-child(3)::before {
+  background: var(--brand-red);
+}
+
+.signalCard span {
+  color: var(--text-muted);
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.signalCard strong {
+  color: var(--foreground);
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.machineShowcase,
+.homeSplitSection {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.machineShowcaseMain,
+.homeSplitLead,
+.machineShowcaseSide {
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 0;
+}
+
+.machineShowcaseMain,
+.homeSplitLead {
+  padding: 26px;
+  border-radius: 0;
+}
+
+.machineShowcaseMain h2,
+.homeSplitLead h2 {
+  color: var(--foreground);
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  margin: 0;
+  max-width: 14ch;
+}
+
+.machineShowcaseMain p,
+.homeSplitLead p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.86;
+  margin: 16px 0 0;
+  max-width: 60ch;
+}
+
+.machineShowcaseSide,
+.homeSplitStack {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.machineMiniCard {
+  background: color-mix(in srgb, var(--surface-soft) 96%, transparent);
+  display: grid;
+  gap: 6px;
+  padding: 18px;
+  border-radius: 0;
+}
+
+.machineMiniCard span {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.machineMiniCard strong {
+  color: var(--foreground);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.capabilityGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.capabilityCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  min-height: 210px;
+  padding: 22px;
+  border-radius: 0;
 }
 
 .capabilityTag {
@@ -841,56 +1058,172 @@
 }
 
 .catalogHero {
-  align-items: end;
-  background: var(--surface-soft);
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  display: grid;
-  gap: 22px;
-  grid-template-columns: 1.25fr 0.75fr;
+  background: var(--brand-blue-deep);
+  color: var(--text-on-brand);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px;
   margin-top: 18px;
-  padding: 28px;
-  border-radius: 12px;
+  border-radius: 0;
+}
+
+.catalogHeroLead h1 {
+  color: var(--text-on-brand);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  margin: 12px 0 10px;
 }
 
 .catalogHeroText {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.82;
-  margin: 16px 0 0;
-  max-width: 64ch;
+  color: color-mix(in srgb, var(--text-on-brand) 80%, transparent);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 52ch;
 }
 
-.catalogHeroMeta {
+.catalogStats {
+  display: flex;
+  gap: 48px;
+}
+
+.catalogStatItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalogStatVal {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--brand-green);
+}
+
+.catalogStatLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.machineCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0;
+}
+
+.machineCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  border-color: var(--brand-green);
+}
+
+.machineVisual {
+  height: 200px;
+  background: var(--surface-soft);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.machineIcon {
+  color: var(--brand-blue-deep);
+  opacity: 0.2;
+}
+
+.machineIcon svg {
+  width: 64px;
+  height: 64px;
+}
+
+.machineModelTag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--brand-blue-deep);
+  color: #fff;
+  font-size: 10px;
+  padding: 6px 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.machineContent {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.machineName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: var(--foreground);
+}
+
+.machineDesc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.machineSpecGrid {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
 }
 
-.catalogHeroMeta div {
-  background: color-mix(in srgb, var(--surface) 88%, transparent);
-  border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
-  min-height: 98px;
-  padding: 16px 18px;
+.machineSpecItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
 }
 
-.catalogHeroMeta strong {
-  color: var(--brand-blue-deep);
-  display: block;
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.25;
-}
-
-.catalogHeroMeta span {
+.machineSpecLabel {
   color: var(--text-muted);
-  display: block;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  line-height: 1.5;
-  margin-top: 10px;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.machineSpecValue {
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.machineCta {
+  margin-top: auto;
+  background: var(--brand-green);
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: background 0.2s ease;
+}
+
+.machineCta:hover {
+  background: var(--brand-blue-deep);
 }
 
 .catalogInfoGrid {
@@ -906,7 +1239,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   min-height: 168px;
   padding: 22px;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .catalogLeadCard h2 {
@@ -945,7 +1278,7 @@
   border: 1px solid var(--border);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 24px;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .catalogSpotlightLead h2,
@@ -982,7 +1315,7 @@
   min-width: 0;
   padding: 16px 20px;
   word-break: break-word;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .productListCard {
@@ -996,7 +1329,7 @@
   text-decoration: none;
   transition: transform 200ms ease, border-color 200ms ease;
   word-break: break-word;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .productListCard:hover {
@@ -1057,7 +1390,7 @@
   border: 1px solid var(--border);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 24px;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .processIntro {
@@ -1085,7 +1418,7 @@
   min-width: 0;
   padding: 22px;
   word-break: break-word;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .processIcon {
@@ -1128,7 +1461,7 @@
   gap: 20px;
   grid-template-columns: minmax(0, 1fr) auto;
   padding: 26px 28px;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .homeClosingText h2 {
@@ -1206,10 +1539,10 @@
 }
 
 .heroPrimary {
-  background: linear-gradient(135deg, var(--brand-accent), var(--brand-yellow));
+  background: var(--brand-green);
   color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
+  border-radius: 0;
+  box-shadow: 0 4px 14px rgba(103, 184, 45, 0.4);
   font-size: 14px;
 }
 
@@ -1217,7 +1550,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-on-brand);
-  border-radius: 8px;
+  border-radius: 0;
   font-size: 14px;
 }
 
@@ -1327,7 +1660,7 @@
   position: relative;
   transition: transform 200ms ease, border-color 200ms ease;
   word-break: break-word;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .categoryCard::before,
@@ -1731,7 +2064,7 @@
 .visionCard {
   background: linear-gradient(180deg, var(--surface), var(--surface-soft));
   border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .visionCard h3 {
@@ -1759,26 +2092,65 @@
 
 .facilityCard {
   align-items: center;
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface) 98%, transparent), color-mix(in srgb, var(--surface-soft) 96%, transparent));
-  border: 1px solid color-mix(in srgb, var(--border) 86%, transparent);
+  background: var(--surface);
+  border: 1px solid var(--border);
   display: flex;
-  gap: 12px;
-  min-height: 74px;
-  padding: 18px 20px;
-  border-radius: 8px;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  transition: transform 0.2s ease;
 }
 
-.facilityCard strong {
+.facilityCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-yellow);
+}
+
+.facilityIconWrap {
+  width: 40px;
+  height: 40px;
+  background: color-mix(in srgb, var(--brand-yellow) 12%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D49000;
+  border-radius: 0;
+  flex-shrink: 0;
+}
+
+.facilityItemContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  gap: 12px;
+  min-width: 0;
+}
+
+.facilityItemName {
+  font-size: 0.88rem;
   color: var(--foreground);
-  font-size: 0.96rem;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.4;
+  overflow: visible;
+  white-space: normal;
+}
+
+.facilityItemQty {
+  background: color-mix(in srgb, var(--brand-yellow) 15%, transparent);
+  color: #D49000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 0;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
 .facilityBullet {
   background: linear-gradient(135deg, var(--brand-accent), var(--brand-highlight));
-  border-radius: 999px;
+  border-radius: 0;
   display: inline-flex;
   flex: 0 0 auto;
   height: 10px;
@@ -1850,38 +2222,187 @@
   margin: 0 0 14px;
 }
 
-.detailPanel {
+.machineDetailGrid {
   display: grid;
-  gap: 22px;
-  grid-template-columns: 0.95fr 1.05fr;
-  margin-top: 18px;
-  padding: 30px;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.detailMedia {
-  align-items: center;
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--brand-accent) 10%, transparent), color-mix(in srgb, var(--surface-tint) 92%, transparent)),
-    var(--surface-tint);
-  color: var(--text-muted);
+.machineVisualPanel {
   display: flex;
-  font-size: 0.84rem;
-  height: 292px;
-  justify-content: center;
-  position: relative;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.detailMedia::after {
-  border: 1px solid color-mix(in srgb, var(--border-strong) 88%, transparent);
-  content: "";
-  inset: 30px;
-  position: absolute;
+.machineMainVisual {
+  height: 400px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-blue-deep);
+  opacity: 0.15;
+}
+
+.machineMainVisual svg {
+  width: 120px;
+  height: 120px;
+}
+
+.machineGalleryMini {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.galleryItem,
+.galleryItemActive {
+  height: 80px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.2;
+}
+
+.galleryItemActive {
+  border-color: var(--brand-green);
+  opacity: 0.5;
+}
+
+.machineSpecsPanel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 32px;
+}
+
+.specsHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.specsHeader p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0 0 32px;
+}
+
+.technicalSpecGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.technicalSpecItem {
+  background: var(--surface);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.techLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.techValue {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--foreground);
+}
+
+.machineActionBlock {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actionPrompt strong {
+  display: block;
+  font-size: 15px;
+}
+
+.actionPrompt span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.machineMainCta {
+  background: var(--brand-green);
+  color: #fff;
+  padding: 14px 24px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.machineMainCta:hover {
+  background: var(--brand-blue-deep);
+  transform: translateY(-2px);
+}
+
+.aboutProfileCta {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--brand-red);
+  color: var(--brand-red);
+  display: inline-flex;
+  font-size: 0.76rem;
+  font-weight: 700;
+  height: 40px;
+  justify-content: center;
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+  padding: 0 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: fit-content;
+  transition: all 0.2s ease;
+}
+
+.aboutProfileCta:hover {
+  background: var(--brand-red);
+  color: #fff;
+}
+
+.heroSecondary {
+  align-items: center;
+  background: transparent;
+  border: 2px solid var(--brand-green);
+  color: var(--brand-green);
+  display: inline-flex;
+  font-size: 0.76rem;
+  font-weight: 700;
+  height: 40px;
+  justify-content: center;
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+  padding: 0 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: fit-content;
 }
 
 .detailCta {
   align-items: center;
-  background: var(--brand-blue-deep);
-  color: var(--text-on-brand);
+  background: var(--brand-green);
+  color: #fff;
   display: inline-flex;
   font-size: 0.92rem;
   font-weight: 700;
@@ -1917,7 +2438,7 @@
     transform 180ms ease,
     box-shadow 180ms ease,
     border-color 180ms ease;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .relatedIcon {
@@ -1940,78 +2461,78 @@
 }
 
 .referenceTable {
-  border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
-}
-
-.referenceIntroBand {
-  align-items: center;
-  display: grid;
-  gap: 18px;
-  grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.9fr);
-  margin-top: 18px;
-  border-radius: 12px;
-}
-
-.referenceIntroLead {
-  display: block;
-}
-
-.referenceStats {
-  display: grid;
-  gap: 12px;
-}
-
-.referenceStats div {
-  background: color-mix(in srgb, var(--surface-soft) 90%, transparent);
-  border: 1px solid color-mix(in srgb, var(--border) 86%, transparent);
-  padding: 18px;
-  border-radius: 8px;
-}
-
-.referenceStats strong {
-  color: var(--brand-blue);
-  display: block;
-  font-size: 1.55rem;
-  font-weight: 600;
-  line-height: 1;
-}
-
-.referenceStats span {
-  color: var(--text-muted);
-  display: block;
-  font-size: 0.82rem;
-  line-height: 1.6;
-  margin-top: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
 .referenceHead,
 .referenceBodyRow {
   display: grid;
-  grid-template-columns: 64px 1.1fr 1fr 0.8fr;
+  grid-template-columns: 60px 1.2fr 1.5fr 1fr;
+  align-items: center;
 }
 
 .referenceHead {
   background: var(--brand-blue-deep);
-  color: var(--text-on-brand);
-  font-size: 0.8rem;
+  color: #fff;
+  font-size: 0.75rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .referenceHead span,
 .referenceBodyRow span {
-  border-right: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
-  padding: 12px 14px;
+  padding: 16px 20px;
+  border-right: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
 }
 
-.referenceBodyRow:nth-child(odd) {
-  background: color-mix(in srgb, var(--surface-soft) 80%, transparent);
+.referenceBodyRow:last-child {
+  border-bottom: none;
+}
+
+.referenceBodyRow:hover {
+  background: color-mix(in srgb, var(--brand-green) 5%, var(--surface));
+}
+
+.referenceBodyRow span:last-child,
+.referenceHead span:last-child {
+  border-right: none;
+}
+
+.referenceId {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  background: color-mix(in srgb, var(--surface-soft) 40%, transparent);
+}
+
+.referenceCustomer {
+  font-weight: 700;
+  color: var(--foreground);
+  font-size: 0.9rem;
+}
+
+.referenceSolution {
+  color: var(--foreground);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.referenceSector {
+  font-size: 0.8rem;
+  color: var(--brand-blue);
+  font-weight: 600;
 }
 
 .contactCard {
   display: grid;
   gap: 12px;
   padding: 22px;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .contactCard h2 {
@@ -2028,8 +2549,8 @@
 
 .contactAction {
   align-items: center;
-  background: var(--brand-blue-deep);
-  color: var(--text-on-brand);
+  background: var(--brand-green);
+  color: #fff;
   display: inline-flex;
   font-size: 0.85rem;
   font-weight: 700;
@@ -2039,8 +2560,9 @@
 }
 
 .contactActionAccent {
-  background: var(--brand-blue);
-  color: var(--text-on-brand);
+  background: var(--brand-green);
+  filter: brightness(0.9);
+  color: #fff;
 }
 
 /* ── About Minimal Redesign ── */
@@ -2144,7 +2666,7 @@
 
 .aboutCardEyebrow {
   align-items: center;
-  border-radius: 999px;
+  border-radius: 0;
   color: var(--brand-blue-deep);
   display: inline-flex;
   font-size: 0.76rem;
@@ -2158,7 +2680,7 @@
 .aboutEditorialSplit {
   display: grid;
   gap: 18px;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  grid-template-columns: 1fr 1fr;
   position: relative;
   z-index: 1;
 }
@@ -2176,78 +2698,13 @@
   letter-spacing: -0.04em;
   line-height: 1.08;
   margin: 0;
-  max-width: none;
-  white-space: nowrap;
+  max-width: 12ch;
+  white-space: normal;
 }
-
-.aboutEditorialIntro {
-  color: var(--foreground);
-  font-size: 1.05rem;
-  font-weight: 500;
-  line-height: 1.8;
-  margin: 0;
-  max-width: 54ch;
-}
-
-.aboutEditorialText {
-  color: var(--text-muted);
-  font-size: 0.98rem;
-  line-height: 1.85;
-  margin: 0;
-  max-width: 52ch;
-}
-
-.aboutProfileCta {
-  align-items: center;
-  background: transparent;
-  border: 1px solid #E04040;
-  color: #E04040;
-  display: inline-flex;
-  font-size: 0.76rem;
-  font-weight: 700;
-  height: 40px;
-  justify-content: center;
-  letter-spacing: 0.08em;
-  margin-top: 8px;
-  padding: 0 18px;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: fit-content;
-}
-
-.aboutProfileCta:hover {
-  background: #E04040;
-  color: #ffffff;
-}
-
-.aboutEditorialPanel {
-  display: grid;
-  align-content: start;
-  gap: 20px;
-  justify-self: end;
-  padding-left: 10px;
-  position: relative;
-  width: 100%;
-}
-
-.aboutEditorialPanel::before {
-  content: "";
-  position: absolute;
-  left: -32px;
-  top: 12px;
-  bottom: 12px;
-  width: 1px;
-  background: color-mix(in srgb, var(--brand-red) 18%, var(--border) 82%);
-}
-
-.aboutCardEyebrowAccent {
-  color: var(--brand-red);
-}
-
 .aboutExecutiveGrid {
   display: grid;
-  gap: 24px;
-  grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.8fr);
+  gap: 20px;
+  grid-template-columns: 1.6fr 1fr;
   align-items: stretch;
   position: relative;
   z-index: 1;
@@ -2269,7 +2726,7 @@
 
 .aboutExecutiveLine {
   background: var(--brand-yellow);
-  border-radius: 999px;
+  border-radius: 0;
   height: 4px;
   width: 64px;
 }
@@ -2319,9 +2776,10 @@
 
 .aboutExecutiveCard strong {
   color: var(--foreground);
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .aboutExecutiveCard span {
@@ -2370,7 +2828,7 @@
 .aboutHeroFrame {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 0;
   min-height: 400px;
   height: 400px;
   overflow: hidden;
@@ -2482,7 +2940,7 @@
 .aboutProfileHighlightIcon {
   align-items: center;
   background: color-mix(in srgb, var(--brand-blue) 10%, transparent);
-  border-radius: 12px;
+  border-radius: 0;
   color: var(--brand-blue-deep);
   display: flex;
   height: 42px;
@@ -2530,11 +2988,11 @@
 }
 
 .aboutProfileRow {
-  align-items: start;
+  align-items: center;
   display: grid;
-  gap: 14px;
-  grid-template-columns: 40px minmax(96px, 132px) 1fr;
-  padding: 20px 24px;
+  gap: 12px;
+  grid-template-columns: 32px minmax(80px, 120px) 1fr;
+  padding: 12px 20px;
 }
 
 .aboutProfileRow + .aboutProfileRow {
@@ -2543,37 +3001,36 @@
 
 .aboutProfileRowIcon {
   align-items: center;
-  background: #7ACB2E;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(122, 203, 46, 0.12);
+  background: var(--brand-green);
+  border-radius: 0;
   color: #ffffff;
   display: flex;
-  height: 36px;
+  height: 28px;
   justify-content: center;
-  width: 36px;
+  width: 28px;
 }
 
 .aboutProfileRowIcon svg {
-  height: 23px;
-  width: 23px;
-  stroke-width: 2.05;
+  height: 16px;
+  width: 16px;
+  stroke-width: 2;
 }
 
 .aboutProfileRow > span:not(.aboutProfileRowIcon) {
-  color: var(--foreground);
-  font-size: 0.77rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  opacity: 0.72;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .aboutProfileRow strong {
   color: var(--foreground);
-  font-size: 1.04rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0;
-  line-height: 1.5;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
 .aboutVisionMission {
@@ -2623,7 +3080,7 @@
 .aboutFocusBand {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(4, minmax(0, 220px));
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   margin-top: 30px;
   position: relative;
@@ -2632,7 +3089,7 @@
 
 .aboutFocusCard {
   align-items: start;
-  background: transparent;
+  background: #ffffff;
   border: none;
   border-top: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
   border-bottom: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
@@ -2706,13 +3163,11 @@
   color: var(--brand-green);
 }
 
-.aboutFocusCard:first-child {
-  margin-right: 14px;
-}
+
 
 
 .aboutFocusCard h3 {
-  color: var(--foreground);
+  color: color-mix(in srgb, var(--foreground) 72%, var(--text-muted) 28%);
   font-size: 1.08rem;
   font-weight: 700;
   line-height: 1.35;
@@ -2744,9 +3199,555 @@
   letter-spacing: 0.01em;
 }
 
+
 .aboutFocusCard:hover p {
   color: color-mix(in srgb, var(--foreground) 72%, var(--text-muted) 28%);
 }
+
+/* ── About Vision/Mission Enhanced ── */
+.aboutVmBlock {
+  border-radius: 0 !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutVmBlock:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.aboutVmVision {
+  background: #ffffff !important;
+  border: 1px solid color-mix(in srgb, var(--brand-blue) 15%, var(--border) 85%) !important;
+}
+
+.aboutVmVision::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--brand-blue-deep);
+}
+
+.aboutVmMission {
+  background: #ffffff !important;
+  border: 1px solid color-mix(in srgb, var(--brand-red) 15%, var(--border) 85%) !important;
+}
+
+.aboutVmMission::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--brand-red);
+}
+
+.aboutVmHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.aboutVmHeader .vmIconWrapper {
+  margin-bottom: 0;
+}
+
+.aboutVmHeader h3 {
+  margin-bottom: 0;
+  font-size: 1.15rem !important;
+}
+
+.vmIconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 0;
+}
+
+.aboutVmVision .vmIconWrapper {
+  background: color-mix(in srgb, var(--brand-blue) 8%, transparent);
+  color: var(--brand-blue-deep);
+}
+
+.aboutVmMission .vmIconWrapper {
+  background: color-mix(in srgb, var(--brand-red) 8%, transparent);
+  color: var(--brand-red);
+}
+
+.vmIconWrapper svg {
+  width: 26px !important;
+  height: 26px !important;
+  stroke-width: 1.25 !important;
+}
+
+.aboutVmVision {
+  border: 1px solid color-mix(in srgb, var(--brand-yellow) 40%, var(--border) 60%) !important;
+}
+
+.aboutVmVision::before {
+  background: var(--brand-yellow) !important;
+}
+
+.aboutVmVision .vmIconWrapper {
+  background: color-mix(in srgb, var(--brand-yellow) 15%, transparent) !important;
+  color: #D49000 !important;
+}
+
+.aboutVmMission {
+  border: 1px solid color-mix(in srgb, var(--brand-green) 30%, var(--border) 70%) !important;
+}
+
+.aboutVmMission::before {
+  background: var(--brand-green) !important;
+}
+
+.aboutVmMission .vmIconWrapper {
+  background: color-mix(in srgb, var(--brand-green) 12%, transparent) !important;
+  color: var(--brand-green) !important;
+}
+/* ─── Product Category Page ─────────────────────────────────────────── */
+
+.catPageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0 20px;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 0;
+}
+
+.catPageHeaderText {
+  flex: 1;
+}
+
+.catPageTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+.catPageSummary {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 60ch;
+}
+
+.catPageMeta {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.catPageMetaBadge {
+  background: var(--brand-green);
+  border: 1px solid var(--brand-green);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 6px 14px;
+  text-transform: uppercase;
+}
+
+.catProductList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.catProductCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.catProductCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: var(--brand-blue);
+}
+
+.catProductThumb {
+  width: 100%;
+  height: 220px;
+  background: var(--surface-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.catProductImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block;
+}
+
+.catProductPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.catProductPlaceholder svg {
+  width: 40px;
+  height: 40px;
+}
+
+.catProductContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.catProductName {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.catProductDesc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0 0 18px;
+  flex: 1;
+}
+
+.catSpecRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.catSpecChip {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 11px;
+}
+
+.catSpecChipLabel {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.catSpecChipVal {
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.catProductFooter {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.catViewBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--brand-green);
+  color: var(--brand-green);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 12px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.catViewBtn:hover {
+  background: var(--brand-green);
+  color: #ffffff;
+}
+
+/* ─── Product Detail Page ────────────────────────────────────────────── */
+
+.pdpHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 28px 0 24px;
+  border-bottom: 2px solid var(--border);
+}
+
+.pdpHeaderMain {
+  flex: 1;
+  min-width: 0;
+}
+
+.pdpCategoryTag {
+  color: var(--brand-red);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.pdpTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0 0 12px;
+  letter-spacing: -0.025em;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+.pdpDescription {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 65ch;
+  overflow-wrap: break-word;
+}
+
+
+
+.pdpBody {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.pdpMainCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.pdpImageBlock {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 360px; /* Wider, cinematic industrial aspect */
+}
+
+.pdpProductImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--surface-soft);
+}
+
+.pdpImagePlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.pdpImagePlaceholder svg {
+  width: 48px;
+  height: 48px;
+}
+
+.pdpImagePlaceholder span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pdpSpecSection {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  margin-bottom: 30px;
+}
+
+.pdpSectionTitle {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-on-brand);
+  background: var(--brand-blue-deep);
+  padding: 12px 20px;
+  margin: 0;
+}
+
+.pdpSpecTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pdpSpecRow {
+  border-bottom: 1px solid var(--border);
+}
+
+.pdpSpecRow:last-child {
+  border-bottom: none;
+}
+
+.pdpSpecRow:nth-child(even) {
+  background: var(--surface-soft);
+}
+
+.pdpSpecLabel {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 13px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  width: 40%;
+  border-right: 1px solid var(--border);
+}
+
+.pdpSpecValue {
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 13px 20px;
+  overflow-wrap: break-word;
+}
+
+/* Enquiry sidebar */
+.pdpEnquiryPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 100px;
+  min-width: 0;
+}
+
+.pdpEnquiryBox {
+  background: var(--brand-blue-deep);
+  color: var(--text-on-brand);
+  padding: 24px;
+}
+
+.pdpEnquiryTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.pdpEnquiryText {
+  font-size: 0.83rem;
+  line-height: 1.65;
+  opacity: 0.8;
+  margin: 0 0 20px;
+}
+
+.pdpEnquiryWhatsapp {
+  display: block;
+  background: var(--brand-green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 12px 16px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.15s ease;
+}
+
+.pdpEnquiryWhatsapp:hover {
+  opacity: 0.9;
+}
+
+.pdpRelatedBox {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+}
+
+.pdpRelatedTitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0 0 14px;
+}
+
+.pdpRelatedList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pdpRelatedLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--foreground);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 10px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  border-left: 2px solid transparent;
+}
+
+.pdpRelatedLink:hover {
+  background: var(--surface-soft);
+  border-left-color: var(--brand-green);
+  color: var(--brand-green);
+}
+
+.pdpRelatedLink svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
 
 @media (max-width: 1024px) {
 
@@ -2762,15 +3763,42 @@
   .catalogSpotlight,
   .referenceIntroBand {
     grid-template-columns: 1fr;
-    border-radius: 12px;
+    border-radius: 0;
+  }
+
+  /* Tablet: collapse 4-col and 3-col product grids to 2 columns */
+  .productCategoriesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featuredProductsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .catalogHeroMeta {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .facilityGrid {
+    grid-template-columns: 1fr;
+  }
+
   .heroLead h1 {
     font-size: 3.2rem;
+  }
+
+  /* Tablet: PDP body sidebar still visible but narrower */
+  .pdpBody {
+    grid-template-columns: 1fr 240px;
+  }
+
+  /* Tablet: catalog hero padding */
+  .catalogHero {
+    padding: 32px 24px;
   }
 }
 
@@ -2780,8 +3808,9 @@
   .discoveryStrip,
   .processBand,
   .homeClosing {
-    padding: 24px;
-    border-radius: 12px;
+    padding: 24px 18px;
+    border-radius: 0;
+    overflow-x: hidden;
   }
 
   .discoveryHeader,
@@ -2789,12 +3818,12 @@
     display: grid;
     gap: 16px;
     grid-template-columns: 1fr;
-    border-radius: 12px;
+    border-radius: 0;
   }
 
   .discoveryCard {
     grid-template-columns: 44px 1fr;
-    border-radius: 8px;
+    border-radius: 0;
   }
 
   .discoveryArrow {
@@ -2820,7 +3849,7 @@
   .heroBanner {
     min-height: auto;
     padding: 30px 24px;
-    border-radius: 12px;
+    border-radius: 0;
   }
 
   .heroBanner h1,
@@ -2837,6 +3866,59 @@
   .homeClosingText h2 {
     font-size: 2.1rem;
     max-width: none;
+  }
+
+  /* ── Tablet/Small-tablet additions ── */
+
+  /* PDP: collapse to single column on tablet portrait */
+  .pdpBody {
+    grid-template-columns: 1fr;
+  }
+
+  .pdpEnquiryPanel {
+    position: static;
+  }
+
+  /* Category page header: stack on narrow tablet */
+  .catPageHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .catPageMeta {
+    padding-top: 0;
+  }
+
+  /* PDP header: stack */
+  .pdpHeader {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* Catalog hero: reduce horizontal padding */
+  .catalogHero {
+    padding: 28px 20px;
+  }
+
+  /* Catalog stats: tighten gap */
+  .catalogStats {
+    gap: 28px;
+  }
+
+  .catProductList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Hero image frame: shorter on tablet portrait */
+  .visualFrameLarge {
+    height: 280px;
+    min-height: 280px;
+  }
+
+  .pdpImageBlock {
+    height: 300px;
   }
 }
 
@@ -2859,7 +3941,7 @@
   .aboutMinimalDetails,
   .aboutMinimalStatsGrid {
     grid-template-columns: 1fr;
-    border-radius: 8px;
+    border-radius: 0;
   }
 
   .aboutMinimalHero {
@@ -2873,12 +3955,9 @@
     grid-template-columns: 1fr;
   }
 
+  /* Fix: consolidated single rule (was duplicated) */
   .aboutFocusBand {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .aboutFocusBand {
-    grid-template-columns: repeat(2, minmax(0, 220px));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .aboutEditorialPanel {
@@ -2898,6 +3977,48 @@
     left: auto;
     margin-top: 24px;
     position: static;
+  }
+
+  /* Phone: product grids go 2-col (still readable) */
+  .productCategoriesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featuredProductsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Hero image shorter on phone landscape */
+  .visualFrameLarge {
+    height: 220px;
+    min-height: 220px;
+  }
+
+  /* Client logos: shrink items */
+  .clientLogoItem {
+    width: 140px;
+    height: 68px;
+    padding: 12px;
+  }
+
+  /* Catalog hero padding */
+  .catalogHero {
+    padding: 24px 18px;
+  }
+
+  /* catalog stats row: wrap */
+  .catalogStats {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  /* Product list card: always stack image on top */
+  .productListCard {
+    grid-template-columns: 1fr;
+  }
+
+  .productListVisual {
+    min-height: 200px;
   }
 }
 
@@ -2920,7 +4041,7 @@
   .catalogSpotlightLead,
   .referenceIntroBand {
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 0;
   }
 
   .heroActions,
@@ -2936,6 +4057,7 @@
   .heroGhost,
   .detailCta {
     width: 100%;
+    justify-content: center;
   }
 
   .referenceHead,
@@ -2950,6 +4072,338 @@
   .heroLead h1 {
     font-size: 1.85rem;
   }
+
+  /* Phone portrait: 1-column for product grids */
+  .productCategoriesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredProductsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Section spacing tightened */
+  .productCategoriesSection,
+  .featuredProductsSection,
+  .clientLogosSection {
+    padding: 20px 14px;
+  }
+
+  .productCategoriesSection .productCategoriesSectionHeader,
+  .featuredProductsSection .featuredProductsHeader,
+  .clientLogosSection .clientLogosHeader {
+    margin-bottom: 20px;
+  }
+
+  /* Category cards: min height reduction */
+  .productCategoryCard {
+    min-height: 150px;
+    padding: 18px 16px;
+  }
+
+  /* Featured image: shorter */
+  .featuredProductImage {
+    height: 160px;
+  }
+
+  /* Hero visual frame */
+  .visualFrameLarge {
+    height: 200px;
+    min-height: 200px;
+  }
+
+  /* About focus band: single column on small phone */
+  .aboutFocusBand {
+    grid-template-columns: 1fr;
+  }
+
+  /* Catalog stats: column */
+  .catalogStats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Client logos: shrink */
+  .clientLogoItem {
+    width: 120px;
+    height: 60px;
+    padding: 10px;
+  }
+
+  /* catProductRow: minimal layout */
+  .catProductRow {
+    grid-template-columns: 64px 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .catProductThumb {
+    width: 64px;
+    height: 64px;
+    min-height: 64px;
+  }
+
+  /* PDP image */
+  .pdpImageBlock {
+    height: 240px;
+  }
+
+  /* PDP header */
+  .pdpHeader {
+    padding: 18px 16px;
+  }
+
+  /* PDP spec table: stack on mobile */
+  .pdpSpecRow {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pdpSpecLabel {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-soft);
+    padding: 10px 16px;
+    background: var(--surface-soft);
+  }
+
+  .pdpSpecValue {
+    padding: 10px 16px;
+    width: 100%;
+  }
+
+  /* PDP title */
+  .pdpTitle {
+    font-size: 1.4rem;
+  }
+
+  /* Vision/mission block 1-col */
+  .aboutVisionMission {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 480px: Small phone portrait ── */
+@media (max-width: 480px) {
+
+  /* Hero section */
+  .heroLead h1 {
+    font-size: 1.6rem;
+  }
+
+  .heroLeadText {
+    font-size: 0.95rem;
+  }
+
+  .heroButtonRow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .heroPrimary,
+  .heroGhost {
+    font-size: 11px;
+    padding: 0 12px;
+    min-height: 44px;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .heroStatRow {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 8px;
+  }
+
+  .heroStat strong {
+    font-size: 1.1rem;
+  }
+
+  .heroStat span {
+    font-size: 0.65rem;
+    margin-top: 4px;
+  }
+
+  .heroStat {
+    padding-left: 12px;
+  }
+
+  /* Hero visual */
+  .visualFrameLarge {
+    height: 180px;
+    min-height: 180px;
+  }
+
+  /* Product category cards: ensure 1-col with good min height */
+  .productCategoriesGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .productCategoryCard {
+    min-height: 120px;
+    padding: 16px;
+  }
+
+  /* Featured products: 1-col */
+  .featuredProductsGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .featuredProductImage {
+    height: 140px;
+  }
+
+  /* Client logos: 2-col grid for clean layout */
+  .clientLogosGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .clientLogoItem {
+    width: 100%;
+    height: 64px;
+  }
+
+  /* Section padding */
+  .productCategoriesSection,
+  .featuredProductsSection,
+  .clientLogosSection {
+    padding: 16px 12px;
+  }
+
+  /* Catalog */
+  .catalogHero {
+    padding: 20px 14px;
+  }
+
+  /* PDP improvements */
+  .pdpHeader {
+    padding: 16px 12px;
+  }
+  
+  .pdpDescription {
+    font-size: 0.88rem;
+  }
+
+  .pdpBody {
+    margin-top: 16px;
+    gap: 16px;
+  }
+
+  .pdpEnquiryBox {
+    padding: 20px 16px;
+  }
+
+  .pdpEnquiryPanel {
+    margin-top: 30px;
+    position: static;
+  }
+
+  .pdpSpecSection {
+    margin-top: 10px;
+  }
+
+  .mainInner {
+    padding: 18px 12px 24px;
+  }
+
+  .catalogStatVal {
+    font-size: 2rem;
+  }
+
+  .catProductList {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .catProductThumb {
+    height: 180px;
+  }
+
+  /* PDP */
+  .pdpTitle {
+    font-size: 1.25rem;
+  }
+
+  .pdpImageBlock {
+    height: 200px;
+  }
+
+  .pdpEnquiryBox {
+    padding: 18px;
+  }
+
+  /* About page */
+  .aboutEditorialLead h1 {
+    font-size: 1.8rem;
+  }
+
+  .aboutExecutiveContent {
+    padding: 20px;
+  }
+
+  .aboutSection {
+    padding: 14px 0;
+  }
+
+  .aboutMinimalLayout {
+    gap: 20px;
+  }
+
+  .aboutFocusBand {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* References table: responsive layout */
+  .referenceHead,
+  .referenceBodyRow {
+    grid-template-columns: 44px 1.1fr 1.5fr;
+  }
+  
+  .referenceSector,
+  .referenceSectorHide {
+    display: none;
+  }
+
+  .referenceHead span,
+  .referenceBodyRow span {
+    padding: 12px 14px;
+  }
+
+  /* Home closing CTA */
+  .homeClosingActions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Process band */
+  .processGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Misc */
+  .companyHighlightStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .capabilityGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .facilityGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 
 @keyframes marqueeSlide {
@@ -2961,3 +4415,7 @@
     transform: translateX(calc(-50% - 9px));
   }
 }
+
+
+
+

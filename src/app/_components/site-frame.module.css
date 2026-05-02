@@ -97,7 +97,7 @@
 }
 
 .logoImage {
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .brand {
@@ -448,10 +448,20 @@
   border-radius: 4px;
 }
 
-.sideButtonAccent {
-  background: var(--brand-blue-deep);
-  color: #fff;
-  border-radius: 4px;
+.sidebarBody .sideButtonAccent {
+  background: transparent;
+  border: 2px solid var(--brand-green);
+  color: var(--brand-green);
+  border-radius: 0;
+  width: 100%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.sidebarBody .sideButtonAccent:hover {
+  background: var(--brand-green);
+  color: #ffffff;
 }
 
 .footer {
@@ -484,6 +494,10 @@
   .shell {
     --desktop-chrome: auto;
     --footer-height: auto;
+    /* Release the desktop scroll-trap so mobile body scroll works */
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
   }
 
   .topStripInner,
@@ -538,29 +552,20 @@
 }
 
 @media (max-width: 720px) {
+  .stickyHeaderWrap {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
   .topStrip {
     display: none;
   }
 
+  /* Hide the full logo/contact header on mobile — MobileMenu bar handles navigation */
   .header {
-    gap: 12px;
-    min-height: auto;
-    padding-bottom: 12px;
-    padding-top: 14px;
-  }
-
-  .brand {
-    font-size: 30px;
-  }
-
-  .tagline {
-    font-size: 9px;
-    letter-spacing: 0.18em;
-  }
-
-  .headerInfoRow,
-  .headerPhone {
-    font-size: 11px;
+    display: none;
   }
 
   .navWrap {
@@ -583,5 +588,31 @@
 
   .footerLinks {
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  /* .header is already display:none at ≤720px — no header rules needed here */
+
+  .mainInner {
+    padding: 14px 14px 24px;
+  }
+
+  .breadcrumb {
+    font-size: 11px;
+    min-height: 36px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .mobileBar {
+    min-height: 52px;
+    padding: 0 14px;
+  }
+
+  .footerInner {
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 10px;
   }
 }

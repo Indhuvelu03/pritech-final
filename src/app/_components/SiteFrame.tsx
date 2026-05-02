@@ -153,9 +153,7 @@ function RightSidebar({ currentPath }: { currentPath?: string }) {
               {email}
             </a>
           ))}
-          <Link href="/contact" className={styles.sideButton}>
-            » Contact Form
-          </Link>
+
           <a
             href={createWhatsappLink()}
             className={styles.sideButtonAccent}
@@ -262,9 +260,10 @@ export function SiteFrame({
               <span>© 2024 Pritech Engineering. All rights reserved.</span>
               <div className={styles.footerLinks}>
                 <Link href="/">Home</Link>
+                <Link href="/company/about-pritech">About Us</Link>
+                <Link href="/products/testing-machines">Products</Link>
+                <Link href="/references">References</Link>
                 <Link href="/contact">Contact Us</Link>
-                <Link href="/privacy-policy">Privacy Policy</Link>
-                <Link href="/legal-disclosure">Legal Disclosure</Link>
               </div>
             </div>
           </footer>

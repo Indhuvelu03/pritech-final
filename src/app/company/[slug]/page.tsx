@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import {
   AwardIcon,
   ClockIcon,
+  FactoryIcon,
   HandshakeIcon,
   ShieldIcon,
   TeamIcon,
@@ -94,17 +95,10 @@ export default async function CompanyPage({
                   </div>
                   <div className={styles.aboutProfileRow}>
                     <span className={styles.aboutProfileRowIcon}>
-                      <WrenchIcon />
+                      <ShieldIcon />
                     </span>
-                    <span>Total Land</span>
+                    <span>Total Area</span>
                     <strong>2400 sq.ft</strong>
-                  </div>
-                  <div className={styles.aboutProfileRow}>
-                    <span className={styles.aboutProfileRowIcon}>
-                      <WrenchIcon />
-                    </span>
-                    <span>Built-up Area</span>
-                    <strong>1000 sq.ft</strong>
                   </div>
                   <div className={styles.aboutProfileRow}>
                     <span className={styles.aboutProfileRowIcon}>
@@ -157,10 +151,10 @@ export default async function CompanyPage({
 
           <section className={styles.aboutSection}>
             <div className={`${styles.aboutCardHeader} ${styles.aboutCardHeaderCentered}`}>
-              <span className={`${styles.aboutCardEyebrow} ${styles.aboutCardEyebrowAccent}`}>
+              <span className={styles.eyebrow}>
                 Strategic Focus
               </span>
-              <h2>Strategic Focus</h2>
+              <h2>Engineering Excellence</h2>
               <p>
                 The business is built around practical engineering, quality-led execution,
                 and dependable delivery for production-focused customers.
@@ -198,7 +192,9 @@ export default async function CompanyPage({
                     </span>
                     <h3>Timely delivery</h3>
                   </div>
-                  <p>Execution aligned with customer schedules and production commitments.</p>
+                  <div className={styles.aboutFocusCardContent}>
+                    <p>Execution aligned with customer schedules and production commitments.</p>
+                  </div>
                 </div>
               </article>
               <article className={styles.aboutFocusCard}>
@@ -215,158 +211,259 @@ export default async function CompanyPage({
             </div>
 
             <div className={styles.aboutVisionMission}>
-              <div className={`${styles.aboutVmBlock} ${styles.aboutVmVision} ${styles.aboutVmBlockSharp}`}>
-                <h3>Vision</h3>
+              <div className={`${styles.aboutVmBlock} ${styles.aboutVmVision}`}>
+                <div className={styles.aboutVmHeader}>
+                  <div className={styles.vmIconWrapper}>
+                    <AwardIcon />
+                  </div>
+                  <h3>Vision</h3>
+                </div>
                 <p>
-                  To be a preferred auto components supplier with a turnover target of
-                  Rs.10 crores through sustained quality and customer trust.
+                  To become the trusted engineering partner for manufacturing teams by
+                  delivering precision-built machinery that drives industrial progress.
                 </p>
               </div>
-              <div className={`${styles.aboutVmBlock} ${styles.aboutVmMission} ${styles.aboutVmBlockSharp}`}>
-                <h3>Mission</h3>
+              <div className={`${styles.aboutVmBlock} ${styles.aboutVmMission}`}>
+                <div className={styles.aboutVmHeader}>
+                  <div className={styles.vmIconWrapper}>
+                    <ShieldIcon />
+                  </div>
+                  <h3>Mission</h3>
+                </div>
                 <p>
-                  Add value to customers by providing innovative, quality-focused, timely,
-                  and cost-effective engineering solutions and services.
+                  To empower production facilities with robust, custom-engineered solutions
+                  that enhance operational efficiency and deliver enduring value.
                 </p>
               </div>
             </div>
           </section>
         </div>
       ) : (
-        <>
-          <section className={styles.companyHero}>
-            <h1>{page.title}</h1>
-            <div className={styles.titleUnderline} />
-            <p>{page.intro}</p>
-          </section>
-
-          <section className={styles.catalogInfoGrid}>
-            <article className={styles.catalogLeadCard}>
-              <div className={styles.discoveryIcon}>
-                <TeamIcon />
+        <div className={styles.aboutMinimalLayout}>
+          <section className={styles.aboutSection}>
+            <div className={styles.aboutEditorialSplit}>
+              <div className={styles.aboutEditorialLead}>
+                <p className={styles.eyebrow}>
+                  {slug === "our-facility" ? "Production Capability" : 
+                   slug === "milestones" ? "Company Journey" : "Industry Trust"}
+                </p>
+                <h1>{page.title}</h1>
+                <div className={styles.titleUnderline} />
+                <p className={styles.aboutEditorialIntro}>{page.intro}</p>
+                <Link href="/products/testing-machines" className={styles.aboutProfileCta}>
+                  Explore Products
+                </Link>
               </div>
-              <h2>Company built around execution</h2>
-              <p>
-                These company pages now focus on operational credibility, engineering
-                capability, and production fit instead of generic filler content.
-              </p>
-            </article>
-            <article className={styles.catalogLeadCard}>
-              <div className={styles.discoveryIcon}>
-                <ShieldIcon />
-              </div>
-              <h2>Manufacturing-first presentation</h2>
-              <p>
-                The information is grouped so visitors can understand leadership, facility,
-                milestones, and customer trust much faster.
-              </p>
-            </article>
-          </section>
-
-          <section className={styles.companyHighlightStrip}>
-            <div className={styles.companyHighlightCard}>
-              <span>Engineering mindset</span>
-              <strong>Capability presented through execution, not filler content.</strong>
-            </div>
-            <div className={styles.companyHighlightCard}>
-              <span>Factory context</span>
-              <strong>Built around machine building, tooling support, and customer delivery.</strong>
-            </div>
-            <div className={styles.companyHighlightCard}>
-              <span>Buyer confidence</span>
-              <strong>Clearer sections for leadership, milestones, facility, and customers.</strong>
+              <aside className={styles.aboutEditorialPanel}>
+                <Image
+                  src={slug === "our-facility" ? "/hero-automation.png" : 
+                       slug === "milestones" ? "/about-hero-visual.png" : "/logo.png"}
+                  alt={page.title}
+                  width={600}
+                  height={320}
+                  style={{
+                    width: "100%",
+                    height: "320px",
+                    objectFit: "contain",
+                    borderRadius: "0",
+                    background: "var(--surface)",
+                    border: "1px solid var(--border)",
+                    padding: slug === "our-customers" ? "40px" : "0",
+                  }}
+                />
+              </aside>
             </div>
           </section>
-        </>
+        </div>
       )}
 
       {slug === "our-facility" ? (
-        <>
-          <section className={styles.contentCard}>
-            <h2>Manufacturing Facility</h2>
+        <div className={styles.aboutMinimalLayout} style={{ marginTop: "0" }}>
+          <section className={styles.aboutSection} style={{ textAlign: 'center' }}>
+            <p className={styles.eyebrow}>Our Capability</p>
+            <h2 style={{ marginBottom: "12px" }}>Machinery & Infrastructure</h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', maxWidth: '65ch', margin: '0 auto 40px', lineHeight: '1.7' }}>
+              A fully equipped production facility in Ambattur, Chennai, optimized for precision 
+              machining, custom SPM fabrication, and large-scale manufacturing support.
+            </p>
             <div className={styles.facilityGrid}>
-              {facilityList.map((item) => (
-                <div key={item} className={styles.facilityCard}>
-                  <span className={styles.facilityBullet} />
-                  <strong>{item}</strong>
-                </div>
-              ))}
+              {facilityList.map((item) => {
+                const [name, qty] = item.split(' - ');
+                return (
+                  <div key={item} className={styles.facilityCard}>
+                    <div className={styles.facilityIconWrap}>
+                      <FactoryIcon style={{ width: '22px', height: '22px' }} />
+                    </div>
+                    <div className={styles.facilityItemContent}>
+                      <span className={styles.facilityItemName}>{name}</span>
+                      {qty && <span className={styles.facilityItemQty}>{qty}</span>}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </section>
 
-          <section className={styles.contentCard}>
-            <h2>What This Supports</h2>
-            <div className={styles.processGrid}>
-              <article className={styles.processCard}>
-                <div className={styles.processIcon}>
-                  <ShieldIcon />
+          <section className={styles.aboutSection}>
+            <div className={styles.processGrid} style={{ gap: '24px' }}>
+              <article className={styles.facilityCard} style={{ flexDirection: 'column', alignItems: 'flex-start', padding: '32px', gap: '20px' }}>
+                <div className={styles.facilityIconWrap}>
+                  <ShieldIcon style={{ width: '22px', height: '22px' }} />
                 </div>
-                <h3>Fixture Manufacturing</h3>
-                <p>Supports precise work-holding, drilling, and machining workflows.</p>
+                <div style={{ display: 'grid', gap: '8px' }}>
+                  <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 700 }}>Fixture Manufacturing</h3>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: '1.7', margin: 0, fontSize: '0.9rem' }}>Supports precise work-holding, drilling, and machining workflows.</p>
+                </div>
               </article>
-              <article className={styles.processCard}>
-                <div className={styles.processIcon}>
-                  <TeamIcon />
+              <article className={styles.facilityCard} style={{ flexDirection: 'column', alignItems: 'flex-start', padding: '32px', gap: '20px' }}>
+                <div className={styles.facilityIconWrap}>
+                  <TeamIcon style={{ width: '22px', height: '22px' }} />
                 </div>
-                <h3>SPM Development</h3>
-                <p>Enables custom machine build stages from fabrication through assembly.</p>
+                <div style={{ display: 'grid', gap: '8px' }}>
+                  <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 700 }}>SPM Development</h3>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: '1.7', margin: 0, fontSize: '0.9rem' }}>Enables custom machine build stages from fabrication through assembly.</p>
+                </div>
               </article>
-              <article className={styles.processCard}>
-                <div className={styles.processIcon}>
-                  <ClockIcon />
+              <article className={styles.facilityCard} style={{ flexDirection: 'column', alignItems: 'flex-start', padding: '32px', gap: '20px' }}>
+                <div className={styles.facilityIconWrap}>
+                  <ClockIcon style={{ width: '22px', height: '22px' }} />
                 </div>
-                <h3>Faster Turnaround</h3>
-                <p>Consolidated capability helps reduce coordination delay across operations.</p>
+                <div style={{ display: 'grid', gap: '8px' }}>
+                  <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 700 }}>Faster Turnaround</h3>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: '1.7', margin: 0, fontSize: '0.9rem' }}>Consolidated capability helps reduce coordination delay across operations.</p>
+                </div>
               </article>
             </div>
           </section>
-        </>
+        </div>
       ) : null}
 
       {slug === "milestones" ? (
-        <section className={styles.contentCard}>
-          <h2>Key Milestones</h2>
-          <div className={styles.timeline}>
-            {milestones.map(([year, text]) => (
-              <div key={year} className={styles.timelineItem}>
-                <span className={styles.timelineYear}>{year}</span>
-                <div className={styles.textBlock}>{text}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      {slug === "our-customers" ? (
-        <>
-          <section className={styles.customerStrip}>
-            <div className={styles.sectionPanelHeader}>
-              <h2>Customer Network</h2>
-              <p>Trusted by OEMs, suppliers, and industrial manufacturing partners.</p>
-            </div>
-            <div className={styles.marqueeWrap}>
-              <div className={styles.marqueeTrack}>
-                {[...customers, ...customers].map((customer, index) => (
-                  <div key={`${customer}-${index}`} className={styles.marqueeItem}>
-                    {customer}
+        <div className={styles.aboutMinimalLayout} style={{ marginTop: "0" }}>
+          <section className={styles.aboutSection}>
+            <h2>Historical Timeline</h2>
+            <div style={{ position: 'relative', marginTop: '40px', paddingLeft: '20px' }}>
+              <div style={{ position: 'absolute', left: '0', top: '0', bottom: '0', width: '2px', background: 'var(--border)', opacity: '0.5' }} />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+                {milestones.map(([year, text]) => (
+                  <div key={year} style={{ position: 'relative' }}>
+                    <div style={{ 
+                      position: 'absolute', 
+                      left: '-26px', 
+                      top: '12px', 
+                      width: '12px', 
+                      height: '12px', 
+                      background: 'var(--brand-blue)', 
+                      borderRadius: '50%',
+                      border: '3px solid var(--background)'
+                    }} />
+                    <div style={{ 
+                      background: 'var(--surface)', 
+                      padding: '28px', 
+                      borderRadius: '0', 
+                      border: '1px solid var(--border)',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
+                      maxWidth: '600px'
+                    }}>
+                      <span style={{ 
+                        display: 'inline-block', 
+                        background: 'var(--brand-blue-deep)', 
+                        color: 'white', 
+                        padding: '4px 12px', 
+                        borderRadius: '0', 
+                        fontSize: '0.85rem', 
+                        fontWeight: '700',
+                        marginBottom: '12px'
+                      }}>
+                        {year}
+                      </span>
+                      <p style={{ margin: '0', fontSize: '1.1rem', color: 'var(--foreground)', fontWeight: '500' }}>{text}</p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </section>
+        </div>
+      ) : null}
 
-          <section className={styles.contentCard}>
-            <h2>Customer Base</h2>
-            <div className={styles.customerGrid}>
-              {customers.map((customer) => (
-                <div key={customer} className={styles.facilityCard}>
-                  <strong>{customer}</strong>
-                </div>
-              ))}
+      {/* {slug === "our-customers" ? (
+        <div className={styles.aboutMinimalLayout} style={{ marginTop: "0" }}>
+          <section className={styles.aboutSection}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '24px' }}>
+              {customers.map((customer, idx) => {
+                const industrialImages = [
+                  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1565151443833-29bf2ba5dd8d?q=80&w=600&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=600&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=600&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1565172326111-09efdec31f4a?q=80&w=600&auto=format&fit=crop"
+                ];
+                const imgUrl = industrialImages[idx % industrialImages.length];
+                
+                return (
+                  <div key={customer} className="customer-card-item" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ height: '160px', position: 'relative', background: 'var(--surface-soft)' }}>
+                      <Image 
+                        src={imgUrl} 
+                        alt={customer} 
+                        fill 
+                        style={{ objectFit: 'cover' }} 
+                      />
+                      <div style={{ 
+                        position: 'absolute', 
+                        inset: '0', 
+                        background: 'linear-gradient(to bottom, rgba(23, 52, 85, 0.4), rgba(23, 52, 85, 0.8))',
+                        display: 'flex',
+                        alignItems: 'flex-end',
+                        padding: '20px'
+                      }}>
+                        <strong style={{ color: 'white', fontSize: '1.2rem' }}>{customer}</strong>
+                      </div>
+                    </div>
+                    <div style={{ padding: '24px', flex: '1' }}>
+                      <div style={{ marginBottom: '16px' }}>
+                        <span style={{ 
+                          fontSize: '0.7rem', 
+                          fontWeight: '700', 
+                          textTransform: 'uppercase', 
+                          color: 'var(--brand-blue)', 
+                          letterSpacing: '0.05em' 
+                        }}>
+                          Partnership Focus
+                        </span>
+                        <p style={{ margin: '4px 0 0', color: 'var(--foreground)', fontSize: '0.9rem', lineHeight: '1.6' }}>
+                          Strategic manufacturing support and precision engineering solutions for large-scale production.
+                        </p>
+                      </div>
+                      <div style={{ borderTop: '1px solid var(--border)', paddingTop: '16px' }}>
+                        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginBottom: '8px' }}>
+                          Key Solutions Provided:
+                        </span>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                          {['SPMs', 'Fixtures', 'Automation'].map(tag => (
+                            <span key={tag} style={{ 
+                              fontSize: '0.7rem', 
+                              background: 'var(--surface-soft)', 
+                              padding: '4px 10px', 
+                              borderRadius: '4px', 
+                              border: '1px solid var(--border)',
+                              color: 'var(--brand-blue-deep)',
+                              fontWeight: '600'
+                            }}>
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </section>
-        </>
-      ) : null}
+        </div>
+      ) : null} */}
     </SiteFrame>
   );
 }

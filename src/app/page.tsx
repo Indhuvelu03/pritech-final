@@ -1,6 +1,8 @@
 import Link from "next/link";
 import {
   ClockIcon,
+  ComponentIcon,
+  FactoryIcon,
   GaugeIcon,
   LayersIcon,
   ShieldIcon,
@@ -23,19 +25,19 @@ const productHooks = [
     title: "Special Purpose Machines",
     text: "Custom SPMs for drilling, grinding, marking, assembly, and controlled operations.",
     href: "/products/special-purpose-machines",
-    Icon: WrenchIcon,
+    Icon: FactoryIcon,
   },
   {
     title: "Fixtures & Tooling",
     text: "Production fixtures and tooling components that improve cycle time and repeatability.",
     href: "/products/fixtures-tooling",
-    Icon: ShieldIcon,
+    Icon: WrenchIcon,
   },
   {
     title: "Handling & Assembly",
     text: "Lifting, transfer, bonding, riveting, and adhesive systems for assembly lines.",
     href: "/products/handling-assembly",
-    Icon: LayersIcon,
+    Icon: ComponentIcon,
   },
 ];
 
@@ -116,20 +118,23 @@ export default function Home() {
 
       <section className={styles.productCategoriesSection}>
         <div className={styles.productCategoriesSectionHeader}>
+          <p className={styles.eyebrow}>Our Solutions</p>
           <h2>Our Product Categories</h2>
-          <p>Specialized machinery solutions for automotive and industrial applications</p>
+          <p className={styles.sectionDescription}>Specialized machinery solutions for automotive and industrial applications</p>
         </div>
 
         <div className={styles.productCategoriesGrid}>
           {productHooks.map(({ title, text, href, Icon }) => (
             <Link key={title} href={href} className={styles.productCategoryCard}>
-              <div className={styles.productCategoryIconWrap}>
-                <div className={styles.productCategoryIcon}>
-                  <Icon />
+              <div className={styles.productCategoryCardHeader}>
+                <div className={styles.productCategoryIconWrap}>
+                  <div className={styles.productCategoryIcon}>
+                    <Icon />
+                  </div>
+                  <div className={styles.productCategoryAccent} />
                 </div>
-                <div className={styles.productCategoryAccent} />
+                <h3>{title}</h3>
               </div>
-              <h3>{title}</h3>
               <p>{text}</p>
               <span className={styles.productCategoryLink}>View Products →</span>
             </Link>

@@ -1,13 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
-import { companyPages, productCategories } from "../siteData";
-import { CloseIcon, MenuIcon } from "./Icons";
+import { companyPages, productCategories, siteInfo } from "../siteData";
+import { CloseIcon, MenuIcon, ChevronDownIcon } from "./Icons";
 import styles from "./mobile-menu.module.css";
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isCompanyOpen, setIsCompanyOpen] = useState(false);
+  const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   useEffect(() => {
     const previous = document.body.style.overflow;
@@ -30,11 +34,10 @@ export function MobileMenu() {
           onClick={() => setIsOpen(true)}
           aria-label="Open navigation menu"
         >
-          <MenuIcon />
-          Menu
+          <MenuIcon strokeWidth={2.2} />
         </button>
 
-        <Link href="/contact" className={styles.accentItem}>
+        <Link href="/contact" className={styles.contactBtn} onClick={() => setIsOpen(false)}>
           Contact
         </Link>
       </div>
@@ -45,10 +48,15 @@ export function MobileMenu() {
 
           <aside className={styles.panel} aria-label="Mobile navigation">
             <div className={styles.panelHeader}>
-              <div className={styles.panelTitle}>
-                <strong>Navigation</strong>
-                <span>Browse pages, company info, and products</span>
-              </div>
+              <Link href="/" className={styles.panelLogo} onClick={() => setIsOpen(false)}>
+                <div className={styles.logoBox}>
+                  <Image src="/logo.png" alt="Logo" width={32} height={32} className={styles.miniLogo} />
+                </div>
+                <div className={styles.panelLogoText}>
+                  <strong>{siteInfo.shortName}</strong>
+                  <span>{siteInfo.tagline}</span>
+                </div>
+              </Link>
 
               <button
                 type="button"
@@ -61,52 +69,106 @@ export function MobileMenu() {
             </div>
 
             <div className={styles.panelBody}>
+              <div className={styles.primaryLinks}>
+                <Link href="/" className={styles.primaryItem} onClick={() => setIsOpen(false)}>
+                  Home
+                </Link>
+                <Link href="/references" className={styles.primaryItem} onClick={() => setIsOpen(false)}>
+                  References
+                </Link>
+                <Link href="/contact" className={styles.primaryItem} onClick={() => setIsOpen(false)}>
+                  Contact
+                </Link>
+              </div>
+
               <section className={styles.group}>
-                <p className={styles.groupLabel}>Main</p>
-                <div className={styles.list}>
-                  <Link href="/" className={styles.item} onClick={() => setIsOpen(false)}>
-                    Home
-                  </Link>
-                  <Link href="/references" className={styles.item} onClick={() => setIsOpen(false)}>
-                    References
-                  </Link>
-                  <Link href="/contact" className={styles.accentItem} onClick={() => setIsOpen(false)}>
-                    Contact Us
-                  </Link>
-                </div>
+                <button
+                  className={styles.groupHeader}
+                  onClick={() => setIsProductsOpen(!isProductsOpen)}
+                >
+                  <p className={styles.groupLabel}>Our Products</p>
+                  <ChevronDownIcon 
+                    className={`${styles.groupArrow} ${isProductsOpen ? styles.arrowOpen : ""}`} 
+                  />
+                </button>
+                {isProductsOpen && (
+                  <div className={styles.productList}>
+                    {productCategories.map((category) => (
+                      <div key={category.slug} className={styles.categoryGroup}>
+                        <button
+                          className={styles.categoryHeader}
+                          onClick={() => setOpenCategory(openCategory === category.slug ? null : category.slug)}
+                        >
+                          <span>{category.title}</span>
+                          <ChevronDownIcon 
+                            className={`${styles.categoryArrow} ${openCategory === category.slug ? styles.arrowOpen : ""}`} 
+                          />
+                        </button>
+                        
+                        {openCategory === category.slug && (
+                          <div className={styles.subProductList}>
+                            <Link
+                              href={`/products/${category.slug}`}
+                              className={styles.viewAllLink}
+                              onClick={() => setIsOpen(false)}
+                            >
+                              View All {category.title}
+                            </Link>
+                            {category.products.map((product) => (
+                              <Link
+                                key={product.slug}
+                                href={`/products/${category.slug}/${product.slug}`}
+                                className={styles.subProductItem}
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {product.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </section>
 
               <section className={styles.group}>
-                <p className={styles.groupLabel}>Company</p>
-                <div className={styles.list}>
-                  {companyPages.map((page) => (
-                    <Link
-                      key={page.slug}
-                      href={`/company/${page.slug}`}
-                      className={`${styles.item} ${styles.subItem}`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {page.title}
-                    </Link>
-                  ))}
-                </div>
+                <button
+                  className={styles.groupHeader}
+                  onClick={() => setIsCompanyOpen(!isCompanyOpen)}
+                >
+                  <p className={styles.groupLabel}>Company Information</p>
+                  <ChevronDownIcon 
+                    className={`${styles.groupArrow} ${isCompanyOpen ? styles.arrowOpen : ""}`} 
+                  />
+                </button>
+                {isCompanyOpen && (
+                  <div className={styles.compactList}>
+                    {companyPages.map((page) => (
+                      <Link
+                        key={page.slug}
+                        href={`/company/${page.slug}`}
+                        className={styles.compactItem}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {page.title}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </section>
 
-              <section className={styles.group}>
-                <p className={styles.groupLabel}>Products</p>
-                <div className={styles.list}>
-                  {productCategories.map((category) => (
-                    <Link
-                      key={category.slug}
-                      href={`/products/${category.slug}`}
-                      className={`${styles.item} ${styles.subItem}`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {category.title}
-                    </Link>
+              <div className={styles.panelFooter}>
+                <p className={styles.footerLabel}>Quick Contact</p>
+                <a href={siteInfo.phoneHref} className={styles.footerContactLink}>
+                  {siteInfo.phone}
+                </a>
+                <div className={styles.footerSocials}>
+                  {siteInfo.emails.slice(0, 1).map(email => (
+                    <span key={email}>{email}</span>
                   ))}
                 </div>
-              </section>
+              </div>
             </div>
           </aside>
         </>

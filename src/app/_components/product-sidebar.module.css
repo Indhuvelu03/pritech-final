@@ -1,86 +1,130 @@
 .sidebarWrap {
-  background: color-mix(in srgb, var(--surface-tint) 88%, transparent);
+  background: color-mix(in srgb, var(--brand-blue) 8%, var(--surface));
+  border: 1px solid var(--border);
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .header {
   align-items: center;
-  background: linear-gradient(90deg, var(--brand-blue-deep), var(--brand-blue));
+  background: var(--brand-blue-deep);
   color: var(--text-on-brand);
   display: flex;
   font-size: 12px;
   font-weight: 700;
-  gap: 8px;
+  gap: 10px;
   letter-spacing: 0.08em;
-  min-height: 42px;
-  padding: 0 14px;
+  min-height: 40px;
+  padding: 0 16px;
   text-transform: uppercase;
 }
 
-.categoryBlock + .categoryBlock {
-  border-top: 1px solid var(--border);
+.categoryBlock {
+  border-bottom: 1px solid var(--border);
+}
+
+.categoryBlock:last-child {
+  border-bottom: none;
 }
 
 .categoryTitle {
   align-items: center;
   color: var(--foreground);
   display: flex;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   justify-content: space-between;
-  letter-spacing: 0.08em;
-  min-height: 44px;
-  padding: 0 14px;
+  min-height: 48px;
+  padding: 0 16px;
   text-decoration: none;
   text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.categoryTitle:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .categoryCurrent {
-  background: color-mix(in srgb, var(--surface-soft) 90%, transparent);
+  background: var(--surface);
+  color: var(--brand-blue-deep) !important;
+  position: relative;
+  border-bottom: none;
 }
 
 .productLinks {
   display: grid;
+  background: var(--surface-soft);
+  padding: 4px 0;
 }
 
 .productLink {
   align-items: center;
   color: var(--text-muted);
   display: flex;
-  font-size: 12px;
+  font-size: 14px;
   justify-content: space-between;
-  min-height: 46px;
-  padding: 0 14px 0 22px;
+  min-height: 38px;
+  padding: 8px 16px 8px 24px;
   text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 40%, transparent);
 }
 
-.productLink:hover,
-.productLink:focus-visible {
-  background: color-mix(in srgb, var(--surface-soft) 92%, transparent);
-  color: var(--foreground);
+.productLink:last-child {
+  border-bottom: none;
+}
+
+.productLink:hover {
+  color: var(--brand-blue-deep);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .productCurrent {
-  background: color-mix(in srgb, var(--brand-accent-soft) 82%, transparent);
-  border-left: 3px solid var(--brand-accent);
-  color: var(--foreground);
-  font-weight: 600;
+  color: var(--brand-blue-deep);
+  font-weight: 700;
+  position: relative;
+  background: #fff;
 }
 
 .categoryArrow {
   color: var(--text-muted);
   flex-shrink: 0;
   height: 10px;
-  transition: transform 200ms ease;
+  transition: transform 0.3s ease;
   width: 10px;
 }
 
 .categoryCurrent .categoryArrow {
   transform: rotate(180deg);
+  color: var(--brand-blue-deep);
 }
 
 .chevron {
-  color: var(--text-muted);
+  color: var(--brand-blue-deep);
   flex-shrink: 0;
-  height: 16px;
-  width: 16px;
+  height: 12px;
+  width: 12px;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.productLink:hover .chevron,
+.productCurrent .chevron {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* Tablet: enlarge touch targets for sidebar links */
+@media (max-width: 1024px) {
+  .categoryTitle {
+    min-height: 52px;
+  }
+
+  .productLink {
+    min-height: 44px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }

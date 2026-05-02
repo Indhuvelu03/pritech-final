@@ -1,6 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { GaugeIcon, SparkIcon, WrenchIcon } from "../../../_components/Icons";
+import { LayersIcon, SparkIcon } from "../../../_components/Icons";
 import { ProductSidebar } from "../../../_components/ProductSidebar";
 import { SiteFrame } from "../../../_components/SiteFrame";
 import styles from "../../../_components/page-styles.module.css";
@@ -52,106 +53,90 @@ export default async function ProductDetailPage({
       }
       leftSidebarWidth={224}
     >
-      <section className={styles.catalogHero}>
-        <div>
-          <p className={styles.eyebrow}>Product Detail</p>
-          <h1 className={styles.productLayoutTitle}>{product.name}</h1>
-          <div className={styles.titleUnderline} />
-          <p className={styles.catalogHeroText}>{product.cardDescription}</p>
+      {/* Product name + description bar */}
+      <div className={styles.pdpHeader}>
+        <div className={styles.pdpHeaderMain}>
+          <p className={styles.pdpCategoryTag}>{category.title}</p>
+          <h1 className={styles.pdpTitle}>{product.name}</h1>
+          <p className={styles.pdpDescription}>{product.description || product.cardDescription}</p>
+        </div>
+      </div>
+
+      {/* Main content: image + specs + enquiry sidebar */}
+      <div className={styles.pdpBody}>
+        <div className={styles.pdpMainCol}>
+          {/* Product image */}
+          <div className={styles.pdpImageBlock}>
+            {product.image ? (
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={640}
+                height={420}
+                className={styles.pdpProductImg}
+                priority
+              />
+            ) : (
+              <div className={styles.pdpImagePlaceholder}>
+                <LayersIcon />
+                <span>Product Image Coming Soon</span>
+              </div>
+            )}
+          </div>
+
+          {/* Specification table */}
+          <section className={styles.pdpSpecSection}>
+            <h2 className={styles.pdpSectionTitle}>Technical Specifications</h2>
+            <table className={styles.pdpSpecTable}>
+              <tbody>
+                {product.specs.map(([label, value]) => (
+                  <tr key={label} className={styles.pdpSpecRow}>
+                    <td className={styles.pdpSpecLabel}>{label}</td>
+                    <td className={styles.pdpSpecValue}>{value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
         </div>
 
-        <div className={styles.catalogHeroMeta}>
-          <div>
-            <strong>{category.title}</strong>
-            <span>Category</span>
-          </div>
-          <div>
-            <strong>{product.specs.length}</strong>
-            <span>Specification points</span>
-          </div>
-          <div>
-            <strong>Direct</strong>
-            <span>WhatsApp enquiry available</span>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.catalogInfoGrid}>
-        <article className={styles.catalogLeadCard}>
-          <div className={styles.discoveryIcon}>
-            <GaugeIcon />
-          </div>
-          <h2>Designed for buyer clarity</h2>
-          <p>
-            Key application, method, industry, and customer-fit details are surfaced first
-            so users can qualify the machine quickly.
-          </p>
-        </article>
-        <article className={styles.catalogLeadCard}>
-          <div className={styles.discoveryIcon}>
-            <SparkIcon />
-          </div>
-          <h2>Direct-to-enquiry flow</h2>
-          <p>
-            Once the product fits the requirement, the page leads directly into a simple
-            WhatsApp enquiry instead of sending the visitor into a long contact process.
-          </p>
-        </article>
-      </section>
-
-      <section className={styles.detailPanel}>
-        <div className={styles.detailMedia}>
-          <div className={styles.sectionIcon}>
-            <WrenchIcon />
-          </div>
-        </div>
-        <div>
-          <p className={styles.detailDescription}>{product.description}</p>
-
-          <div className={styles.productSpecPills}>
-            {product.specs.slice(0, 3).map(([label, value]) => (
-              <span key={`${product.slug}-pill-${label}`}>
-                {label}: {value}
-              </span>
-            ))}
+        {/* Enquiry sidebar */}
+        <aside className={styles.pdpEnquiryPanel}>
+          <div className={styles.pdpEnquiryBox}>
+            <h3 className={styles.pdpEnquiryTitle}>Request a Quote</h3>
+            <p className={styles.pdpEnquiryText}>
+              Speak directly with our engineering team about this product and your requirements.
+            </p>
+            <a
+              href={createWhatsappLink(product.name)}
+              className={styles.pdpEnquiryWhatsapp}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Chat on WhatsApp
+            </a>
           </div>
 
-          <table className={styles.specTable}>
-            <tbody>
-              {product.specs.map(([label, value]) => (
-                <tr key={`${product.slug}-${label}`}>
-                  <td>{label}</td>
-                  <td>{value}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-
-          <a
-            href={createWhatsappLink(product.name)}
-            className={styles.detailCta}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Enquire About This Product
-          </a>
-        </div>
-      </section>
-
-      <p className={styles.subtleLabel}>Other {category.title}</p>
-      <div className={styles.relatedGrid}>
-        {relatedProducts.slice(0, 4).map((item) => (
-          <Link
-            key={item.slug}
-            href={`/products/${category.slug}/${item.slug}`}
-            className={styles.relatedCard}
-          >
-            <span className={styles.relatedIcon}>
-              <SparkIcon />
-            </span>
-            <span>{item.name}</span>
-          </Link>
-        ))}
+          {/* Related products */}
+          {relatedProducts.length > 0 && (
+            <div className={styles.pdpRelatedBox}>
+              <h4 className={styles.pdpRelatedTitle}>Other {category.title}</h4>
+              <ul className={styles.pdpRelatedList}>
+                {relatedProducts.slice(0, 5).map((item) => (
+                  <li key={item.slug}>
+                    <Link
+                      href={`/products/${category.slug}/${item.slug}`}
+                      className={styles.pdpRelatedLink}
+                    >
+                      <SparkIcon />
+                      <span>{item.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </aside>
       </div>
     </SiteFrame>
   );

@@ -26,6 +26,7 @@ export type Product = {
   slug: string;
   cardDescription: string;
   description: string;
+  image?: string;
   specs: Array<[label: string, value: string]>;
 };
 
@@ -40,8 +41,6 @@ export const topUtilityLinks: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/company/about-pritech" },
   { label: "Contact", href: "/contact" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Legal Disclosure", href: "/legal-disclosure" },
 ];
 
 export const companyPages: CompanyPage[] = [
@@ -66,6 +65,7 @@ export const companyPages: CompanyPage[] = [
     intro:
       "From formation and facility expansion to new business lines and supplier recognition, our milestones reflect consistent execution and long-term customer trust.",
   },
+/*
   {
     slug: "our-customers",
     title: "Our Customers",
@@ -73,6 +73,7 @@ export const companyPages: CompanyPage[] = [
     intro:
       "We support manufacturers who need reliable machine building, tooling, assembly support, and testing solutions delivered with practical production understanding.",
   },
+*/
 ];
 
 export const productCategories: ProductCategory[] = [
@@ -89,6 +90,7 @@ export const productCategories: ProductCategory[] = [
           "Air leak testing for brake master cylinders, callipers, and hydraulic components.",
         description:
           "Precision air leakage detection machine for brake master cylinders, callipers and hydraulic components. Built to customer specifications using differential pressure method. Zero-defect quality assurance for brake system assemblies.",
+        image: "/products/air-leak-test-machine.jpg",
         specs: [
           ["Application", "Brake & hydraulic component testing"],
           ["Method", "Differential pressure / flow"],
@@ -104,6 +106,7 @@ export const productCategories: ProductCategory[] = [
           "Hydraulic and pneumatic leak testing machine for assembled brake components.",
         description:
           "Hydraulic and pneumatic leak testing machine for assembled brake sub-components. Pressure decay method with pass/fail indication and data logging. Suitable for high-volume production lines.",
+        image: "/products/leak-test-machine.jpg",
         specs: [
           ["Application", "Hydraulic assemblies"],
           ["Method", "Pressure decay"],
@@ -119,6 +122,7 @@ export const productCategories: ProductCategory[] = [
           "Load and pressure proof testing for brake shoes and structural automotive parts.",
         description:
           "Load and pressure proof testing for brake shoes and structural automotive parts. Consistent force application with digital pass/fail readout. Built for in-line quality inspection.",
+        image: "/products/proof-test-machine.png",
         specs: [
           ["Test Type", "Proof load & pressure"],
           ["Application", "Brake shoes, structural parts"],
@@ -134,6 +138,7 @@ export const productCategories: ProductCategory[] = [
           "Measures spring compression force versus deflection for adjuster springs.",
         description:
           "Measures spring compression force vs deflection for brake adjuster springs and suspension components. Provides force-deflection curve output for quality certification.",
+        image: "/products/proof-test-machine.png",
         specs: [
           ["Application", "Spring compression testing"],
           ["Output", "Force-deflection curve"],
@@ -149,6 +154,7 @@ export const productCategories: ProductCategory[] = [
           "Specialized leak testing for brake master cylinder and booster assemblies.",
         description:
           "Specialised leak test machine for brake master cylinder and vacuum booster assemblies. Built to OEM standards with pneumatic test circuit and rejection marking.",
+        image: "/products/leak-test-machine.jpg",
         specs: [
           ["Application", "Brake master cylinder & booster"],
           ["Standard", "OEM specifications"],
@@ -172,6 +178,7 @@ export const productCategories: ProductCategory[] = [
           "Outer diameter grinding machine for precise brake shoe arc radius.",
         description:
           "Outer diameter grinding machine for brake shoes ensuring precise arc radius for optimal brake pad-to-drum contact. Consistent grinding with minimal setup time.",
+        image: "/products/proof-test-machine.png",
         specs: [
           ["Operation", "OD arc grinding"],
           ["Component", "Brake shoe"],
@@ -187,6 +194,7 @@ export const productCategories: ProductCategory[] = [
           "Single-cycle assembly solution for shock absorber and damper operations.",
         description:
           "Special purpose machine for shock absorber and damper assembly operations. Automated pressing, rod insertion, locking and torque operations in a single cycle.",
+        image: "/products/cam-nut-loosening-machine.png",
         specs: [
           ["Operation", "Assembly & pressing"],
           ["Component", "Shock absorber / damper"],
@@ -202,6 +210,7 @@ export const productCategories: ProductCategory[] = [
           "Multi-hole simultaneous drilling for tubular components.",
         description:
           "Multi-hole simultaneous drilling special purpose machine for tubular components. High production rate with consistent hole positioning and drill depth control.",
+        image: "/products/chain-link-machine.png",
         specs: [
           ["Operation", "Multi-spindle simultaneous drilling"],
           ["Component", "Tubular parts"],
@@ -217,6 +226,7 @@ export const productCategories: ProductCategory[] = [
           "Precision outer diameter grinding for shafts, pins, and round components.",
         description:
           "Precision outer diameter grinding for round components. High surface finish with tight dimensional tolerance. Suitable for shafts, pins and cylindrical components.",
+        image: "/products/air-leak-test-machine.jpg",
         specs: [
           ["Operation", "OD grinding"],
           ["Accuracy", "+/-0.01 mm"],
@@ -232,6 +242,7 @@ export const productCategories: ProductCategory[] = [
           "Dot-peen or stamp marking for steering knuckle traceability.",
         description:
           "Dot-peen or stamp marking machine for steering knuckles providing permanent part identification, serial numbers and production date traceability.",
+        image: "/products/knuckle-marking-machine.png",
         specs: [
           ["Operation", "Permanent part marking"],
           ["Component", "Steering knuckle"],
@@ -247,6 +258,7 @@ export const productCategories: ProductCategory[] = [
           "Fiber laser marking for part ID, logos, and date code traceability.",
         description:
           "Fiber laser marking machine for permanent part ID, date codes, logos and traceability marking on metal components. Non-contact, high-speed marking with no consumables.",
+        image: "/products/knuckle-marking-machine.png",
         specs: [
           ["Type", "Fiber laser"],
           ["Application", "Metal component marking"],
@@ -262,6 +274,7 @@ export const productCategories: ProductCategory[] = [
           "Force-controlled assembly machine for lid and glass seating operations.",
         description:
           "Special purpose assembly machine for pressing and seating lid and glass components. Consistent press force with position sensing and reject detection.",
+        image: "/products/chain-link-machine.png",
         specs: [
           ["Operation", "Press assembly"],
           ["Component", "Lid & glass sub-assembly"],
@@ -277,6 +290,7 @@ export const productCategories: ProductCategory[] = [
           "Automated joining and pressing of chain links with controlled cycle time.",
         description:
           "Chain link assembly machine for automated joining and pressing of chain links. Uniform link formation with controlled press force and cycle time.",
+        image: "/products/chain-link-machine.png",
         specs: [
           ["Operation", "Chain link assembly"],
           ["Component", "Chain links"],
@@ -292,6 +306,7 @@ export const productCategories: ProductCategory[] = [
           "Torque-controlled loosening machine for disassembly operations.",
         description:
           "Torque-controlled cam nut loosening machine for disassembly operations. Consistent torque application with pass/fail feedback.",
+        image: "/products/cam-nut-loosening-machine.png",
         specs: [
           ["Operation", "Torque-controlled loosening"],
           ["Component", "Cam nut assembly"],
@@ -307,6 +322,7 @@ export const productCategories: ProductCategory[] = [
           "Controlled bush press-fit machine for water tube assemblies.",
         description:
           "Bush press-fit machine for water tube assemblies. Controlled press force ensures correct insertion depth and interference fit without component damage.",
+        image: "/products/cam-nut-loosening-machine.png",
         specs: [
           ["Operation", "Bush press fit"],
           ["Component", "Water tube + bush"],
@@ -330,6 +346,7 @@ export const productCategories: ProductCategory[] = [
           "Fixtures for simultaneous VMC machining of automotive components.",
         description:
           "Vertical Machining Centre fixtures for complex automotive components. Designed for 4-component simultaneous machining, reducing cycle time by 75%. Precision ground locators ensure repeatability.",
+        image: "/products/proof-test-machine.png",
         specs: [
           ["Machine", "Vertical Machining Centre"],
           ["Capacity", "4 components simultaneously"],
@@ -345,6 +362,7 @@ export const productCategories: ProductCategory[] = [
           "Go / no-go gauging fixture for brake shoe dimensional inspection.",
         description:
           "Go/No-Go gauging fixture for brake shoe dimensional inspection. Quick-load design for high-volume production line use. Hardened and ground reference surfaces for long life.",
+        image: "/products/air-leak-test-machine.jpg",
         specs: [
           ["Type", "Go / No-Go gauge fixture"],
           ["Component", "Brake shoe"],
@@ -360,6 +378,7 @@ export const productCategories: ProductCategory[] = [
           "Holding and positioning fixture for repeatable laser marking stations.",
         description:
           "Component holding and positioning fixture for laser marking stations. Ensures absolute repeatability of mark location and component orientation through precision locating pins.",
+        image: "/products/knuckle-marking-machine.png",
         specs: [
           ["Type", "Holding & positioning fixture"],
           ["Application", "Laser marking station"],
@@ -375,6 +394,7 @@ export const productCategories: ProductCategory[] = [
           "VMC fixture for master cylinder front housing machining.",
         description:
           "VMC fixture for Master Cylinder front housing. Designed for simultaneous facing and drilling of 4 components per cycle, reducing machining time significantly.",
+        image: "/products/leak-test-machine.jpg",
         specs: [
           ["Component", "Master Cylinder front housing"],
           ["Operation", "Face machining + drilling"],
@@ -390,6 +410,7 @@ export const productCategories: ProductCategory[] = [
           "Fixture for exhaust manifold spot facing and drilling operations.",
         description:
           "Machining fixture for exhaust manifold spot facing and drilling operations. Designed to hold manifold securely during multiple drilling cycles.",
+        image: "/products/chain-link-machine.png",
         specs: [
           ["Component", "Exhaust manifold"],
           ["Operation", "Spot facing + drilling"],
@@ -405,6 +426,7 @@ export const productCategories: ProductCategory[] = [
           "Punches, dies, stripper plates, and guide elements built to drawing.",
         description:
           "Precision press tool components including punches, dies, stripper plates, guide pillars and guide bushes. Manufactured to customer drawing in D2 and H13 tool steel with heat treatment.",
+        image: "/products/cam-nut-loosening-machine.png",
         specs: [
           ["Components", "Punch, die, stripper, guide pillars"],
           ["Material", "D2 / H13 tool steel"],
@@ -420,6 +442,7 @@ export const productCategories: ProductCategory[] = [
           "Hardened and ground clamp blocks for machining and assembly work-holding.",
         description:
           "Hardened and ground clamp blocks for work-holding in machining fixtures and assembly jigs. Custom dimensions available. Used in VMC and lathe work-holding systems.",
+        image: "/products/air-leak-test-machine.jpg",
         specs: [
           ["Material", "EN31 hardened & ground"],
           ["Tolerance", "+/-0.005 mm"],
@@ -443,6 +466,7 @@ export const productCategories: ProductCategory[] = [
           "Pneumatic lifting and positioning device for flywheel assembly.",
         description:
           "Ergonomic pneumatic lifting and positioning device for heavy flywheel components during engine assembly. Reduces operator fatigue and prevents damage to precision faces.",
+        image: "/products/chain-link-machine.png",
         specs: [
           ["Capacity", "Up to 50 kg"],
           ["Drive", "Pneumatic"],
@@ -458,6 +482,7 @@ export const productCategories: ProductCategory[] = [
           "Custom belt, roller, and slat conveyors for line-to-line part transfer.",
         description:
           "Custom-designed conveyor systems for production line part transfer between workstations. Belt, roller and slat conveyor configurations available to suit production layout.",
+        image: "/products/cam-nut-loosening-machine.png",
         specs: [
           ["Type", "Belt / Roller / Slat conveyor"],
           ["Drive", "Motor-driven"],
@@ -473,6 +498,7 @@ export const productCategories: ProductCategory[] = [
           "Semi-automatic riveting with integrated assembly table for brake shoes.",
         description:
           "Semi-automatic riveting machine with integrated assembly table for brake shoe lining attachment. Consistent rivet setting force with adjustable die sets for different rivet sizes.",
+        image: "/products/proof-test-machine.png",
         specs: [
           ["Operation", "Brake shoe riveting"],
           ["Component", "Brake shoe + lining"],
@@ -488,6 +514,7 @@ export const productCategories: ProductCategory[] = [
           "Heated bonding station for friction lining adhesive attachment.",
         description:
           "Heated bonding work station for adhesive attachment of brake friction lining to brake shoe. Temperature-controlled platen ensures consistent curing of bonding adhesive under correct pressure.",
+        image: "/products/leak-test-machine.jpg",
         specs: [
           ["Operation", "Adhesive bonding"],
           ["Component", "Brake shoe + friction lining"],
@@ -503,6 +530,7 @@ export const productCategories: ProductCategory[] = [
           "Automated metered glue dispensing for brake and sealing components.",
         description:
           "Automated adhesive dispensing machine for precise and consistent glue application on brake and automotive sealing components. Metered dispensing eliminates waste and ensures bond quality.",
+        image: "/products/knuckle-marking-machine.png",
         specs: [
           ["Operation", "Automated adhesive dispensing"],
           ["Method", "Metered dispensing"],
@@ -568,7 +596,7 @@ export const siteNavigationLinks: NavItem[] = [
   { label: "About Us", href: "/company/about-pritech" },
   { label: "Products", href: "/products/testing-machines" },
   { label: "References", href: "/references" },
-  { label: "Our Customers", href: "/company/our-customers" },
+  // { label: "Our Customers", href: "/company/our-customers" },
 ];
 
 export function createWhatsappLink(product?: string) {
