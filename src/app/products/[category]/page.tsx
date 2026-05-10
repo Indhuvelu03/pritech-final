@@ -56,8 +56,8 @@ export default async function ProductCategoryPage({
                 <Image
                   src={product.image}
                   alt={product.name}
-                  width={400}
-                  height={240}
+                  fill
+                  sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className={styles.catProductImage}
                 />
               ) : (

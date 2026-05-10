@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import {
   companyPages,
@@ -8,7 +8,6 @@ import {
   productCategories,
   siteInfo,
   siteNavigationLinks,
-  topUtilityLinks,
 } from "../siteData";
 import { ChevronDownIcon } from "./Icons";
 import { MobileMenu } from "./MobileMenu";
@@ -25,7 +24,7 @@ type SiteFrameProps = {
   children: ReactNode;
   leftSidebar?: ReactNode;
   leftSidebarWidth?: number;
-  navSection?: "home" | "products" | "company" | "references";
+  navSection?: "home" | "products" | "company" | "references" | "contact";
   currentPath?: string;
 };
 
@@ -160,7 +159,7 @@ function RightSidebar({ currentPath }: { currentPath?: string }) {
             target="_blank"
             rel="noreferrer"
           >
-            » Enquire Now
+            &gt;&gt; Enquire Now
           </a>
         </div>
       </section>
@@ -184,25 +183,17 @@ export function SiteFrame({
   currentPath,
 }: SiteFrameProps) {
   return (
-    <ScrollShell
-      shellStyle={{ ["--left-width" as string]: `${leftSidebarWidth}px` }}
-    >
-      {/* <div className={styles.topStrip}>
-        <div className={styles.topStripInner}>
-          <nav className={styles.utilityNav} aria-label="Utility">
-            {topUtilityLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </div> */}
-
+    <ScrollShell shellStyle={{ ["--left-width" as string]: `${leftSidebarWidth}px` }}>
       <div className={styles.stickyHeaderWrap}>
         <header className={styles.header}>
           <Link href="/" className={styles.logoLink}>
-            <Image src="/logo.png" alt="Pritech Engineering Logo" width={80} height={80} className={styles.logoImage} />
+            <Image
+              src="/logo.png"
+              alt="Pritech Engineering Logo"
+              width={80}
+              height={80}
+              className={styles.logoImage}
+            />
             <div>
               <p className={styles.brand}>{siteInfo.shortName}</p>
               <p className={styles.tagline}>{siteInfo.tagline}</p>
@@ -238,7 +229,7 @@ export function SiteFrame({
               ) : (
                 <strong>{item.label}</strong>
               )}
-              {index < breadcrumbs.length - 1 ? " › " : ""}
+              {index < breadcrumbs.length - 1 ? " > " : ""}
             </span>
           ))}
         </div>
@@ -257,7 +248,7 @@ export function SiteFrame({
           <div className={styles.mainInner}>{children}</div>
           <footer className={styles.footer}>
             <div className={styles.footerInner}>
-              <span>© 2024 Pritech Engineering. All rights reserved.</span>
+              <span>(c) 2024 Pritech Engineering. All rights reserved.</span>
               <div className={styles.footerLinks}>
                 <Link href="/">Home</Link>
                 <Link href="/company/about-pritech">About Us</Link>
@@ -273,6 +264,7 @@ export function SiteFrame({
           <RightSidebar currentPath={currentPath} />
         </aside>
       </div>
+
     </ScrollShell>
   );
 }

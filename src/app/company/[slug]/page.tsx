@@ -136,8 +136,8 @@ export default async function CompanyPage({
               <aside className={styles.aboutExecutiveCard}>
                 <div className={styles.aboutExecutiveImageWrap}>
                   <Image
-                    src="/logo.png"
-                    alt="Pritech Engineering logo"
+                    src="/owner.png"
+                    alt="B. Kadambaraja"
                     width={220}
                     height={220}
                     className={styles.aboutExecutiveLogo}
