@@ -78,7 +78,7 @@ export default function ReferencesPage() {
 
         <section className={styles.aboutSection} style={{ marginTop: '40px' }}>
           <p className={styles.eyebrow}>Detailed Track Record</p>
-          <h2 style={{ fontSize: "2.15rem", color: "var(--foreground)", marginBottom: "32px", fontWeight: "700", lineHeight: "1.18" }}>
+          <h2 style={{ fontSize: "var(--type-section-title)", color: "var(--foreground)", marginBottom: "32px", fontWeight: "700", lineHeight: "1.18" }}>
             Operational Portfolio
           </h2>
           
@@ -105,8 +105,8 @@ export default function ReferencesPage() {
         <section className={styles.aboutSection} style={{ textAlign: 'center', borderTop: '1px solid var(--border)', paddingTop: '60px', marginTop: '60px' }}>
           <div style={{ maxWidth: '700px', margin: '0 auto' }}>
             <span className={styles.eyebrow}>Technical Excellence</span>
-            <h2 style={{ fontSize: '2rem', fontWeight: 700, margin: '12px 0', lineHeight: '1.2' }}>Quality Commitment</h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.12rem', lineHeight: '1.85' }}>
+            <h2 style={{ fontSize: 'var(--type-section-title)', fontWeight: 700, margin: '12px 0', lineHeight: '1.2' }}>Quality Commitment</h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: 'var(--type-body-lg)', lineHeight: '1.85' }}>
               Each reference listed represents a partnership built on technical precision and production-oriented results. 
               We maintain long-term relationships with our clients by providing continuous support and iterative improvements to their manufacturing workflows.
             </p>

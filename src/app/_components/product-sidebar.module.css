@@ -11,7 +11,7 @@
   background: var(--brand-blue-deep);
   color: var(--text-on-brand);
   display: flex;
-  font-size: 13px;
+  font-size: var(--type-label);
   font-weight: 700;
   gap: 10px;
   letter-spacing: 0.12em;
@@ -36,7 +36,7 @@
   cursor: pointer;
   display: flex;
   font: inherit;
-  font-size: 14px;
+  font-size: var(--type-small);
   font-weight: 650;
   justify-content: space-between;
   min-height: 54px;
@@ -86,7 +86,7 @@
 
 .currentLabel {
   color: var(--brand-blue);
-  font-size: 0.68rem;
+  font-size: var(--type-label);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -103,7 +103,7 @@
   border-radius: 0;
   color: color-mix(in srgb, var(--foreground) 70%, var(--text-muted));
   display: flex;
-  font-size: 14px;
+  font-size: var(--type-small);
   font-weight: 500;
   justify-content: space-between;
   line-height: 1.45;

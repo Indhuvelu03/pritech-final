@@ -19,6 +19,29 @@
   --brand-red: #e03131;
   --text-on-brand: #ffffff;
   --text-muted: #52657e;
+  /* ── Type Scale (harmonised) ──────────────────────────────────────────
+     Step  Token                 Value     Ratio vs previous
+     0     --type-overline       0.72rem   —  (badge / eyebrow)
+     1     --type-label          0.82rem   ×1.14  (meta / form labels)
+     2     --type-small          0.90rem   ×1.10  (captions / chips)
+     3     --type-body           1.00rem   ×1.11  (body copy)
+     4     --type-description    1.10rem   ×1.10  (lead body / card descriptions)
+     5     --type-subheading     1.25rem   ×1.14  (card h3 / section sub-labels)
+     6     --type-section-heading 2.00rem  ×1.60  (section h2 – deliberate jump)
+     7     --type-page-heading   2.80rem   ×1.40  (page h1)
+     ─────────────────────────────────────────────────────────────────── */
+  --type-overline: 0.72rem;
+  --type-label: 0.82rem;
+  --type-small: 0.90rem;
+  --type-body: 1.00rem;
+  --type-description: 1.10rem;
+  --type-subheading: 1.25rem;
+  --type-section-heading: 2.00rem;
+  --type-page-heading: 2.80rem;
+  --type-body-lg: var(--type-description);
+  --type-card-title: var(--type-subheading);
+  --type-section-title: var(--type-section-heading);
+  --type-page-title: var(--type-page-heading);
 }
 
 @theme inline {
@@ -41,7 +64,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   margin: 0;
   overflow-x: clip;
@@ -112,4 +135,25 @@ img {
 
 ::selection {
   background: rgba(47, 142, 216, 0.24);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --type-overline: 0.68rem;
+    --type-label: 0.76rem;
+    --type-small: 0.84rem;
+    --type-body: 0.94rem;
+    --type-description: 1.02rem;
+    --type-subheading: 1.14rem;
+    --type-section-heading: 1.60rem;
+    --type-page-heading: 2.00rem;
+    --type-body-lg: var(--type-description);
+    --type-card-title: var(--type-subheading);
+    --type-section-title: var(--type-section-heading);
+    --type-page-title: var(--type-page-heading);
+  }
+
+  body {
+    font-size: 15px;
+  }
 }

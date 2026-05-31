@@ -45,8 +45,8 @@ export default function ContactPage() {
               </div>
               <div style={{ display: 'grid', gap: '16px', marginTop: '20px' }}>
                 <div>
-                  <span style={{ fontSize: '11px', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700, letterSpacing: '0.05em' }}>Phone</span>
-                  <a href={siteInfo.phoneHref} style={{ display: 'block', fontSize: '1.25rem', fontWeight: 700, color: 'var(--brand-blue-deep)', textDecoration: 'none', marginTop: '4px' }}>
+                  <span style={{ fontSize: 'var(--type-label)', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700, letterSpacing: '0.05em' }}>Phone</span>
+                  <a href={siteInfo.phoneHref} style={{ display: 'block', fontSize: '1.34rem', fontWeight: 700, color: 'var(--brand-blue-deep)', textDecoration: 'none', marginTop: '4px' }}>
                     {siteInfo.phone}
                   </a>
                 </div>
@@ -71,11 +71,11 @@ export default function ContactPage() {
                 <h3 style={{ color: 'var(--foreground)' }}>Registered Office</h3>
               </div>
               <div style={{ marginTop: '20px' }}>
-                <span style={{ fontSize: '11px', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700, letterSpacing: '0.05em' }}>Location</span>
-                <p style={{ color: 'var(--foreground)', fontSize: '0.95rem', lineHeight: '1.7', marginTop: '8px', fontWeight: 500 }}>
+                <span style={{ fontSize: 'var(--type-label)', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700, letterSpacing: '0.05em' }}>Location</span>
+                <p style={{ color: 'var(--foreground)', fontSize: 'var(--type-body)', lineHeight: '1.8', marginTop: '8px', fontWeight: 500 }}>
                   {siteInfo.address}
                 </p>
-                <div style={{ marginTop: '16px', display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--brand-blue)', fontSize: '0.85rem', fontWeight: 600 }}>
+                <div style={{ marginTop: '16px', display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--brand-blue)', fontSize: 'var(--type-small)', fontWeight: 600 }}>
                   <FactoryIcon style={{ width: '16px', height: '16px' }} />
                   Ambattur Industrial Estate
                 </div>
@@ -92,16 +92,16 @@ export default function ContactPage() {
               </div>
               <div style={{ display: 'grid', gap: '16px', marginTop: '20px' }}>
                 <div>
-                  <span style={{ fontSize: '11px', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700, letterSpacing: '0.05em' }}>Email Support</span>
+                  <span style={{ fontSize: 'var(--type-label)', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700, letterSpacing: '0.05em' }}>Email Support</span>
                   <div style={{ display: 'grid', gap: '8px', marginTop: '8px' }}>
                     {siteInfo.emails.map(email => (
-                      <a key={email} href={`mailto:${email}`} style={{ color: 'var(--brand-red)', fontWeight: 600, fontSize: '1rem', textDecoration: 'none' }}>
+                      <a key={email} href={`mailto:${email}`} style={{ color: 'var(--brand-red)', fontWeight: 600, fontSize: 'var(--type-body)', textDecoration: 'none' }}>
                         {email}
                       </a>
                     ))}
                   </div>
                 </div>
-                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: '1.6', margin: 0 }}>
+                <p style={{ fontSize: 'var(--type-small)', color: 'var(--text-muted)', lineHeight: '1.75', margin: 0 }}>
                   For technical drawings and RFQs, please use our email channels for documentation transfer.
                 </p>
               </div>
@@ -112,8 +112,8 @@ export default function ContactPage() {
         <section className={styles.aboutSection} style={{ borderTop: '1px solid var(--border)', paddingTop: '60px', marginTop: '40px' }}>
           <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
             <span className={styles.eyebrow}>Response Guarantee</span>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '12px 0' }}>How We Work</h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.7' }}>
+            <h2 style={{ fontSize: 'var(--type-section-title)', fontWeight: 700, margin: '12px 0', lineHeight: 1.18 }}>How We Work</h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: 'var(--type-body-lg)', lineHeight: '1.85' }}>
               Most WhatsApp enquiries are acknowledged within 2 hours during operational hours (9:00 AM - 7:00 PM). 
               For detailed SPM projects, we typically provide a preliminary technical assessment within 48 hours of receiving your RFQ.
             </p>

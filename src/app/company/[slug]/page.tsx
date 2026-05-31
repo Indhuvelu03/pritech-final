@@ -287,7 +287,7 @@ export default async function CompanyPage({
           <section className={styles.aboutSection} style={{ textAlign: 'center' }}>
             <p className={styles.eyebrow}>Our Capability</p>
             <h2 style={{ marginBottom: "12px" }}>Machinery & Infrastructure</h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.12rem', maxWidth: '70ch', margin: '0 auto 40px', lineHeight: '1.85' }}>
+            <p style={{ color: 'var(--text-muted)', fontSize: 'var(--type-body-lg)', maxWidth: '70ch', margin: '0 auto 40px', lineHeight: '1.85' }}>
               A fully equipped production facility in Ambattur, Chennai, optimized for precision 
               machining, custom SPM fabrication, and large-scale manufacturing support.
             </p>
@@ -316,8 +316,8 @@ export default async function CompanyPage({
                   <ShieldIcon style={{ width: '22px', height: '22px' }} />
                 </div>
                 <div style={{ display: 'grid', gap: '8px' }}>
-                  <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 700 }}>Fixture Manufacturing</h3>
-                  <p style={{ color: 'var(--text-muted)', lineHeight: '1.85', margin: 0, fontSize: '1.05rem' }}>Supports precise work-holding, drilling, and machining workflows.</p>
+                  <h3 style={{ margin: 0, fontSize: 'var(--type-card-title)', fontWeight: 700 }}>Fixture Manufacturing</h3>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: '1.85', margin: 0, fontSize: 'var(--type-body)' }}>Supports precise work-holding, drilling, and machining workflows.</p>
                 </div>
               </article>
               <article className={styles.facilityCard} style={{ flexDirection: 'column', alignItems: 'flex-start', padding: '32px', gap: '20px' }}>
@@ -325,8 +325,8 @@ export default async function CompanyPage({
                   <TeamIcon style={{ width: '22px', height: '22px' }} />
                 </div>
                 <div style={{ display: 'grid', gap: '8px' }}>
-                  <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 700 }}>SPM Development</h3>
-                  <p style={{ color: 'var(--text-muted)', lineHeight: '1.85', margin: 0, fontSize: '1.05rem' }}>Enables custom machine build stages from fabrication through assembly.</p>
+                  <h3 style={{ margin: 0, fontSize: 'var(--type-card-title)', fontWeight: 700 }}>SPM Development</h3>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: '1.85', margin: 0, fontSize: 'var(--type-body)' }}>Enables custom machine build stages from fabrication through assembly.</p>
                 </div>
               </article>
               <article className={styles.facilityCard} style={{ flexDirection: 'column', alignItems: 'flex-start', padding: '32px', gap: '20px' }}>
@@ -334,8 +334,8 @@ export default async function CompanyPage({
                   <ClockIcon style={{ width: '22px', height: '22px' }} />
                 </div>
                 <div style={{ display: 'grid', gap: '8px' }}>
-                  <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 700 }}>Faster Turnaround</h3>
-                  <p style={{ color: 'var(--text-muted)', lineHeight: '1.85', margin: 0, fontSize: '1.05rem' }}>Consolidated capability helps reduce coordination delay across operations.</p>
+                  <h3 style={{ margin: 0, fontSize: 'var(--type-card-title)', fontWeight: 700 }}>Faster Turnaround</h3>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: '1.85', margin: 0, fontSize: 'var(--type-body)' }}>Consolidated capability helps reduce coordination delay across operations.</p>
                 </div>
               </article>
             </div>
@@ -376,13 +376,13 @@ export default async function CompanyPage({
                         color: 'white', 
                         padding: '4px 12px', 
                         borderRadius: '0', 
-                        fontSize: '0.95rem', 
+                        fontSize: 'var(--type-small)', 
                         fontWeight: '700',
                         marginBottom: '12px'
                       }}>
                         {year}
                       </span>
-                      <p style={{ margin: '0', fontSize: '1.18rem', lineHeight: '1.75', color: 'var(--foreground)', fontWeight: '500' }}>{text}</p>
+                      <p style={{ margin: '0', fontSize: 'var(--type-body-lg)', lineHeight: '1.75', color: 'var(--foreground)', fontWeight: '500' }}>{text}</p>
                     </div>
                   </div>
                 ))}

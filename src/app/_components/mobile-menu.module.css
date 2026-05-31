@@ -38,7 +38,7 @@
   border-radius: 0;
   color: #ffffff;
   display: flex;
-  font-size: 0.86rem;
+  font-size: var(--type-label);
   font-weight: 700;
   height: 32px;
   padding: 0 14px;
@@ -147,7 +147,7 @@
   color: var(--brand-blue-deep);
   display: inline-block;
   font-family: "Orbitron", "Audiowide", "Michroma", sans-serif;
-  font-size: 0.82rem;
+  font-size: var(--type-small);
   font-weight: 500;
   letter-spacing: 0.035em;
   line-height: 1.2;
@@ -157,7 +157,7 @@
 
 .panelLogoText span,
 .mobileLogoText span {
-  font-size: 0.62rem;
+  font-size: var(--type-label);
   font-weight: 500;
   color: var(--brand-red);
   text-transform: uppercase;
@@ -202,7 +202,7 @@
   border-bottom: 1px solid var(--border);
   color: var(--brand-blue-deep);
   display: flex;
-  font-size: 1.08rem;
+  font-size: var(--type-body);
   font-weight: 600;
   height: 48px;
   padding: 0 4px;
@@ -218,7 +218,7 @@
 
 .groupLabel {
   color: var(--brand-blue-deep);
-  font-size: 1.08rem;
+  font-size: var(--type-body);
   font-weight: 600;
   letter-spacing: normal;
   margin: 0;
@@ -269,7 +269,7 @@
   border: none;
   color: var(--foreground);
   display: flex;
-  font-size: 1.05rem;
+  font-size: var(--type-body);
   font-weight: 600;
   min-height: 52px;
   align-items: center;
@@ -303,7 +303,7 @@
 
 .viewAllLink {
   color: var(--brand-blue);
-  font-size: 0.92rem;
+  font-size: var(--type-small);
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
@@ -314,7 +314,7 @@
 
 .subProductItem {
   color: var(--text-muted);
-  font-size: 1rem;
+  font-size: var(--type-small);
   font-weight: 500;
   text-decoration: none;
   padding: 6px 0;
@@ -333,7 +333,7 @@
 
 .compactItem {
   color: var(--foreground);
-  font-size: 1.05rem;
+  font-size: var(--type-body);
   font-weight: 500;
   padding: 14px 4px;
   text-decoration: none;
@@ -355,7 +355,7 @@
 
 .footerLabel {
   color: var(--brand-green);
-  font-size: 0.82rem;
+  font-size: var(--type-label);
   font-weight: 700;
   margin-bottom: 8px;
   text-transform: uppercase;
@@ -364,7 +364,7 @@
 .footerContactLink {
   color: var(--brand-blue-deep);
   display: block;
-  font-size: 1.2rem;
+  font-size: var(--type-subheading);
   font-weight: 600;
   margin-bottom: 4px;
   text-decoration: none;
@@ -372,7 +372,7 @@
 
 .footerSocials {
   color: #000000;
-  font-size: 0.98rem;
+  font-size: var(--type-small);
   font-weight: 500;
 }
 
@@ -384,7 +384,7 @@
 
 .footerLabel {
   color: var(--brand-green);
-  font-size: 0.82rem;
+  font-size: var(--type-label);
   font-weight: 700;
   margin-bottom: 8px;
   text-transform: uppercase;
@@ -393,7 +393,7 @@
 .footerContactLink {
   color: var(--brand-blue-deep);
   display: block;
-  font-size: 1.25rem;
+  font-size: var(--type-subheading);
   font-weight: 600;
   margin-bottom: 4px;
   text-decoration: none;
@@ -401,6 +401,6 @@
 
 .footerSocials {
   color: #000000;
-  font-size: 0.98rem;
+  font-size: var(--type-small);
   font-weight: 500;
 }

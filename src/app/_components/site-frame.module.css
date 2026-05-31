@@ -14,7 +14,7 @@
 .topStrip {
   background: var(--brand-blue-deep);
   color: color-mix(in srgb, var(--text-on-brand) 90%, transparent);
-  font-size: 11px;
+  font-size: var(--type-label);
 }
 
 .topStripInner,
@@ -117,7 +117,7 @@
 
 .tagline {
   color: var(--brand-red);
-  font-size: 12px;
+  font-size: var(--type-label);
   font-weight: 700;
   letter-spacing: 0.25em;
   margin: 12px 0 0;
@@ -135,7 +135,7 @@
 
 .headerPhone {
   color: var(--brand-blue-deep);
-  font-size: 17px;
+  font-size: var(--type-subheading);
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 2px;
@@ -143,7 +143,7 @@
 }
 
 .headerInfoRow {
-  font-size: 13px;
+  font-size: var(--type-small);
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
@@ -186,7 +186,7 @@
   cursor: pointer;
   display: inline-flex;
   font: inherit;
-  font-size: 15px;
+  font-size: var(--type-small);
   font-weight: 600;
   gap: 8px;
   height: 48px;
@@ -253,7 +253,7 @@
   border-bottom: 1px solid var(--border);
   color: var(--text-muted);
   display: block;
-  font-size: 15px;
+  font-size: var(--type-small);
   padding: 16px 18px;
   text-decoration: none;
 }
@@ -276,7 +276,7 @@
   border: 1px solid var(--text-on-brand);
   color: var(--text-on-brand);
   display: inline-flex;
-  font-size: 13px;
+  font-size: var(--type-label);
   font-weight: 700;
   height: 32px;
   justify-content: center;
@@ -301,7 +301,7 @@
   color: var(--text-muted);
   display: flex;
   flex-wrap: wrap;
-  font-size: 13px;
+  font-size: var(--type-small);
   gap: 10px;
   min-height: 32px;
   overflow-wrap: anywhere;
@@ -380,7 +380,7 @@
   background: var(--brand-blue-deep);
   color: var(--text-on-brand);
   display: flex;
-  font-size: 14px;
+  font-size: var(--type-label);
   font-weight: 700;
   gap: 8px;
   letter-spacing: 0.11em;
@@ -400,7 +400,7 @@
   border: 1px solid transparent;
   color: color-mix(in srgb, var(--foreground) 72%, var(--text-muted));
   display: flex;
-  font-size: 16px;
+  font-size: var(--type-body);
   font-weight: 500;
   min-height: 48px;
   padding: 12px 14px;
@@ -449,13 +449,13 @@
 
 .sidebarBody strong {
   color: var(--brand-blue-deep);
-  font-size: 18px;
+  font-size: var(--type-subheading);
 }
 
 .sidebarBody a,
 .sidebarBody p {
   color: var(--text-muted);
-  font-size: 15px;
+  font-size: var(--type-small);
   line-height: 1.75;
   margin: 0;
   text-decoration: none;
@@ -466,7 +466,7 @@
   align-items: center;
   border: 0;
   display: inline-flex;
-  font-size: 14px;
+  font-size: var(--type-small);
   font-weight: 700;
   justify-content: center;
   min-height: 42px;
@@ -514,7 +514,7 @@
 .footerInner {
   align-items: center;
   display: flex;
-  font-size: 13px;
+  font-size: var(--type-small);
   justify-content: space-between;
   min-height: var(--footer-height);
   padding: 0 14px;
@@ -639,7 +639,7 @@
   }
 
   .breadcrumb {
-    font-size: 11px;
+    font-size: var(--type-small);
     min-height: 36px;
     padding-left: 14px;
     padding-right: 14px;
@@ -653,6 +653,6 @@
   .footerInner {
     padding-left: 14px;
     padding-right: 14px;
-    font-size: 10px;
+    font-size: var(--type-small);
   }
 }
