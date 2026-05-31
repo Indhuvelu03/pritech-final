@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./product-sidebar.module.css";
 import { productCategories } from "../siteData";
@@ -17,9 +17,9 @@ export function ProductSidebar({
 }: ProductSidebarProps) {
   const [openCategory, setOpenCategory] = useState<string | null>(currentCategorySlug);
 
-  const toggleCategory = (slug: string) => {
-    setOpenCategory(prev => (prev === slug ? null : slug));
-  };
+  useEffect(() => {
+    setOpenCategory(currentCategorySlug);
+  }, [currentCategorySlug]);
 
   return (
     <div className={styles.sidebarWrap}>
@@ -31,21 +31,20 @@ export function ProductSidebar({
 
         return (
           <section key={category.slug} className={styles.categoryBlock}>
-            <div
-              className={`${styles.categoryTitle} ${isExpanded ? styles.categoryCurrent : ""}`}
-              onClick={() => toggleCategory(category.slug)}
-              style={{ cursor: "pointer" }}
+            <Link
+              href={`/products/${category.slug}`}
+              className={`${styles.categoryTitle} ${
+                isPageActive ? styles.categoryActive : ""
+              } ${isExpanded ? styles.categoryExpanded : ""}`}
             >
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span style={{ color: isPageActive ? 'var(--brand-blue-deep)' : 'inherit', fontWeight: isPageActive ? '700' : 'inherit' }}>
-                  {category.title}
-                </span>
+              <span className={styles.categoryText}>
+                <span>{category.title}</span>
                 {isPageActive && !isExpanded && (
-                  <span style={{ fontSize: '0.65rem', color: 'var(--brand-blue)', marginTop: '2px' }}>Current Section</span>
+                  <span className={styles.currentLabel}>Current section</span>
                 )}
-              </div>
+              </span>
               <ChevronDownIcon className={styles.categoryArrow} />
-            </div>
+            </Link>
 
             {isExpanded ? (
               <div className={styles.productLinks}>

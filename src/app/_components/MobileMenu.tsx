@@ -53,7 +53,7 @@ export function MobileMenu() {
                   <Image src="/logo.png" alt="Logo" width={32} height={32} className={styles.miniLogo} />
                 </div>
                 <div className={styles.panelLogoText}>
-                  <strong>{siteInfo.shortName}</strong>
+                  <strong>{siteInfo.name}</strong>
                   <span>{siteInfo.tagline}</span>
                 </div>
               </Link>

@@ -34,9 +34,9 @@ const productHooks = [
     Icon: WrenchIcon,
   },
   {
-    title: "Handling & Assembly",
-    text: "Lifting, transfer, bonding, riveting, and adhesive systems for assembly lines.",
-    href: "/products/handling-assembly",
+    title: "Marking Machines",
+    text: "Laser and dot-pin marking systems for traceability, identification, and production marking.",
+    href: "/products/marking-machines",
     Icon: ComponentIcon,
   },
 ];
@@ -136,7 +136,7 @@ export default function Home() {
                 <h3>{title}</h3>
               </div>
               <p>{text}</p>
-              <span className={styles.productCategoryLink}>View Products →</span>
+              <span className={styles.productCategoryLink}>View Products -&gt;</span>
             </Link>
           ))}
         </div>
@@ -158,7 +158,7 @@ export default function Home() {
               <span className={styles.featuredProductTag}>Testing</span>
               <h3>Air Leak Test Machine</h3>
               <p>Air leak testing for brake master cylinders, callipers, and hydraulic components.</p>
-              <span className={styles.featuredProductLink}>View Details →</span>
+              <span className={styles.featuredProductLink}>View Details -&gt;</span>
             </div>
           </Link>
 
@@ -170,7 +170,7 @@ export default function Home() {
               <span className={styles.featuredProductTag}>Testing</span>
               <h3>Leak Test Machine</h3>
               <p>Hydraulic and pneumatic leak testing machine for assembled brake components.</p>
-              <span className={styles.featuredProductLink}>View Details →</span>
+              <span className={styles.featuredProductLink}>View Details -&gt;</span>
             </div>
           </Link>
 
@@ -182,7 +182,7 @@ export default function Home() {
               <span className={styles.featuredProductTag}>SPM</span>
               <h3>Chain Link Machine</h3>
               <p>Automated joining and pressing of chain links with controlled cycle time.</p>
-              <span className={styles.featuredProductLink}>View Details →</span>
+              <span className={styles.featuredProductLink}>View Details -&gt;</span>
             </div>
           </Link>
 
@@ -194,7 +194,7 @@ export default function Home() {
               <span className={styles.featuredProductTag}>SPM</span>
               <h3>Cam Nut Loosening Machine</h3>
               <p>Torque-controlled loosening machine for disassembly operations.</p>
-              <span className={styles.featuredProductLink}>View Details →</span>
+              <span className={styles.featuredProductLink}>View Details -&gt;</span>
             </div>
           </Link>
 
@@ -206,19 +206,19 @@ export default function Home() {
               <span className={styles.featuredProductTag}>Testing</span>
               <h3>Proof Test Machine</h3>
               <p>Load and pressure proof testing for brake shoes and structural automotive parts.</p>
-              <span className={styles.featuredProductLink}>View Details →</span>
+              <span className={styles.featuredProductLink}>View Details -&gt;</span>
             </div>
           </Link>
 
-          <Link href="/products/special-purpose-machines/knuckle-marking-machine" className={styles.featuredProductCard}>
+          <Link href="/products/marking-machines/knuckle-marking-machine" className={styles.featuredProductCard}>
             <div className={styles.featuredProductImage}>
               <img src="/products/knuckle-marking-machine.png" alt="Knuckle Marking Machine" />
             </div>
             <div className={styles.featuredProductInfo}>
-              <span className={styles.featuredProductTag}>SPM</span>
+              <span className={styles.featuredProductTag}>Marking</span>
               <h3>Knuckle Marking Machine</h3>
               <p>Dot-peen or stamp marking for steering knuckle traceability.</p>
-              <span className={styles.featuredProductLink}>View Details →</span>
+              <span className={styles.featuredProductLink}>View Details -&gt;</span>
             </div>
           </Link>
         </div>

@@ -132,6 +132,22 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        name: "Valve Testing Machine",
+        slug: "valve-testing-machine",
+        cardDescription:
+          "Dedicated testing machine for valve performance and leakage validation.",
+        description:
+          "Valve testing machine designed for production-side validation of valve assemblies with controlled test conditions, repeatable measurement, and reliable pass/fail output.",
+        image: "/products/valve-testing-machine.png",
+        specs: [
+          ["Application", "Valve testing"],
+          ["Method", "Controlled inspection cycle"],
+          ["Industry", "Automotive / Industrial"],
+          ["Output", "Repeatable test result"],
+          ["Use", "Production quality validation"],
+        ],
+      },
+      {
         name: "Spring Load Test Rig",
         slug: "spring-load-test-rig",
         cardDescription:
@@ -236,38 +252,6 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
-        name: "Knuckle Marking Machine",
-        slug: "knuckle-marking-machine",
-        cardDescription:
-          "Dot-peen or stamp marking for steering knuckle traceability.",
-        description:
-          "Dot-peen or stamp marking machine for steering knuckles providing permanent part identification, serial numbers and production date traceability.",
-        image: "/products/knuckle-marking-machine.png",
-        specs: [
-          ["Operation", "Permanent part marking"],
-          ["Component", "Steering knuckle"],
-          ["Industry", "Automotive"],
-          ["Output", "Serial number, date code"],
-          ["Method", "Dot-peen / stamp"],
-        ],
-      },
-      {
-        name: "Laser Marking Machine",
-        slug: "laser-marking-machine",
-        cardDescription:
-          "Fiber laser marking for part ID, logos, and date code traceability.",
-        description:
-          "Fiber laser marking machine for permanent part ID, date codes, logos and traceability marking on metal components. Non-contact, high-speed marking with no consumables.",
-        image: "/products/knuckle-marking-machine.png",
-        specs: [
-          ["Type", "Fiber laser"],
-          ["Application", "Metal component marking"],
-          ["Speed", "High speed, non-contact"],
-          ["Consumables", "None"],
-          ["Clients", "Mando India, Omron Automation"],
-        ],
-      },
-      {
         name: "Lid Glass Assembly SPM",
         slug: "lid-glass-assembly-spm",
         cardDescription:
@@ -316,157 +300,13 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
-        name: "Water Tube Bush Pressing",
-        slug: "water-tube-bush-pressing",
-        cardDescription:
-          "Controlled bush press-fit machine for water tube assemblies.",
-        description:
-          "Bush press-fit machine for water tube assemblies. Controlled press force ensures correct insertion depth and interference fit without component damage.",
-        image: "/products/cam-nut-loosening-machine.png",
-        specs: [
-          ["Operation", "Bush press fit"],
-          ["Component", "Water tube + bush"],
-          ["Method", "Force-controlled press"],
-          ["Industry", "Automotive cooling systems"],
-          ["Control", "Insertion depth and interference fit"],
-        ],
-      },
-    ],
-  },
-  {
-    slug: "fixtures-tooling",
-    title: "Fixtures & Tooling",
-    summary:
-      "Precision fixtures, gauges, and tooling components designed for repeatability and faster cycle times.",
-    products: [
-      {
-        name: "VMC Fixtures",
-        slug: "vmc-fixtures",
-        cardDescription:
-          "Fixtures for simultaneous VMC machining of automotive components.",
-        description:
-          "Vertical Machining Centre fixtures for complex automotive components. Designed for 4-component simultaneous machining, reducing cycle time by 75%. Precision ground locators ensure repeatability.",
-        image: "/products/proof-test-machine.png",
-        specs: [
-          ["Machine", "Vertical Machining Centre"],
-          ["Capacity", "4 components simultaneously"],
-          ["Component", "Master cylinder, manifolds"],
-          ["Repeatability", "+/-0.01 mm"],
-          ["Clients", "Redema, Mando India"],
-        ],
-      },
-      {
-        name: "Brake Shoe Testing Fixture",
-        slug: "brake-shoe-testing-fixture",
-        cardDescription:
-          "Go / no-go gauging fixture for brake shoe dimensional inspection.",
-        description:
-          "Go/No-Go gauging fixture for brake shoe dimensional inspection. Quick-load design for high-volume production line use. Hardened and ground reference surfaces for long life.",
-        image: "/products/air-leak-test-machine.jpg",
-        specs: [
-          ["Type", "Go / No-Go gauge fixture"],
-          ["Component", "Brake shoe"],
-          ["Speed", "Quick-load for high volume"],
-          ["Material", "Hardened ground steel"],
-          ["Clients", "Brakes & Automotive"],
-        ],
-      },
-      {
-        name: "Laser Marking Fixture",
-        slug: "laser-marking-fixture",
-        cardDescription:
-          "Holding and positioning fixture for repeatable laser marking stations.",
-        description:
-          "Component holding and positioning fixture for laser marking stations. Ensures absolute repeatability of mark location and component orientation through precision locating pins.",
-        image: "/products/knuckle-marking-machine.png",
-        specs: [
-          ["Type", "Holding & positioning fixture"],
-          ["Application", "Laser marking station"],
-          ["Repeatability", "+/-0.02 mm"],
-          ["Material", "Hardened tool steel"],
-          ["Positioning", "Precision locating pins"],
-        ],
-      },
-      {
-        name: "Front Housing VMC Fixture",
-        slug: "front-housing-vmc-fixture",
-        cardDescription:
-          "VMC fixture for master cylinder front housing machining.",
-        description:
-          "VMC fixture for Master Cylinder front housing. Designed for simultaneous facing and drilling of 4 components per cycle, reducing machining time significantly.",
-        image: "/products/leak-test-machine.jpg",
-        specs: [
-          ["Component", "Master Cylinder front housing"],
-          ["Operation", "Face machining + drilling"],
-          ["Capacity", "4 components at a time"],
-          ["Notes", "Precision ground datum faces"],
-          ["Use", "High-repeatability machining"],
-        ],
-      },
-      {
-        name: "Exhaust Manifold Machining Fixture",
-        slug: "exhaust-manifold-machining-fixture",
-        cardDescription:
-          "Fixture for exhaust manifold spot facing and drilling operations.",
-        description:
-          "Machining fixture for exhaust manifold spot facing and drilling operations. Designed to hold manifold securely during multiple drilling cycles.",
-        image: "/products/chain-link-machine.png",
-        specs: [
-          ["Component", "Exhaust manifold"],
-          ["Operation", "Spot facing + drilling"],
-          ["Material", "Cast iron base with hardened bush inserts"],
-          ["Use", "Multiple drilling cycles"],
-          ["Industry", "Automotive"],
-        ],
-      },
-      {
-        name: "Press Tool Components",
-        slug: "press-tool-components",
-        cardDescription:
-          "Punches, dies, stripper plates, and guide elements built to drawing.",
-        description:
-          "Precision press tool components including punches, dies, stripper plates, guide pillars and guide bushes. Manufactured to customer drawing in D2 and H13 tool steel with heat treatment.",
-        image: "/products/cam-nut-loosening-machine.png",
-        specs: [
-          ["Components", "Punch, die, stripper, guide pillars"],
-          ["Material", "D2 / H13 tool steel"],
-          ["Treatment", "Hardened & ground"],
-          ["Industry", "Stamping / press shops"],
-          ["Build", "Manufactured to drawing"],
-        ],
-      },
-      {
-        name: "Clamp Blocks",
-        slug: "clamp-blocks",
-        cardDescription:
-          "Hardened and ground clamp blocks for machining and assembly work-holding.",
-        description:
-          "Hardened and ground clamp blocks for work-holding in machining fixtures and assembly jigs. Custom dimensions available. Used in VMC and lathe work-holding systems.",
-        image: "/products/air-leak-test-machine.jpg",
-        specs: [
-          ["Material", "EN31 hardened & ground"],
-          ["Tolerance", "+/-0.005 mm"],
-          ["Finish", "Ground finish"],
-          ["Application", "Work-holding in machining"],
-          ["Customization", "Custom dimensions available"],
-        ],
-      },
-    ],
-  },
-  {
-    slug: "handling-assembly",
-    title: "Handling & Assembly",
-    summary:
-      "Ergonomic lifting, transfer, riveting, bonding, and adhesive systems for assembly operations.",
-    products: [
-      {
         name: "Fly Wheel Lifter",
         slug: "fly-wheel-lifter",
         cardDescription:
           "Pneumatic lifting and positioning device for flywheel assembly.",
         description:
           "Ergonomic pneumatic lifting and positioning device for heavy flywheel components during engine assembly. Reduces operator fatigue and prevents damage to precision faces.",
-        image: "/products/chain-link-machine.png",
+        image: "/products/fly-wheel-lifter.png",
         specs: [
           ["Capacity", "Up to 50 kg"],
           ["Drive", "Pneumatic"],
@@ -482,7 +322,7 @@ export const productCategories: ProductCategory[] = [
           "Custom belt, roller, and slat conveyors for line-to-line part transfer.",
         description:
           "Custom-designed conveyor systems for production line part transfer between workstations. Belt, roller and slat conveyor configurations available to suit production layout.",
-        image: "/products/cam-nut-loosening-machine.png",
+        image: "/products/conveyor-systems.png",
         specs: [
           ["Type", "Belt / Roller / Slat conveyor"],
           ["Drive", "Motor-driven"],
@@ -539,6 +379,358 @@ export const productCategories: ProductCategory[] = [
           ["Benefit", "Reduced waste and consistent bond quality"],
         ],
       },
+      {
+        name: "Water Tube Bush Pressing",
+        slug: "water-tube-bush-pressing",
+        cardDescription:
+          "Controlled bush press-fit machine for water tube assemblies.",
+        description:
+          "Bush press-fit machine for water tube assemblies. Controlled press force ensures correct insertion depth and interference fit without component damage.",
+        image: "/products/water-tube-bush-pressing.jpg",
+        specs: [
+          ["Operation", "Bush press fit"],
+          ["Component", "Water tube + bush"],
+          ["Method", "Force-controlled press"],
+          ["Industry", "Automotive cooling systems"],
+          ["Control", "Insertion depth and interference fit"],
+        ],
+      },
+    ],
+  },
+  {
+    slug: "fixtures-tooling",
+    title: "Fixtures & Tooling",
+    summary:
+      "Precision fixtures, gauges, and tooling components designed for repeatability and faster cycle times.",
+    products: [
+      {
+        name: "VMC Fixtures",
+        slug: "vmc-fixtures",
+        cardDescription:
+          "Fixtures for simultaneous VMC machining of automotive components.",
+        description:
+          "Vertical Machining Centre fixtures for complex automotive components. Designed for 4-component simultaneous machining, reducing cycle time by 75%. Precision ground locators ensure repeatability.",
+        image: "/products/vmc-fixtures.jpg",
+        specs: [
+          ["Machine", "Vertical Machining Centre"],
+          ["Capacity", "4 components simultaneously"],
+          ["Component", "Master cylinder, manifolds"],
+          ["Repeatability", "+/-0.01 mm"],
+          ["Clients", "Redema, Mando India"],
+        ],
+      },
+      {
+        name: "Brake Shoe Testing Fixture",
+        slug: "brake-shoe-testing-fixture",
+        cardDescription:
+          "Go / no-go gauging fixture for brake shoe dimensional inspection.",
+        description:
+          "Go/No-Go gauging fixture for brake shoe dimensional inspection. Quick-load design for high-volume production line use. Hardened and ground reference surfaces for long life.",
+        image: "/products/brake-shoe-testing-fixture.jpg",
+        specs: [
+          ["Type", "Go / No-Go gauge fixture"],
+          ["Component", "Brake shoe"],
+          ["Speed", "Quick-load for high volume"],
+          ["Material", "Hardened ground steel"],
+          ["Clients", "Brakes & Automotive"],
+        ],
+      },
+      {
+        name: "Brake Shoe Milling Fixture",
+        slug: "brake-shoe-milling-fixture",
+        cardDescription:
+          "Fixture for stable and repeatable brake shoe milling operations.",
+        description:
+          "Brake shoe milling fixture built to support consistent work-holding, positional accuracy, and repeatable machining during brake shoe milling processes.",
+        image: "/products/brake-shoe-milling-fixture.jpg",
+        specs: [
+          ["Type", "Milling fixture"],
+          ["Component", "Brake shoe"],
+          ["Use", "Repeatable machining support"],
+          ["Material", "Industrial fixture build"],
+          ["Industry", "Automotive"],
+        ],
+      },
+      {
+        name: "Bush Pressing Fixture",
+        slug: "bush-pressing-fixture",
+        cardDescription:
+          "Fixture designed for controlled and aligned bush pressing.",
+        description:
+          "Bush pressing fixture engineered for accurate alignment and stable support during insertion operations to improve consistency and reduce setup variation.",
+        image: "/products/bush-pressing-fixture.jpg",
+        specs: [
+          ["Type", "Pressing fixture"],
+          ["Component", "Bush"],
+          ["Function", "Alignment and support"],
+          ["Use", "Controlled press operation"],
+          ["Industry", "Automotive / General"],
+        ],
+      },
+      {
+        name: "Testing Fixture",
+        slug: "testing-fixture",
+        cardDescription:
+          "General-purpose testing fixture for production inspection setups.",
+        description:
+          "Testing fixture used to position and hold components consistently during inspection and functional validation operations on the shop floor.",
+        image: "/products/testing-fixture.jpg",
+        specs: [
+          ["Type", "Testing fixture"],
+          ["Application", "Inspection setup"],
+          ["Function", "Repeatable positioning"],
+          ["Use", "Quality validation"],
+          ["Industry", "Automotive / Industrial"],
+        ],
+      },
+      {
+        name: "Laser Marking Fixture",
+        slug: "laser-marking-fixture",
+        cardDescription:
+          "Holding and positioning fixture for repeatable laser marking stations.",
+        description:
+          "Component holding and positioning fixture for laser marking stations. Ensures absolute repeatability of mark location and component orientation through precision locating pins.",
+        image: "/products/knuckle-marking-machine.png",
+        specs: [
+          ["Type", "Holding & positioning fixture"],
+          ["Application", "Laser marking station"],
+          ["Repeatability", "+/-0.02 mm"],
+          ["Material", "Hardened tool steel"],
+          ["Positioning", "Precision locating pins"],
+        ],
+      },
+      {
+        name: "CNC Lathe Fixture",
+        slug: "cnc-lathe-fixture",
+        cardDescription:
+          "Lathe fixture for secure and repeatable CNC turning operations.",
+        description:
+          "CNC lathe fixture developed to improve component holding stability, repeatability, and setup reliability during precision turning operations.",
+        image: "/products/cnc-lathe-fixture.png",
+        specs: [
+          ["Type", "Lathe fixture"],
+          ["Machine", "CNC lathe"],
+          ["Function", "Secure work-holding"],
+          ["Use", "Turning operations"],
+          ["Industry", "Precision machining"],
+        ],
+      },
+      {
+        name: "Front Housing VMC Fixture",
+        slug: "front-housing-vmc-fixture",
+        cardDescription:
+          "VMC fixture for master cylinder front housing machining.",
+        description:
+          "VMC fixture for Master Cylinder front housing. Designed for simultaneous facing and drilling of 4 components per cycle, reducing machining time significantly.",
+        image: "/products/front-housing-vmc-fixture.jpg",
+        specs: [
+          ["Component", "Master Cylinder front housing"],
+          ["Operation", "Face machining + drilling"],
+          ["Capacity", "4 components at a time"],
+          ["Notes", "Precision ground datum faces"],
+          ["Use", "High-repeatability machining"],
+        ],
+      },
+      {
+        name: "Shaft Milling VMC Fixture",
+        slug: "shaft-milling-vmc-fixture",
+        cardDescription:
+          "VMC fixture built for shaft milling with secure alignment.",
+        description:
+          "Shaft milling VMC fixture designed to improve rigidity, datum control, and repeatable positioning for shaft machining operations on vertical machining centres.",
+        image: "/products/shaft-milling-vmc-fixture.jpg",
+        specs: [
+          ["Type", "VMC milling fixture"],
+          ["Component", "Shaft"],
+          ["Machine", "Vertical Machining Centre"],
+          ["Function", "Accurate clamping"],
+          ["Industry", "Precision machining"],
+        ],
+      },
+      {
+        name: "VMC 4th Axis Fixture",
+        slug: "vmc-4th-axis-fixture",
+        cardDescription:
+          "Fixture optimized for indexed machining on VMC 4th-axis setups.",
+        description:
+          "VMC 4th axis fixture developed for indexed machining applications that require stable rotation support, repeatable location, and better cycle control.",
+        image: "/products/vmc-4th-axis-fixture.jpg",
+        specs: [
+          ["Type", "4th axis fixture"],
+          ["Machine", "VMC"],
+          ["Function", "Indexed machining support"],
+          ["Use", "Rotary setup applications"],
+          ["Industry", "Automotive / Engineering"],
+        ],
+      },
+      {
+        name: "VMC Milling Fixture",
+        slug: "vmc-milling-fixture",
+        cardDescription:
+          "General VMC fixture for precision milling operations.",
+        description:
+          "VMC milling fixture created for dependable work-holding, positional accuracy, and repeatable milling performance across production machining tasks.",
+        image: "/products/vmc-milling-fixture.jpg",
+        specs: [
+          ["Type", "Milling fixture"],
+          ["Machine", "VMC"],
+          ["Function", "Precision work-holding"],
+          ["Use", "Repeatable milling"],
+          ["Industry", "General engineering"],
+        ],
+      },
+      {
+        name: "VMC Self Centering Fixture",
+        slug: "vmc-self-centering-fixture",
+        cardDescription:
+          "Self-centering VMC fixture for quick and accurate positioning.",
+        description:
+          "VMC self-centering fixture designed to reduce setup time and improve alignment consistency by automatically centering the workpiece during clamping.",
+        image: "/products/vmc-self-centering-fixture.png",
+        specs: [
+          ["Type", "Self-centering fixture"],
+          ["Machine", "VMC"],
+          ["Function", "Automatic workpiece centering"],
+          ["Benefit", "Reduced setup time"],
+          ["Industry", "Automotive / Precision machining"],
+        ],
+      },
+      {
+        name: "Exhaust Manifold Machining Fixture",
+        slug: "exhaust-manifold-machining-fixture",
+        cardDescription:
+          "Fixture for exhaust manifold spot facing and drilling operations.",
+        description:
+          "Machining fixture for exhaust manifold spot facing and drilling operations. Designed to hold manifold securely during multiple drilling cycles.",
+        image: "/products/chain-link-machine.png",
+        specs: [
+          ["Component", "Exhaust manifold"],
+          ["Operation", "Spot facing + drilling"],
+          ["Material", "Cast iron base with hardened bush inserts"],
+          ["Use", "Multiple drilling cycles"],
+          ["Industry", "Automotive"],
+        ],
+      },
+      {
+        name: "Clamp Blocks",
+        slug: "clamp-blocks",
+        cardDescription:
+          "Hardened and ground clamp blocks for machining and assembly work-holding.",
+        description:
+          "Hardened and ground clamp blocks for work-holding in machining fixtures and assembly jigs. Custom dimensions available. Used in VMC and lathe work-holding systems.",
+        image: "/products/air-leak-test-machine.jpg",
+        specs: [
+          ["Material", "EN31 hardened & ground"],
+          ["Tolerance", "+/-0.005 mm"],
+          ["Finish", "Ground finish"],
+          ["Application", "Work-holding in machining"],
+          ["Customization", "Custom dimensions available"],
+        ],
+      },
+      {
+        name: "Press Tool Components",
+        slug: "press-tool-components",
+        cardDescription:
+          "Punches, dies, stripper plates, and guide elements built to drawing.",
+        description:
+          "Precision press tool components including punches, dies, stripper plates, guide pillars and guide bushes. Manufactured to customer drawing in D2 and H13 tool steel with heat treatment.",
+        image: "/products/cam-nut-loosening-machine.png",
+        specs: [
+          ["Components", "Punch, die, stripper, guide pillars"],
+          ["Material", "D2 / H13 tool steel"],
+          ["Treatment", "Hardened & ground"],
+          ["Industry", "Stamping / press shops"],
+          ["Build", "Manufactured to drawing"],
+        ],
+      },
+      {
+        name: "Bush Pressing Machine",
+        slug: "bush-pressing-machine",
+        cardDescription:
+          "Pressing machine for bush fitting and insertion operations.",
+        description:
+          "Bush pressing machine built for controlled bush insertion with consistent force application, positioning support, and production-friendly operation.",
+        image: "/products/bush-pressing-machine.jpg",
+        specs: [
+          ["Type", "Pressing machine"],
+          ["Component", "Bush"],
+          ["Function", "Insertion operation"],
+          ["Use", "Production pressing"],
+          ["Industry", "Automotive / General"],
+        ],
+      },
+      {
+        name: "Rubber Bush Pressing Machine",
+        slug: "rubber-bush-pressing-machine",
+        cardDescription:
+          "Machine for controlled rubber bush pressing applications.",
+        description:
+          "Rubber bush pressing machine designed for stable fixture support and reliable insertion performance during rubber bush assembly operations.",
+        image: "/products/rubber-bush-pressing-machine.png",
+        specs: [
+          ["Type", "Pressing machine"],
+          ["Component", "Rubber bush"],
+          ["Function", "Controlled insertion"],
+          ["Use", "Assembly support"],
+          ["Industry", "Automotive"],
+        ],
+      },
+    ],
+  },
+  {
+    slug: "marking-machines",
+    title: "Marking Machines",
+    summary:
+      "Laser and dot-peen marking systems for traceability, serial coding, and permanent component identification.",
+    products: [
+      {
+        name: "Knuckle Marking Machine",
+        slug: "knuckle-marking-machine",
+        cardDescription:
+          "Dot-peen or stamp marking for steering knuckle traceability.",
+        description:
+          "Dot-peen or stamp marking machine for steering knuckles providing permanent part identification, serial numbers and production date traceability.",
+        image: "/products/knuckle-marking-machine.png",
+        specs: [
+          ["Operation", "Permanent part marking"],
+          ["Component", "Steering knuckle"],
+          ["Industry", "Automotive"],
+          ["Output", "Serial number, date code"],
+          ["Method", "Dot-peen / stamp"],
+        ],
+      },
+      {
+        name: "Laser Marking Machine",
+        slug: "laser-marking-machine",
+        cardDescription:
+          "Fiber laser marking for part ID, logos, and date code traceability.",
+        description:
+          "Fiber laser marking machine for permanent part ID, date codes, logos and traceability marking on metal components. Non-contact, high-speed marking with no consumables.",
+        image: "/products/laser-marking-machine.png",
+        specs: [
+          ["Type", "Fiber laser"],
+          ["Application", "Metal component marking"],
+          ["Speed", "High speed, non-contact"],
+          ["Consumables", "None"],
+          ["Clients", "Mando India, Omron Automation"],
+        ],
+      },
+      {
+        name: "Dot Pin Marking Machine",
+        slug: "dot-pin-marking-machine",
+        cardDescription:
+          "Dot pin marking machine for permanent traceability markings.",
+        description:
+          "Dot pin marking machine used for durable part identification, serial number application, and traceability marking across production components.",
+        image: "/products/dot-pin-marking-machine.png",
+        specs: [
+          ["Type", "Dot pin marking"],
+          ["Application", "Permanent traceability marking"],
+          ["Output", "Serial / code marking"],
+          ["Method", "Mechanical pin marking"],
+          ["Industry", "Automotive / Industrial"],
+        ],
+      },
     ],
   },
 ];
@@ -593,8 +785,8 @@ export const milestones = [
 
 export const siteNavigationLinks: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/company/about-pritech" },
-  { label: "Products", href: "/products/testing-machines" },
+  { label: "About Us", href: "/company" },
+  { label: "Products", href: "/products" },
   { label: "References", href: "/references" },
   // { label: "Our Customers", href: "/company/our-customers" },
 ];

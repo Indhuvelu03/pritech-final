@@ -1,9 +1,9 @@
 .sidebarWrap {
-  background: color-mix(in srgb, var(--brand-blue) 8%, var(--surface));
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 10px 24px rgba(26, 90, 142, 0.06);
 }
 
 .header {
@@ -14,14 +14,14 @@
   font-size: 13px;
   font-weight: 700;
   gap: 10px;
-  letter-spacing: 0.08em;
-  min-height: 40px;
-  padding: 0 16px;
+  letter-spacing: 0.12em;
+  min-height: 46px;
+  padding: 0 18px;
   text-transform: uppercase;
 }
 
 .categoryBlock {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
 }
 
 .categoryBlock:last-child {
@@ -30,65 +30,106 @@
 
 .categoryTitle {
   align-items: center;
+  background: var(--surface);
+  border: 0;
   color: var(--foreground);
+  cursor: pointer;
   display: flex;
+  font: inherit;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 650;
   justify-content: space-between;
-  min-height: 48px;
-  padding: 0 16px;
+  min-height: 54px;
+  padding: 10px 18px;
+  position: relative;
+  text-align: left;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.2s ease;
+  width: 100%;
 }
 
 .categoryTitle:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: color-mix(in srgb, var(--brand-blue) 5%, var(--surface));
+  color: var(--brand-blue-deep);
 }
 
-.categoryCurrent {
-  background: var(--surface);
-  color: var(--brand-blue-deep) !important;
-  font-weight: 600;
-  position: relative;
-  border-bottom: none;
+.categoryTitle::before {
+  background: var(--brand-green);
+  content: "";
+  inset: 12px auto 12px 0;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.2s ease;
+  width: 3px;
+}
+
+.categoryText {
+  display: grid;
+  gap: 3px;
+  line-height: 1.35;
+}
+
+.categoryActive {
+  background: color-mix(in srgb, var(--brand-blue) 7%, #ffffff);
+  color: var(--brand-blue-deep);
+}
+
+.categoryActive::before,
+.categoryExpanded::before {
+  opacity: 1;
+}
+
+.categoryExpanded {
+  color: var(--brand-blue-deep);
+}
+
+.currentLabel {
+  color: var(--brand-blue);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .productLinks {
   display: grid;
-  background: var(--surface-soft);
-  padding: 4px 0;
+  background: linear-gradient(180deg, var(--surface-soft), #ffffff);
+  padding: 6px 8px 10px;
 }
 
 .productLink {
   align-items: center;
-  color: var(--text-muted);
+  border-radius: 0;
+  color: color-mix(in srgb, var(--foreground) 70%, var(--text-muted));
   display: flex;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 500;
   justify-content: space-between;
-  min-height: 38px;
-  padding: 8px 16px 8px 24px;
+  line-height: 1.45;
+  min-height: 40px;
+  padding: 9px 12px 9px 18px;
   text-decoration: none;
   transition: all 0.2s ease;
-  border-bottom: 1px solid color-mix(in srgb, var(--border) 40%, transparent);
+  border-bottom: 0;
 }
 
-.productLink:last-child {
-  border-bottom: none;
+.productLink + .productLink {
+  border-top: 1px solid color-mix(in srgb, var(--border) 46%, transparent);
 }
 
 .productLink:hover {
   color: var(--brand-blue-deep);
-  background: rgba(255, 255, 255, 0.5);
+  background: color-mix(in srgb, var(--brand-blue) 6%, #ffffff);
 }
 
 .productCurrent {
   color: var(--brand-blue-deep);
-  font-weight: 600;
+  font-weight: 700;
   position: relative;
-  background: color-mix(in srgb, var(--brand-blue) 8%, #ffffff);
-  border-left: 2px solid var(--brand-blue);
-  padding-left: 22px;
+  background: #ffffff;
+  box-shadow: inset 3px 0 0 var(--brand-green);
+  padding-left: 18px;
 }
 
 .categoryArrow {
@@ -99,7 +140,7 @@
   width: 10px;
 }
 
-.categoryCurrent .categoryArrow {
+.categoryExpanded .categoryArrow {
   transform: rotate(180deg);
   color: var(--brand-blue-deep);
 }

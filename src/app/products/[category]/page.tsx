@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { LayersIcon } from "../../_components/Icons";
 import { ProductSidebar } from "../../_components/ProductSidebar";
 import { SiteFrame } from "../../_components/SiteFrame";
@@ -17,6 +17,9 @@ export default async function ProductCategoryPage({
   params: Promise<{ category: string }>;
 }) {
   const { category: categorySlug } = await params;
+  if (categorySlug === "handling-assembly") {
+    redirect("/products/special-purpose-machines");
+  }
   const category = getCategoryBySlug(categorySlug);
 
   if (!category) {
@@ -33,7 +36,7 @@ export default async function ProductCategoryPage({
       currentPath={`/products/${category.slug}`}
       navSection="products"
       leftSidebar={<ProductSidebar currentCategorySlug={category.slug} />}
-      leftSidebarWidth={224}
+      leftSidebarWidth={260}
     >
       {/* Category header bar — compact, no hero */}
       <div className={styles.catPageHeader}>
@@ -47,6 +50,27 @@ export default async function ProductCategoryPage({
         </div>
       </div>
 
+      {category.slug === "fixtures-tooling" ? (
+        <section className={styles.fixtureCatalogueCard}>
+          <div>
+            <p className={styles.eyebrow}>Client Drawing Catalogue</p>
+            <h2>Fixture Drawing Portfolio</h2>
+            <p>
+              View the complete Pritech fixture drawing reference PDF, including VMC fixtures,
+              rotary fixtures, bush pressing fixtures, pneumatic fixtures, and related tooling examples.
+            </p>
+          </div>
+          <a
+            href="/docs/fixture-drawing-a822.pdf"
+            className={styles.fixtureCatalogueBtn}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open PDF Catalogue
+          </a>
+        </section>
+      ) : null}
+
       {/* Product listing */}
       <div className={styles.catProductList}>
         {category.products.map((product) => (
@@ -57,7 +81,7 @@ export default async function ProductCategoryPage({
                   src={product.image}
                   alt={product.name}
                   fill
-                  sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 720px) 100vw, 280px"
                   className={styles.catProductImage}
                 />
               ) : (

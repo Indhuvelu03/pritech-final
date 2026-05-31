@@ -32,15 +32,17 @@ export default function ReferencesPage() {
 
             <aside className={styles.aboutEditorialPanel}>
               <Image
-                src="/hero-machine.png"
-                alt="Industrial Machine"
+                src="/refernce.png?v=20260531"
+                alt="Trusted clients reference graphic"
                 width={600}
                 height={320}
+                unoptimized
                 style={{
                   width: "100%",
                   height: "auto",
                   maxHeight: "320px",
-                  objectFit: "cover",
+                  objectFit: "contain",
+                  transform: "scale(1.06)",
                   borderRadius: "0",
                   border: "1px solid var(--border)",
                   boxShadow: "0 20px 40px rgba(0,0,0,0.06)",
@@ -50,9 +52,33 @@ export default function ReferencesPage() {
           </div>
         </section>
 
+        <section className={styles.clientLogosSection}>
+          <div className={styles.clientLogosHeader}>
+            <p className={styles.eyebrow}>Our Clients</p>
+            <h2>Trusted by Industry Leaders</h2>
+          </div>
+          <div className={styles.clientLogosGrid}>
+            {[
+              "c1.jpg",
+              "c2.jpg",
+              "c3.jpg",
+              "c4.png",
+              "c5.jpg",
+              "c6.jpg",
+              "c7.jpg",
+              "c8.png",
+              "c9.jpg",
+            ].map((logo, index) => (
+              <div key={logo} className={styles.clientLogoItem}>
+                <img src={`/${logo}`} alt={`Client Logo ${index + 1}`} />
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className={styles.aboutSection} style={{ marginTop: '40px' }}>
           <p className={styles.eyebrow}>Detailed Track Record</p>
-          <h2 style={{ fontSize: "1.6rem", color: "var(--foreground)", marginBottom: "32px", fontWeight: "700" }}>
+          <h2 style={{ fontSize: "2.15rem", color: "var(--foreground)", marginBottom: "32px", fontWeight: "700", lineHeight: "1.18" }}>
             Operational Portfolio
           </h2>
           
@@ -79,11 +105,20 @@ export default function ReferencesPage() {
         <section className={styles.aboutSection} style={{ textAlign: 'center', borderTop: '1px solid var(--border)', paddingTop: '60px', marginTop: '60px' }}>
           <div style={{ maxWidth: '700px', margin: '0 auto' }}>
             <span className={styles.eyebrow}>Technical Excellence</span>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '12px 0' }}>Quality Commitment</h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.7' }}>
+            <h2 style={{ fontSize: '2rem', fontWeight: 700, margin: '12px 0', lineHeight: '1.2' }}>Quality Commitment</h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.12rem', lineHeight: '1.85' }}>
               Each reference listed represents a partnership built on technical precision and production-oriented results. 
               We maintain long-term relationships with our clients by providing continuous support and iterative improvements to their manufacturing workflows.
             </p>
+            <a
+              href="/docs/fixture-drawing-a822.pdf"
+              className={styles.referencePdfBtn}
+              target="_blank"
+              rel="noreferrer"
+              style={{ marginTop: "24px" }}
+            >
+              View Fixture Drawing PDF
+            </a>
           </div>
         </section>
       </div>

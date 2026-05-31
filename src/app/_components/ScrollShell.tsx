@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useRef, useEffect, useState, type ReactNode } from "react";
 import styles from "./site-frame.module.css";
 
@@ -12,6 +13,7 @@ export function ScrollShell({
 }) {
   const mainRef = useRef<HTMLDivElement | null>(null);
   const [headerHidden, setHeaderHidden] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const mainEl = mainRef.current;
@@ -40,6 +42,19 @@ export function ScrollShell({
     scrollable.addEventListener("scroll", handleScroll, { passive: true });
     return () => scrollable.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const mainEl = mainRef.current;
+    if (!mainEl) return;
+
+    const scrollable = mainEl.querySelector(
+      `.${styles.mainColumn}`
+    ) as HTMLElement | null;
+    if (!scrollable) return;
+
+    setHeaderHidden(false);
+    scrollable.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
 
   return (
     <div

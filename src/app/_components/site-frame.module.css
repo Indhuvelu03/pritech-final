@@ -8,6 +8,7 @@
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 .topStrip {
@@ -102,16 +103,21 @@
 
 .brand {
   color: var(--brand-blue-deep);
-  font-size: 42px;
-  font-weight: 300;
-  letter-spacing: 0.025em;
-  line-height: 0.9;
+  display: inline-block;
+  font-family: "Orbitron", "Audiowide", "Michroma", sans-serif;
+  font-size: clamp(28px, 2.35vw, 39px);
+  font-weight: 500;
+  letter-spacing: 0.045em;
+  line-height: 1;
   margin: 0;
+  transform: scaleX(1.01);
+  transform-origin: left center;
+  white-space: nowrap;
 }
 
 .tagline {
   color: var(--brand-red);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.25em;
   margin: 12px 0 0;
@@ -129,7 +135,7 @@
 
 .headerPhone {
   color: var(--brand-blue-deep);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 2px;
@@ -137,8 +143,8 @@
 }
 
 .headerInfoRow {
-  font-size: 11px;
-  line-height: 1.45;
+  font-size: 13px;
+  line-height: 1.6;
   overflow-wrap: anywhere;
 }
 
@@ -180,7 +186,7 @@
   cursor: pointer;
   display: inline-flex;
   font: inherit;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   gap: 8px;
   height: 48px;
@@ -247,8 +253,8 @@
   border-bottom: 1px solid var(--border);
   color: var(--text-muted);
   display: block;
-  font-size: 14px;
-  padding: 15px 18px;
+  font-size: 15px;
+  padding: 16px 18px;
   text-decoration: none;
 }
 
@@ -270,7 +276,7 @@
   border: 1px solid var(--text-on-brand);
   color: var(--text-on-brand);
   display: inline-flex;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   height: 32px;
   justify-content: center;
@@ -295,7 +301,7 @@
   color: var(--text-muted);
   display: flex;
   flex-wrap: wrap;
-  font-size: 12px;
+  font-size: 13px;
   gap: 10px;
   min-height: 32px;
   overflow-wrap: anywhere;
@@ -326,6 +332,7 @@
   border-right: 1px solid var(--border);
   overflow-y: auto;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -363,8 +370,9 @@
 }
 
 .sidebarBlock {
-  background: color-mix(in srgb, var(--surface) 90%, transparent);
-  border-bottom: 1px solid var(--border);
+  background: #ffffff;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .sidebarTitle {
@@ -372,51 +380,83 @@
   background: var(--brand-blue-deep);
   color: var(--text-on-brand);
   display: flex;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   gap: 8px;
-  letter-spacing: 0.08em;
-  min-height: 42px;
-  padding: 0 18px;
+  letter-spacing: 0.11em;
+  min-height: 46px;
+  padding: 0 20px;
   text-transform: uppercase;
 }
 
 .sidebarList {
   display: grid;
+  gap: 6px;
+  padding: 10px;
 }
 
 .sidebarList a {
-  border-bottom: 1px solid var(--border);
-  color: var(--text-muted);
-  font-size: 15px;
-  min-height: 46px;
-  padding: 13px 16px;
+  align-items: center;
+  border: 1px solid transparent;
+  color: color-mix(in srgb, var(--foreground) 72%, var(--text-muted));
+  display: flex;
+  font-size: 16px;
+  font-weight: 500;
+  min-height: 48px;
+  padding: 12px 14px;
+  position: relative;
   text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.sidebarList a::before {
+  background: var(--brand-green);
+  content: "";
+  height: 18px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 160ms ease;
+  width: 3px;
 }
 
 .sidebarList a:hover,
 .sidebarList a:focus-visible,
 .sidebarListCurrent {
-  background: var(--surface-soft);
-  color: var(--brand-blue);
+  background: color-mix(in srgb, var(--brand-blue) 7%, #ffffff);
+  border-color: color-mix(in srgb, var(--brand-blue) 20%, var(--border));
+  color: var(--brand-blue-deep);
+  transform: translateX(2px);
+}
+
+.sidebarList a:hover::before,
+.sidebarList a:focus-visible::before,
+.sidebarListCurrent::before {
+  opacity: 1;
 }
 
 .sidebarBody {
   display: grid;
-  gap: 10px;
-  padding: 16px;
+  gap: 12px;
+  padding: 18px;
 }
 
 .sidebarBody strong {
   color: var(--brand-blue-deep);
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .sidebarBody a,
 .sidebarBody p {
   color: var(--text-muted);
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.75;
   margin: 0;
   text-decoration: none;
 }
@@ -426,7 +466,7 @@
   align-items: center;
   border: 0;
   display: inline-flex;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   justify-content: center;
   min-height: 42px;
@@ -474,7 +514,7 @@
 .footerInner {
   align-items: center;
   display: flex;
-  font-size: 11px;
+  font-size: 13px;
   justify-content: space-between;
   min-height: var(--footer-height);
   padding: 0 14px;
@@ -542,7 +582,7 @@
   }
 
   .brand {
-    font-size: 38px;
+    font-size: 30px;
   }
 
   .mainInner {

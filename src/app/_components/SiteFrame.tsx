@@ -11,6 +11,7 @@ import {
 } from "../siteData";
 import { ChevronDownIcon } from "./Icons";
 import { MobileMenu } from "./MobileMenu";
+import { ScrollAnimator } from "./ScrollAnimator";
 import { ScrollShell } from "./ScrollShell";
 import styles from "./site-frame.module.css";
 
@@ -184,6 +185,7 @@ export function SiteFrame({
 }: SiteFrameProps) {
   return (
     <ScrollShell shellStyle={{ ["--left-width" as string]: `${leftSidebarWidth}px` }}>
+      <ScrollAnimator />
       <div className={styles.stickyHeaderWrap}>
         <header className={styles.header}>
           <Link href="/" className={styles.logoLink}>
@@ -195,7 +197,7 @@ export function SiteFrame({
               className={styles.logoImage}
             />
             <div>
-              <p className={styles.brand}>{siteInfo.shortName}</p>
+              <p className={styles.brand}>{siteInfo.name}</p>
               <p className={styles.tagline}>{siteInfo.tagline}</p>
             </div>
           </Link>
@@ -244,7 +246,7 @@ export function SiteFrame({
           <div />
         )}
 
-        <main className={styles.mainColumn}>
+        <main className={styles.mainColumn} data-scroll-root>
           <div className={styles.mainInner}>{children}</div>
           <footer className={styles.footer}>
             <div className={styles.footerInner}>

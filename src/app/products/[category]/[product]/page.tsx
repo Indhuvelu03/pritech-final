@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { LayersIcon, SparkIcon } from "../../../_components/Icons";
 import { ProductSidebar } from "../../../_components/ProductSidebar";
 import { SiteFrame } from "../../../_components/SiteFrame";
@@ -29,6 +29,14 @@ export default async function ProductDetailPage({
   const productEntry = getProductBySlug(categorySlug, productSlug);
 
   if (!productEntry) {
+    const movedCategory = productCategories.find((category) =>
+      category.products.some((item) => item.slug === productSlug),
+    );
+
+    if (movedCategory) {
+      redirect(`/products/${movedCategory.slug}/${productSlug}`);
+    }
+
     notFound();
   }
 
@@ -51,7 +59,7 @@ export default async function ProductDetailPage({
           currentProductSlug={product.slug}
         />
       }
-      leftSidebarWidth={224}
+      leftSidebarWidth={260}
     >
       {/* Product name + description bar */}
       <div className={styles.pdpHeader}>
@@ -84,19 +92,22 @@ export default async function ProductDetailPage({
             )}
           </div>
 
-          {/* Specification table */}
+          {/* Specification summary */}
           <section className={styles.pdpSpecSection}>
-            <h2 className={styles.pdpSectionTitle}>Technical Specifications</h2>
-            <table className={styles.pdpSpecTable}>
-              <tbody>
-                {product.specs.map(([label, value]) => (
-                  <tr key={label} className={styles.pdpSpecRow}>
-                    <td className={styles.pdpSpecLabel}>{label}</td>
-                    <td className={styles.pdpSpecValue}>{value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className={styles.pdpSpecIntro}>
+              <h2 className={styles.pdpSectionTitle}>Key Specifications</h2>
+              <p className={styles.pdpSpecIntroText}>
+                A quick view of the most important production and application details for this machine.
+              </p>
+            </div>
+            <div className={styles.pdpSpecGrid}>
+              {product.specs.map(([label, value]) => (
+                <article key={label} className={styles.pdpSpecCard}>
+                  <span className={styles.pdpSpecCardLabel}>{label}</span>
+                  <strong className={styles.pdpSpecCardValue}>{value}</strong>
+                </article>
+              ))}
+            </div>
           </section>
         </div>
 
