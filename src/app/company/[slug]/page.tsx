@@ -255,27 +255,17 @@ export default async function CompanyPage({
                 </Link>
               </div>
               <aside className={styles.aboutEditorialPanel}>
+                <div className={styles.aboutEditorialImageFrame}>
                 <Image
                   src={slug === "our-facility" ? "/facility.png?v=20260531" : 
                        slug === "milestones" ? "/milestone.png?v=20260531" : "/logo.png"}
                   alt={page.title}
-                  width={600}
-                  height={320}
+                  fill
+                  sizes="(max-width: 720px) 100vw, 50vw"
                   unoptimized={slug === "our-facility" || slug === "milestones"}
-                  style={{
-                    width: "100%",
-                    height: slug === "our-facility" ? "360px" : "320px",
-                    objectFit: "contain",
-                    transform:
-                      slug === "our-facility" ? "scale(1.06)" :
-                      slug === "milestones" ? "scale(1.06)" :
-                      undefined,
-                    borderRadius: "0",
-                    background: "var(--surface)",
-                    border: "1px solid var(--border)",
-                    padding: slug === "our-customers" ? "40px" : "0",
-                  }}
+                  className={`${styles.aboutEditorialImage} ${slug === "our-customers" ? styles.aboutEditorialLogoImage : ""}`}
                 />
+                </div>
               </aside>
             </div>
           </section>

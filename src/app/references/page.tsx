@@ -31,48 +31,17 @@ export default function ReferencesPage() {
             </div>
 
             <aside className={styles.aboutEditorialPanel}>
+              <div className={styles.aboutEditorialImageFrame}>
               <Image
                 src="/refernce.png?v=20260531"
                 alt="Trusted clients reference graphic"
-                width={600}
-                height={320}
+                fill
+                sizes="(max-width: 720px) 100vw, 50vw"
                 unoptimized
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  maxHeight: "320px",
-                  objectFit: "contain",
-                  transform: "scale(1.06)",
-                  borderRadius: "0",
-                  border: "1px solid var(--border)",
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.06)",
-                }}
+                className={styles.aboutEditorialImage}
               />
-            </aside>
-          </div>
-        </section>
-
-        <section className={styles.clientLogosSection}>
-          <div className={styles.clientLogosHeader}>
-            <p className={styles.eyebrow}>Our Clients</p>
-            <h2>Trusted by Industry Leaders</h2>
-          </div>
-          <div className={styles.clientLogosGrid}>
-            {[
-              "c1.jpg",
-              "c2.jpg",
-              "c3.jpg",
-              "c4.png",
-              "c5.jpg",
-              "c6.jpg",
-              "c7.jpg",
-              "c8.png",
-              "c9.jpg",
-            ].map((logo, index) => (
-              <div key={logo} className={styles.clientLogoItem}>
-                <img src={`/${logo}`} alt={`Client Logo ${index + 1}`} />
               </div>
-            ))}
+            </aside>
           </div>
         </section>
 
@@ -99,6 +68,30 @@ export default function ReferencesPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className={styles.clientLogosSection}>
+          <div className={styles.clientLogosHeader}>
+            <p className={styles.eyebrow}>Our Clients</p>
+            <h2>Trusted by Industry Leaders</h2>
+          </div>
+          <div className={styles.clientLogosGrid}>
+            {[
+              "c1.jpg",
+              "c2.jpg",
+              "c3.jpg",
+              "c4.png",
+              "c5.jpg",
+              "c6.jpg",
+              "c7.jpg",
+              "c8.png",
+              "c9.jpg",
+            ].map((logo, index) => (
+              <div key={logo} className={styles.clientLogoItem}>
+                <img src={`/${logo}`} alt={`Client Logo ${index + 1}`} />
+              </div>
+            ))}
           </div>
         </section>
 

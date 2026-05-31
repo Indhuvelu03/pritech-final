@@ -70,15 +70,17 @@
   background: #ffffff;
   border-radius: 0;
   display: flex;
-  height: 36px;
+  height: 58px;
   justify-content: center;
-  width: 36px;
-  padding: 4px;
+  overflow: hidden;
+  padding: 2px;
+  width: 58px;
 }
 
 .miniLogo {
   height: 100%;
   object-fit: contain;
+  transform: scale(1.38);
   width: 100%;
 }
 
@@ -121,8 +123,8 @@
   color: var(--brand-blue-deep);
   display: flex;
   justify-content: space-between;
-  min-height: 80px;
-  padding: 0 20px;
+  min-height: 96px;
+  padding: 0 18px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -130,7 +132,7 @@
   align-items: center;
   color: inherit;
   display: flex;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
 }
 
@@ -138,8 +140,8 @@
 .mobileLogoText {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
-  max-width: 210px;
+  line-height: 1.05;
+  max-width: 220px;
 }
 
 .panelLogoText strong,
@@ -147,21 +149,27 @@
   color: var(--brand-blue-deep);
   display: inline-block;
   font-family: "Orbitron", "Audiowide", "Michroma", sans-serif;
-  font-size: var(--type-small);
+  font-size: 1.08rem;
   font-weight: 500;
-  letter-spacing: 0.035em;
-  line-height: 1.2;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
   transform: scaleX(1.01);
   transform-origin: left center;
 }
 
 .panelLogoText span,
 .mobileLogoText span {
-  font-size: var(--type-label);
-  font-weight: 500;
   color: var(--brand-red);
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.055em;
+  line-height: 1.18;
+  margin-top: 4px;
+  text-transform: none;
+}
+
+.mobileLogoText span {
+  font-size: 0.82rem;
 }
 
 .closeButton {

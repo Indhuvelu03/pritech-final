@@ -73,12 +73,6 @@ export function MobileMenu() {
                 <Link href="/" className={styles.primaryItem} onClick={() => setIsOpen(false)}>
                   Home
                 </Link>
-                <Link href="/references" className={styles.primaryItem} onClick={() => setIsOpen(false)}>
-                  References
-                </Link>
-                <Link href="/contact" className={styles.primaryItem} onClick={() => setIsOpen(false)}>
-                  Contact
-                </Link>
               </div>
 
               <section className={styles.group}>
@@ -157,6 +151,15 @@ export function MobileMenu() {
                   </div>
                 )}
               </section>
+
+              <div className={styles.primaryLinks}>
+                <Link href="/references" className={styles.primaryItem} onClick={() => setIsOpen(false)}>
+                  References
+                </Link>
+                <Link href="/contact" className={styles.primaryItem} onClick={() => setIsOpen(false)}>
+                  Contact
+                </Link>
+              </div>
 
               <div className={styles.panelFooter}>
                 <p className={styles.footerLabel}>Quick Contact</p>
