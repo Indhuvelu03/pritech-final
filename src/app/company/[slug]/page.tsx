@@ -76,7 +76,7 @@ export default async function CompanyPage({
                     <span className={styles.aboutProfileRowIcon}>
                       <TeamIcon />
                     </span>
-                    <span>Owner</span>
+                    <span>CEO</span>
                     <strong>Kadambaraja. B</strong>
                   </div>
                   <div className={styles.aboutProfileRow}>
@@ -98,14 +98,14 @@ export default async function CompanyPage({
                       <ShieldIcon />
                     </span>
                     <span>Total Area</span>
-                    <strong>2400 sq.ft</strong>
+                    <strong>1000 sq.ft</strong>
                   </div>
                   <div className={styles.aboutProfileRow}>
                     <span className={styles.aboutProfileRowIcon}>
                       <TeamIcon />
                     </span>
                     <span>Total Staff</span>
-                    <strong>19 Members</strong>
+                    <strong>6 Members</strong>
                   </div>
                 </div>
               </aside>
@@ -119,13 +119,13 @@ export default async function CompanyPage({
                 <div className={styles.aboutExecutiveLine} />
                 <p>
                   <strong>B. Kadambaraja</strong> is the Proprietor of Pritech Engineering,
-                  bringing over 20 years of engineering experience across production,
+                  bringing over 25+ years of engineering experience across production,
                   machinery, and manufacturing execution.
                 </p>
                 <p>
                   Before establishing Pritech Engineering in 2008, he spent 12 years at
                   Redema Customized Machine Tools and contributed to the development of
-                  more than 150 special purpose machines for leading automotive manufacturers.
+                  more than 75 special purpose machines for leading automotive manufacturers.
                 </p>
                 <p>
                   His leadership continues to focus on practical engineering, reliable

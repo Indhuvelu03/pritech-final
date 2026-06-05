@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, KeyboardEvent, MouseEvent } from "react";
 import Link from "next/link";
 import styles from "./product-sidebar.module.css";
 import { productCategories } from "../siteData";
@@ -43,7 +43,23 @@ export function ProductSidebar({
                   <span className={styles.currentLabel}>Current section</span>
                 )}
               </span>
-              <ChevronDownIcon className={styles.categoryArrow} />
+              <ChevronDownIcon
+                className={styles.categoryArrow}
+                role="button"
+                tabIndex={0}
+                aria-expanded={isExpanded}
+                onClick={(e: MouseEvent) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setOpenCategory(isExpanded ? null : category.slug);
+                }}
+                onKeyDown={(e: KeyboardEvent) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setOpenCategory(isExpanded ? null : category.slug);
+                  }
+                }}
+              />
             </Link>
 
             {isExpanded ? (

@@ -152,7 +152,7 @@ export default function Home() {
         <div className={styles.featuredProductsGrid}>
           <Link href="/products/testing-machines/air-leak-test-machine" className={styles.featuredProductCard}>
             <div className={styles.featuredProductImage}>
-              <img src="/products/air-leak-test-machine.jpg" alt="Air Leak Test Machine" />
+              <img src="/testing machine/Air Leak Testing Machine.jpeg" alt="Air Leak Test Machine" />
             </div>
             <div className={styles.featuredProductInfo}>
               <span className={styles.featuredProductTag}>Testing</span>
@@ -176,7 +176,7 @@ export default function Home() {
 
           <Link href="/products/special-purpose-machines/chain-link-machine" className={styles.featuredProductCard}>
             <div className={styles.featuredProductImage}>
-              <img src="/products/chain-link-machine.png" alt="Chain Link Machine" />
+              <img src="/general machine/Chain Link Machine.jpeg" alt="Chain Link Machine" />
             </div>
             <div className={styles.featuredProductInfo}>
               <span className={styles.featuredProductTag}>SPM</span>
@@ -188,7 +188,7 @@ export default function Home() {
 
           <Link href="/products/special-purpose-machines/cam-nut-loosening-machine" className={styles.featuredProductCard}>
             <div className={styles.featuredProductImage}>
-              <img src="/products/cam-nut-loosening-machine.png" alt="Cam Nut Loosening Machine" />
+              <img src="/general machine/Cam Nut Loosening Machine.jpeg" alt="Cam Nut Loosening Machine" />
             </div>
             <div className={styles.featuredProductInfo}>
               <span className={styles.featuredProductTag}>SPM</span>
@@ -200,7 +200,7 @@ export default function Home() {
 
           <Link href="/products/testing-machines/proof-test-machine" className={styles.featuredProductCard}>
             <div className={styles.featuredProductImage}>
-              <img src="/products/proof-test-machine.png" alt="Proof Test Machine" />
+              <img src="/testing machine/Proof Test Machine.jpeg" alt="Proof Test Machine" />
             </div>
             <div className={styles.featuredProductInfo}>
               <span className={styles.featuredProductTag}>Testing</span>
@@ -240,8 +240,13 @@ export default function Home() {
             "c7.jpg",
             "c8.png",
             "c9.jpg",
+            "hutson.jpeg",
+            "western.jpeg",
           ].map((logo, index) => (
-            <div key={index} className={styles.clientLogoItem}>
+            <div
+              key={index}
+              className={`${styles.clientLogoItem} ${logo === "c3.jpg" || logo === "c4.png" || logo === "hutson.jpeg" || logo === "western.jpeg" ? styles.clientLogoZoom : ""}`}
+            >
               <img src={`/${logo}`} alt={`Client Logo ${index + 1}`} />
             </div>
           ))}

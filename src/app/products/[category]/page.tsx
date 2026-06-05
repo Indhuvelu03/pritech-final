@@ -46,30 +46,10 @@ export default async function ProductCategoryPage({
         </div>
         <div className={styles.catPageMeta}>
           <span className={styles.catPageMetaBadge}>{category.products.length} Models</span>
-          <span className={styles.catPageMetaBadge}>OEM Available</span>
         </div>
       </div>
 
-      {category.slug === "fixtures-tooling" ? (
-        <section className={styles.fixtureCatalogueCard}>
-          <div>
-            <p className={styles.eyebrow}>Client Drawing Catalogue</p>
-            <h2>Fixture Drawing Portfolio</h2>
-            <p>
-              View the complete Pritech fixture drawing reference PDF, including VMC fixtures,
-              rotary fixtures, bush pressing fixtures, pneumatic fixtures, and related tooling examples.
-            </p>
-          </div>
-          <a
-            href="/docs/fixture-drawing-a822.pdf"
-            className={styles.fixtureCatalogueBtn}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open PDF Catalogue
-          </a>
-        </section>
-      ) : null}
+      {/* Fixture drawing catalogue removed */}
 
       {/* Product listing */}
       <div className={styles.catProductList}>

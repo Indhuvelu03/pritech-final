@@ -407,8 +407,22 @@
   transition: transform 0.3s ease;
 }
 
+.clientLogoZoom img {
+  transform: scale(1.18);
+}
+
 .clientLogoItem:hover img {
   transform: scale(1.05);
+}
+
+.clientLogoZoom:hover img {
+  transform: scale(1.26);
+}
+
+.clientLogoZoom {
+  width: 190px;
+  height: 100px;
+  padding: 18px;
 }
 
 .homeHero {

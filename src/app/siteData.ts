@@ -122,7 +122,7 @@ export const productCategories: ProductCategory[] = [
           "Load and pressure proof testing for brake shoes and structural automotive parts.",
         description:
           "Load and pressure proof testing for brake shoes and structural automotive parts. Consistent force application with digital pass/fail readout. Built for in-line quality inspection.",
-        image: "/products/proof-test-machine.png",
+        image: "/testing machine/proof test machine.jpeg",
         specs: [
           ["Test Type", "Proof load & pressure"],
           ["Application", "Brake shoes, structural parts"],
@@ -138,7 +138,7 @@ export const productCategories: ProductCategory[] = [
           "Dedicated testing machine for valve performance and leakage validation.",
         description:
           "Valve testing machine designed for production-side validation of valve assemblies with controlled test conditions, repeatable measurement, and reliable pass/fail output.",
-        image: "/products/valve-testing-machine.png",
+        image: "/testing machine/valve testing machine.png",
         specs: [
           ["Application", "Valve testing"],
           ["Method", "Controlled inspection cycle"],
@@ -154,7 +154,7 @@ export const productCategories: ProductCategory[] = [
           "Measures spring compression force versus deflection for adjuster springs.",
         description:
           "Measures spring compression force vs deflection for brake adjuster springs and suspension components. Provides force-deflection curve output for quality certification.",
-        image: "/products/proof-test-machine.png",
+        image: "/testing machine/spring load test rig.jpeg",
         specs: [
           ["Application", "Spring compression testing"],
           ["Output", "Force-deflection curve"],
@@ -170,7 +170,7 @@ export const productCategories: ProductCategory[] = [
           "Specialized leak testing for brake master cylinder and booster assemblies.",
         description:
           "Specialised leak test machine for brake master cylinder and vacuum booster assemblies. Built to OEM standards with pneumatic test circuit and rejection marking.",
-        image: "/products/leak-test-machine.jpg",
+        image: "/testing machine/master booster leak test machine.jpeg",
         specs: [
           ["Application", "Brake master cylinder & booster"],
           ["Standard", "OEM specifications"],
@@ -194,7 +194,7 @@ export const productCategories: ProductCategory[] = [
           "Outer diameter grinding machine for precise brake shoe arc radius.",
         description:
           "Outer diameter grinding machine for brake shoes ensuring precise arc radius for optimal brake pad-to-drum contact. Consistent grinding with minimal setup time.",
-        image: "/products/proof-test-machine.png",
+        image: "/general machine/brake shoe od grinding machine.jpeg",
         specs: [
           ["Operation", "OD arc grinding"],
           ["Component", "Brake shoe"],
@@ -210,7 +210,7 @@ export const productCategories: ProductCategory[] = [
           "Single-cycle assembly solution for shock absorber and damper operations.",
         description:
           "Special purpose machine for shock absorber and damper assembly operations. Automated pressing, rod insertion, locking and torque operations in a single cycle.",
-        image: "/products/cam-nut-loosening-machine.png",
+        image: "/general machine/damper assembly SPM.jpeg",
         specs: [
           ["Operation", "Assembly & pressing"],
           ["Component", "Shock absorber / damper"],
@@ -226,7 +226,7 @@ export const productCategories: ProductCategory[] = [
           "Multi-hole simultaneous drilling for tubular components.",
         description:
           "Multi-hole simultaneous drilling special purpose machine for tubular components. High production rate with consistent hole positioning and drill depth control.",
-        image: "/products/chain-link-machine.png",
+        image: "/general machine/tub drilling machine.jpeg",
         specs: [
           ["Operation", "Multi-spindle simultaneous drilling"],
           ["Component", "Tubular parts"],
@@ -242,7 +242,7 @@ export const productCategories: ProductCategory[] = [
           "Precision outer diameter grinding for shafts, pins, and round components.",
         description:
           "Precision outer diameter grinding for round components. High surface finish with tight dimensional tolerance. Suitable for shafts, pins and cylindrical components.",
-        image: "/products/air-leak-test-machine.jpg",
+        image: "/general machine/OD Grinding Machine.jpeg",
         specs: [
           ["Operation", "OD grinding"],
           ["Accuracy", "+/-0.01 mm"],
@@ -258,7 +258,7 @@ export const productCategories: ProductCategory[] = [
           "Force-controlled assembly machine for lid and glass seating operations.",
         description:
           "Special purpose assembly machine for pressing and seating lid and glass components. Consistent press force with position sensing and reject detection.",
-        image: "/products/chain-link-machine.png",
+        image: "/general machine/Lid Glass Assembly SPM.jpeg",
         specs: [
           ["Operation", "Press assembly"],
           ["Component", "Lid & glass sub-assembly"],
@@ -274,7 +274,7 @@ export const productCategories: ProductCategory[] = [
           "Automated joining and pressing of chain links with controlled cycle time.",
         description:
           "Chain link assembly machine for automated joining and pressing of chain links. Uniform link formation with controlled press force and cycle time.",
-        image: "/products/chain-link-machine.png",
+        image: "/general machine/Chain Link Machine.jpeg",
         specs: [
           ["Operation", "Chain link assembly"],
           ["Component", "Chain links"],
@@ -290,7 +290,7 @@ export const productCategories: ProductCategory[] = [
           "Torque-controlled loosening machine for disassembly operations.",
         description:
           "Torque-controlled cam nut loosening machine for disassembly operations. Consistent torque application with pass/fail feedback.",
-        image: "/products/cam-nut-loosening-machine.png",
+        image: "/general machine/Cam Nut Loosening Machine.jpeg",
         specs: [
           ["Operation", "Torque-controlled loosening"],
           ["Component", "Cam nut assembly"],
@@ -338,7 +338,7 @@ export const productCategories: ProductCategory[] = [
           "Semi-automatic riveting with integrated assembly table for brake shoes.",
         description:
           "Semi-automatic riveting machine with integrated assembly table for brake shoe lining attachment. Consistent rivet setting force with adjustable die sets for different rivet sizes.",
-        image: "/products/proof-test-machine.png",
+        image: "/general machine/Riveting Machine & Assembly Table.jpeg",
         specs: [
           ["Operation", "Brake shoe riveting"],
           ["Component", "Brake shoe + lining"],
@@ -354,7 +354,7 @@ export const productCategories: ProductCategory[] = [
           "Heated bonding station for friction lining adhesive attachment.",
         description:
           "Heated bonding work station for adhesive attachment of brake friction lining to brake shoe. Temperature-controlled platen ensures consistent curing of bonding adhesive under correct pressure.",
-        image: "/products/leak-test-machine.jpg",
+        image: "/general machine/Brake Shoe Bonding Table.jpeg",
         specs: [
           ["Operation", "Adhesive bonding"],
           ["Component", "Brake shoe + friction lining"],
@@ -370,7 +370,7 @@ export const productCategories: ProductCategory[] = [
           "Automated metered glue dispensing for brake and sealing components.",
         description:
           "Automated adhesive dispensing machine for precise and consistent glue application on brake and automotive sealing components. Metered dispensing eliminates waste and ensures bond quality.",
-        image: "/products/knuckle-marking-machine.png",
+        image: "/general machine/Glue Applying Machine.jpeg",
         specs: [
           ["Operation", "Automated adhesive dispensing"],
           ["Method", "Metered dispensing"],
@@ -403,22 +403,7 @@ export const productCategories: ProductCategory[] = [
     summary:
       "Precision fixtures, gauges, and tooling components designed for repeatability and faster cycle times.",
     products: [
-      {
-        name: "VMC Fixtures",
-        slug: "vmc-fixtures",
-        cardDescription:
-          "Fixtures for simultaneous VMC machining of automotive components.",
-        description:
-          "Vertical Machining Centre fixtures for complex automotive components. Designed for 4-component simultaneous machining, reducing cycle time by 75%. Precision ground locators ensure repeatability.",
-        image: "/products/vmc-fixtures.jpg",
-        specs: [
-          ["Machine", "Vertical Machining Centre"],
-          ["Capacity", "4 components simultaneously"],
-          ["Component", "Master cylinder, manifolds"],
-          ["Repeatability", "+/-0.01 mm"],
-          ["Clients", "Redema, Mando India"],
-        ],
-      },
+     
       {
         name: "Brake Shoe Testing Fixture",
         slug: "brake-shoe-testing-fixture",
@@ -483,22 +468,7 @@ export const productCategories: ProductCategory[] = [
           ["Industry", "Automotive / Industrial"],
         ],
       },
-      {
-        name: "Laser Marking Fixture",
-        slug: "laser-marking-fixture",
-        cardDescription:
-          "Holding and positioning fixture for repeatable laser marking stations.",
-        description:
-          "Component holding and positioning fixture for laser marking stations. Ensures absolute repeatability of mark location and component orientation through precision locating pins.",
-        image: "/products/knuckle-marking-machine.png",
-        specs: [
-          ["Type", "Holding & positioning fixture"],
-          ["Application", "Laser marking station"],
-          ["Repeatability", "+/-0.02 mm"],
-          ["Material", "Hardened tool steel"],
-          ["Positioning", "Precision locating pins"],
-        ],
-      },
+      /* Laser Marking Fixture removed */
       {
         name: "CNC Lathe Fixture",
         slug: "cnc-lathe-fixture",
@@ -761,6 +731,11 @@ export const references = [
   ["Redema", "VMC Fixtures, Press Tool Components", "Tooling"],
   ["Myunghwa Automotive", "Assembly SPM", "Assembly Automation"],
   ["Daesung Automotive", "Testing Fixtures", "Precision Fixture"],
+  ["Hitech Aria", "Fixture", "Tooling"],
+  ["Ramakrishna Forging", "Fixture", "Tooling"],
+  ["Mktron", "Fixture Testing Machine", "Testing"],
+  ["Masu Brakes", "OD Grinding Machine", "Brake Systems"],
+  ["Renault Nissan", "Conrod Tightening", "Assembly Automation"],
 ];
 
 export const facilityList = [
@@ -781,6 +756,9 @@ export const milestones = [
   ["2010", "Best Supplier Award from Brakes & Automotive"],
   ["2011", "New facility inaugurated and sleeve adjuster business started"],
   ["2012", "Final stage of TBI adjuster assembly business"],
+  ["2016", "Brake adjuster development"],
+  ["2020", "Manufacturing of new concept machine: Brake Shoe OD Grinding"],
+  ["2024", "New concept conrod tightening machine for automotive company"],
 ];
 
 export const siteNavigationLinks: NavItem[] = [

@@ -87,6 +87,8 @@ export default function ReferencesPage() {
               "c7.jpg",
               "c8.png",
               "c9.jpg",
+              "hutson.jpeg",
+              "western.jpeg"
             ].map((logo, index) => (
               <div key={logo} className={styles.clientLogoItem}>
                 <img src={`/${logo}`} alt={`Client Logo ${index + 1}`} />
@@ -103,15 +105,7 @@ export default function ReferencesPage() {
               Each reference listed represents a partnership built on technical precision and production-oriented results. 
               We maintain long-term relationships with our clients by providing continuous support and iterative improvements to their manufacturing workflows.
             </p>
-            <a
-              href="/docs/fixture-drawing-a822.pdf"
-              className={styles.referencePdfBtn}
-              target="_blank"
-              rel="noreferrer"
-              style={{ marginTop: "24px" }}
-            >
-              View Fixture Drawing PDF
-            </a>
+            {/* Fixture drawing PDF CTA removed */}
           </div>
         </section>
       </div>
