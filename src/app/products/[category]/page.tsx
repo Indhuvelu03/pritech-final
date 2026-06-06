@@ -1,21 +1,54 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { LayersIcon } from "../../_components/Icons";
 import { ProductSidebar } from "../../_components/ProductSidebar";
 import { SiteFrame } from "../../_components/SiteFrame";
 import styles from "../../_components/page-styles.module.css";
 import { getCategoryBySlug, productCategories } from "../../siteData";
+import { createSeoMetadata } from "../../seo";
+
+type ProductCategoryPageProps = {
+  params: Promise<{ category: string }>;
+};
 
 export function generateStaticParams() {
   return productCategories.map((category) => ({ category: category.slug }));
 }
 
+export async function generateMetadata({
+  params,
+}: ProductCategoryPageProps): Promise<Metadata> {
+  const { category: categorySlug } = await params;
+  const category = getCategoryBySlug(categorySlug);
+
+  if (!category) {
+    return createSeoMetadata({
+      title: "Products",
+      description:
+        "Pritech Engineering product categories for testing machines, special purpose machines, fixtures, tooling, and marking machines.",
+      path: `/products/${categorySlug}`,
+    });
+  }
+
+  return createSeoMetadata({
+    title: `${category.title} Manufacturer`,
+    description: `${category.summary} Browse ${category.products.length} ${category.title.toLowerCase()} from Pritech Engineering for automotive and industrial production use.`,
+    path: `/products/${category.slug}`,
+    image: category.products.find((product) => product.image)?.image ?? "/hero-machine.png",
+    keywords: [
+      category.title,
+      `${category.title} Chennai`,
+      `${category.title} manufacturer`,
+      ...category.products.slice(0, 6).map((product) => product.name),
+    ],
+  });
+}
+
 export default async function ProductCategoryPage({
   params,
-}: {
-  params: Promise<{ category: string }>;
-}) {
+}: ProductCategoryPageProps) {
   const { category: categorySlug } = await params;
   if (categorySlug === "handling-assembly") {
     redirect("/products/special-purpose-machines");

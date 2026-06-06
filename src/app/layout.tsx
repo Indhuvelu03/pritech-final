@@ -1,10 +1,44 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import {
+  createSeoMetadata,
+  defaultSeo,
+  localBusinessJsonLd,
+  organizationJsonLd,
+  siteUrl,
+} from "./seo";
 
 export const metadata: Metadata = {
-  title: "Pritech Engineering",
-  description:
-    "Special purpose machines, testing systems, fixtures, and precision engineering solutions from Chennai.",
+  ...createSeoMetadata({
+    title: defaultSeo.title,
+    description: defaultSeo.description,
+    path: "/",
+  }),
+  metadataBase: new URL(siteUrl),
+  applicationName: "Pritech Engineering",
+  authors: [{ name: "Pritech Engineering" }],
+  creator: "Pritech Engineering",
+  publisher: "Pritech Engineering",
+  category: "Industrial Machinery",
+  title: {
+    default: defaultSeo.title,
+    template: "%s | Pritech Engineering",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -22,7 +56,15 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([organizationJsonLd, localBusinessJsonLd]),
+          }}
+        />
+      </body>
     </html>
   );
 }

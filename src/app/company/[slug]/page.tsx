@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
   AwardIcon,
@@ -19,16 +20,38 @@ import {
   getCompanyPageBySlug,
   milestones,
 } from "../../siteData";
+import { createSeoMetadata } from "../../seo";
+
+type CompanyPageProps = {
+  params: Promise<{ slug: string }>;
+};
 
 export function generateStaticParams() {
   return companyPages.map((page) => ({ slug: page.slug }));
 }
 
-export default async function CompanyPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export async function generateMetadata({ params }: CompanyPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const page = getCompanyPageBySlug(slug);
+
+  if (!page) {
+    return createSeoMetadata({
+      title: "Company",
+      description: "Pritech Engineering company information.",
+      path: `/company/${slug}`,
+    });
+  }
+
+  return createSeoMetadata({
+    title: page.title,
+    description: page.intro,
+    path: `/company/${page.slug}`,
+    image: page.slug === "our-facility" ? "/facility.png" : page.slug === "milestones" ? "/milestone.png" : "/logo.png",
+    keywords: [page.title, "Pritech Engineering company", "SPM manufacturer Chennai"],
+  });
+}
+
+export default async function CompanyPage({ params }: CompanyPageProps) {
   const { slug } = await params;
   const page = getCompanyPageBySlug(slug);
 

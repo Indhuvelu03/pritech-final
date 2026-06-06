@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { LayersIcon, SparkIcon } from "../../../_components/Icons";
 import { ProductSidebar } from "../../../_components/ProductSidebar";
@@ -10,6 +11,11 @@ import {
   getProductBySlug,
   productCategories,
 } from "../../../siteData";
+import { absoluteUrl, createSeoMetadata } from "../../../seo";
+
+type ProductDetailPageProps = {
+  params: Promise<{ category: string; product: string }>;
+};
 
 export function generateStaticParams() {
   return productCategories.flatMap((category) =>
@@ -20,11 +26,39 @@ export function generateStaticParams() {
   );
 }
 
-export default async function ProductDetailPage({
+export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ category: string; product: string }>;
-}) {
+}: ProductDetailPageProps): Promise<Metadata> {
+  const { category: categorySlug, product: productSlug } = await params;
+  const productEntry = getProductBySlug(categorySlug, productSlug);
+
+  if (!productEntry) {
+    return createSeoMetadata({
+      title: "Product",
+      description:
+        "Pritech Engineering product details for special purpose machines, testing machines, fixtures, tooling, and marking machines.",
+      path: `/products/${categorySlug}/${productSlug}`,
+    });
+  }
+
+  const { category, product } = productEntry;
+
+  return createSeoMetadata({
+    title: `${product.name} Manufacturer`,
+    description: product.description || product.cardDescription,
+    path: `/products/${category.slug}/${product.slug}`,
+    image: product.image ?? "/hero-machine.png",
+    keywords: [
+      product.name,
+      `${product.name} Chennai`,
+      `${product.name} manufacturer`,
+      category.title,
+      ...product.specs.map(([label, value]) => `${label} ${value}`),
+    ],
+  });
+}
+
+export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
   const { category: categorySlug, product: productSlug } = await params;
   const productEntry = getProductBySlug(categorySlug, productSlug);
 
@@ -42,6 +76,23 @@ export default async function ProductDetailPage({
 
   const { category, product } = productEntry;
   const relatedProducts = category.products.filter((item) => item.slug !== product.slug);
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description || product.cardDescription,
+    image: product.image ? absoluteUrl(product.image) : absoluteUrl("/hero-machine.png"),
+    brand: {
+      "@type": "Brand",
+      name: "Pritech Engineering",
+    },
+    category: category.title,
+    manufacturer: {
+      "@type": "Organization",
+      name: "Pritech Engineering",
+      url: absoluteUrl("/"),
+    },
+  };
 
   return (
     <SiteFrame
@@ -61,6 +112,10 @@ export default async function ProductDetailPage({
       }
       leftSidebarWidth={260}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       {/* Product name + description bar */}
       <div className={styles.pdpHeader}>
         <div className={styles.pdpHeaderMain}>

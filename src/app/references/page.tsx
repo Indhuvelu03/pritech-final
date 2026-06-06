@@ -1,8 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { SiteFrame } from "../_components/SiteFrame";
 import styles from "../_components/page-styles.module.css";
 import { references } from "../siteData";
+import { createSeoMetadata } from "../seo";
+
+export const metadata: Metadata = createSeoMetadata({
+  title: "Project References & Client Track Record",
+  description:
+    "Explore Pritech Engineering project references across special purpose machines, fixtures, brake systems, testing fixtures, and automotive manufacturing support.",
+  path: "/references",
+  image: "/refernce.png",
+  keywords: ["Pritech references", "SPM project references", "automotive machinery clients"],
+});
 
 export default function ReferencesPage() {
   return (

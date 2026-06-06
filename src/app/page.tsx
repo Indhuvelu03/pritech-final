@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import {
   ClockIcon,
   ComponentIcon,
@@ -13,6 +14,15 @@ import {
 import { SiteFrame } from "./_components/SiteFrame";
 import styles from "./_components/page-styles.module.css";
 import { createWhatsappLink, customers, productCategories } from "./siteData";
+import { createSeoMetadata } from "./seo";
+
+export const metadata: Metadata = createSeoMetadata({
+  title: "Special Purpose Machines, Testing Machines & Fixtures",
+  description:
+    "Pritech Engineering designs and manufactures testing machines, SPMs, fixtures, tooling, and marking machines for automotive and industrial production teams.",
+  path: "/",
+  image: "/hero-machine.png",
+});
 
 const productHooks = [
   {

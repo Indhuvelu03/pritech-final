@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { SiteFrame } from "../_components/SiteFrame";
 import { 
   PhoneIcon, 
@@ -9,6 +10,16 @@ import {
 } from "../_components/Icons";
 import styles from "../_components/page-styles.module.css";
 import { createWhatsappLink, siteInfo } from "../siteData";
+import { createSeoMetadata } from "../seo";
+
+export const metadata: Metadata = createSeoMetadata({
+  title: "Contact Pritech Engineering",
+  description:
+    "Contact Pritech Engineering in Ambattur, Chennai for special purpose machines, testing machines, fixtures, tooling, and production engineering enquiries.",
+  path: "/contact",
+  image: "/facility.png",
+  keywords: ["contact Pritech Engineering", "SPM manufacturer Ambattur", "machine builder Chennai"],
+});
 
 export default function ContactPage() {
   return (

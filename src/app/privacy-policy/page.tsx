@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import { SiteFrame } from "../_components/SiteFrame";
 import styles from "../_components/page-styles.module.css";
+import { createSeoMetadata } from "../seo";
+
+export const metadata: Metadata = createSeoMetadata({
+  title: "Privacy Policy",
+  description:
+    "Privacy policy for Pritech Engineering enquiries, quotation requests, and project communication.",
+  path: "/privacy-policy",
+});
 
 export default function PrivacyPolicyPage() {
   return (
