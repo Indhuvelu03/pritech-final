@@ -200,7 +200,7 @@ export default function Home() {
 
           <Link href="/products/testing-machines/proof-test-machine" className={styles.featuredProductCard}>
             <div className={styles.featuredProductImage}>
-              <img src="/testing machine/Proof Test Machine.jpeg" alt="Proof Test Machine" />
+              <img src="/testing machine/proof test machine.jpeg" alt="Proof Test Machine" />
             </div>
             <div className={styles.featuredProductInfo}>
               <span className={styles.featuredProductTag}>Testing</span>
