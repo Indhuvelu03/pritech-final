@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { productCategories, siteInfo } from "./siteData";
 
 export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "pritech-final.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pritechengineering.com"
 ).replace(/\/$/, "");
 
 export const defaultSeo = {
-  title: "Pritech Engineering | Special Purpose Machines & Testing Systems",
+  title: "Pritech Engineering | Special Purpose Machines & Testing Systems | testing machines Chennai | fixtures and tooling Chennai | automotive production machinery Chennai",
   description:
     "Pritech Engineering builds special purpose machines, testing machines, fixtures, tooling, and precision production solutions for automotive and industrial manufacturers in Chennai.",
   image: "/hero-machine.png",
