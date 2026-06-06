@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
 import { productCategories, siteInfo } from "./siteData";
 
-export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pritechengineering.com"
-).replace(/\/$/, "");
+function normalizeSiteUrl(value?: string) {
+  const fallback = "https://www.pritechengineering.com";
+  const rawValue = value?.trim() || fallback;
+  const withProtocol = /^https?:\/\//i.test(rawValue) ? rawValue : `https://${rawValue}`;
+
+  try {
+    return new URL(withProtocol).origin;
+  } catch {
+    return fallback;
+  }
+}
+
+export const siteUrl = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
 
 export const defaultSeo = {
-  title: "Pritech Engineering | Special Purpose Machines & Testing Systems | testing machines Chennai | fixtures and tooling Chennai | automotive production machinery Chennai",
+  title: "Pritech Engineering | Special Purpose Machines & Testing Systems in Chennai",
   description:
     "Pritech Engineering builds special purpose machines, testing machines, fixtures, tooling, and precision production solutions for automotive and industrial manufacturers in Chennai.",
   image: "/hero-machine.png",
