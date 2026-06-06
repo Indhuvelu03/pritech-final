@@ -212,7 +212,7 @@ export default function Home() {
 
           <Link href="/products/marking-machines/knuckle-marking-machine" className={styles.featuredProductCard}>
             <div className={styles.featuredProductImage}>
-              <img src="/products/knuckle-marking-machine.png" alt="Knuckle Marking Machine" />
+              <img src="/marking machine (laser & DOT pin marking)/knuckle marking machine.jpeg" alt="Knuckle Marking Machine" />
             </div>
             <div className={styles.featuredProductInfo}>
               <span className={styles.featuredProductTag}>Marking</span>

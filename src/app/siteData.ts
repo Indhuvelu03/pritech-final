@@ -90,7 +90,7 @@ export const productCategories: ProductCategory[] = [
           "Air leak testing for brake master cylinders, callipers, and hydraulic components.",
         description:
           "Precision air leakage detection machine for brake master cylinders, callipers and hydraulic components. Built to customer specifications using differential pressure method. Zero-defect quality assurance for brake system assemblies.",
-        image: "/products/air-leak-test-machine.jpg",
+        image: "/testing machine/Air Leak Testing Machine.jpeg",
         specs: [
           ["Application", "Brake & hydraulic component testing"],
           ["Method", "Differential pressure / flow"],
@@ -572,7 +572,7 @@ export const productCategories: ProductCategory[] = [
           "Fixture for exhaust manifold spot facing and drilling operations.",
         description:
           "Machining fixture for exhaust manifold spot facing and drilling operations. Designed to hold manifold securely during multiple drilling cycles.",
-        image: "/products/chain-link-machine.png",
+        image: "/fixtures/exhaust.jpeg",
         specs: [
           ["Component", "Exhaust manifold"],
           ["Operation", "Spot facing + drilling"],
@@ -588,7 +588,7 @@ export const productCategories: ProductCategory[] = [
           "Hardened and ground clamp blocks for machining and assembly work-holding.",
         description:
           "Hardened and ground clamp blocks for work-holding in machining fixtures and assembly jigs. Custom dimensions available. Used in VMC and lathe work-holding systems.",
-        image: "/products/air-leak-test-machine.jpg",
+        image: "/fixtures/clamp.jpeg",
         specs: [
           ["Material", "EN31 hardened & ground"],
           ["Tolerance", "+/-0.005 mm"],
@@ -604,7 +604,7 @@ export const productCategories: ProductCategory[] = [
           "Punches, dies, stripper plates, and guide elements built to drawing.",
         description:
           "Precision press tool components including punches, dies, stripper plates, guide pillars and guide bushes. Manufactured to customer drawing in D2 and H13 tool steel with heat treatment.",
-        image: "/products/cam-nut-loosening-machine.png",
+        image: "/fixtures/press-tool.jpeg",
         specs: [
           ["Components", "Punch, die, stripper, guide pillars"],
           ["Material", "D2 / H13 tool steel"],
@@ -660,7 +660,7 @@ export const productCategories: ProductCategory[] = [
           "Dot-peen or stamp marking for steering knuckle traceability.",
         description:
           "Dot-peen or stamp marking machine for steering knuckles providing permanent part identification, serial numbers and production date traceability.",
-        image: "/products/knuckle-marking-machine.png",
+        image: "/marking machine (laser & DOT pin marking)/knuckle marking machine.jpeg",
         specs: [
           ["Operation", "Permanent part marking"],
           ["Component", "Steering knuckle"],
@@ -692,7 +692,7 @@ export const productCategories: ProductCategory[] = [
           "Dot pin marking machine for permanent traceability markings.",
         description:
           "Dot pin marking machine used for durable part identification, serial number application, and traceability marking across production components.",
-        image: "/products/dot-pin-marking-machine.png",
+        image: "/marking machine (laser & DOT pin marking)/Dot Pin Marking.jpeg",
         specs: [
           ["Type", "Dot pin marking"],
           ["Application", "Permanent traceability marking"],
