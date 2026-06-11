@@ -194,7 +194,7 @@ export const productCategories: ProductCategory[] = [
           "Outer diameter grinding machine for precise brake shoe arc radius.",
         description:
           "Outer diameter grinding machine for brake shoes ensuring precise arc radius for optimal brake pad-to-drum contact. Consistent grinding with minimal setup time.",
-        image: "/general machine/brake shoe od grinding machine.jpeg",
+        image: "/general machine/Brake Shoe OD Grinding Machine.jpeg",
         specs: [
           ["Operation", "OD arc grinding"],
           ["Component", "Brake shoe"],
@@ -242,7 +242,7 @@ export const productCategories: ProductCategory[] = [
           "Precision outer diameter grinding for shafts, pins, and round components.",
         description:
           "Precision outer diameter grinding for round components. High surface finish with tight dimensional tolerance. Suitable for shafts, pins and cylindrical components.",
-        image: "/general machine/OD Grinding Machine.jpeg",
+        image: "/general machine/OD Grinding machine.jpeg",
         specs: [
           ["Operation", "OD grinding"],
           ["Accuracy", "+/-0.01 mm"],
@@ -370,7 +370,7 @@ export const productCategories: ProductCategory[] = [
           "Automated metered glue dispensing for brake and sealing components.",
         description:
           "Automated adhesive dispensing machine for precise and consistent glue application on brake and automotive sealing components. Metered dispensing eliminates waste and ensures bond quality.",
-        image: "/general machine/Glue Applying Machine.jpeg",
+        image: "/general machine/glue applying machine.jpeg",
         specs: [
           ["Operation", "Automated adhesive dispensing"],
           ["Method", "Metered dispensing"],
@@ -572,7 +572,7 @@ export const productCategories: ProductCategory[] = [
           "Fixture for exhaust manifold spot facing and drilling operations.",
         description:
           "Machining fixture for exhaust manifold spot facing and drilling operations. Designed to hold manifold securely during multiple drilling cycles.",
-        image: "/fixtures/exhaust.jpeg",
+        image: "/fixtures/Exhaust.jpeg",
         specs: [
           ["Component", "Exhaust manifold"],
           ["Operation", "Spot facing + drilling"],
