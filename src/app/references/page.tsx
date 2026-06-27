@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteFrame } from "../_components/SiteFrame";
 import styles from "../_components/page-styles.module.css";
-import { references } from "../siteData";
+import { clientLogos, references } from "../siteData";
 import { createSeoMetadata } from "../seo";
 
 export const metadata: Metadata = createSeoMetadata({
@@ -88,19 +88,7 @@ export default function ReferencesPage() {
             <h2>Trusted by Industry Leaders</h2>
           </div>
           <div className={styles.clientLogosGrid}>
-            {[
-              "c1.jpg",
-              "c2.jpg",
-              "c3.jpg",
-              "c4.png",
-              "c5.jpg",
-              "c6.jpg",
-              "c7.jpg",
-              "c8.png",
-              "c9.jpg",
-              "hutson.jpeg",
-              "western.jpeg"
-            ].map((logo, index) => (
+            {clientLogos.map((logo, index) => (
               <div key={logo} className={styles.clientLogoItem}>
                 <img src={`/${logo}`} alt={`Client Logo ${index + 1}`} />
               </div>

@@ -36,7 +36,10 @@ export function ScrollAnimator() {
       (entries) => {
         entries.forEach((entry) => {
           const target = entry.target as HTMLElement;
-          target.dataset.scrollReveal = entry.isIntersecting ? "visible" : "pending";
+          if (entry.isIntersecting) {
+            target.dataset.scrollReveal = "visible";
+            observer.unobserve(target);
+          }
         });
       },
       {

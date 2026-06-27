@@ -1,7 +1,7 @@
 export const siteInfo = {
   name: "Pritech Engineering",
   shortName: "PRITECH",
-  tagline: "Engineering - Special Purpose Machines",
+  tagline: "Engineering - Customized Machine Tools",
   phone: "+91-7550112337",
   phoneHref: "tel:+917550112337",
   whatsappNumber: "917550112337",
@@ -220,6 +220,22 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        name: "Brake Caliber 10 Bar Leak Testing Machine",
+        slug: "brake-caliber-10bar-leak-testing-machine",
+        cardDescription:
+          "10 bar leak testing machine for brake caliber and hydraulic brake components.",
+        description:
+          "Brake caliber 10 bar leak testing machine designed for controlled pressure validation of brake caliber assemblies and hydraulic brake components. Built for repeatable leak detection, production-side inspection, and clear pass/fail output.",
+        image: "/general machine/Brake-Caliber.png",
+        specs: [
+          ["Operation", "10 bar leak testing"],
+          ["Component", "Brake caliber assembly"],
+          ["Method", "Pressure hold / leak detection"],
+          ["Industry", "Automotive brake systems"],
+          ["Output", "Pass / fail indication"],
+        ],
+      },
+      {
         name: "Tub Drilling SPM",
         slug: "tub-drilling-spm",
         cardDescription:
@@ -380,7 +396,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
-        name: "Water Tube Bush Pressing",
+        name: "Water Tube Bush Press Machine",
         slug: "water-tube-bush-pressing",
         cardDescription:
           "Controlled bush press-fit machine for water tube assemblies.",
@@ -613,24 +629,24 @@ export const productCategories: ProductCategory[] = [
           ["Build", "Manufactured to drawing"],
         ],
       },
+      // {
+      //   name: "Bush Pressing Machine",
+      //   slug: "bush-pressing-machine",
+      //   cardDescription:
+      //     "Pressing machine for bush fitting and insertion operations.",
+      //   description:
+      //     "Bush pressing machine built for controlled bush insertion with consistent force application, positioning support, and production-friendly operation.",
+      //   image: "/products/bush-pressing-machine.jpg",
+      //   specs: [
+      //     ["Type", "Pressing machine"],
+      //     ["Component", "Bush"],
+      //     ["Function", "Insertion operation"],
+      //     ["Use", "Production pressing"],
+      //     ["Industry", "Automotive / General"],
+      //   ],
+      // },
       {
-        name: "Bush Pressing Machine",
-        slug: "bush-pressing-machine",
-        cardDescription:
-          "Pressing machine for bush fitting and insertion operations.",
-        description:
-          "Bush pressing machine built for controlled bush insertion with consistent force application, positioning support, and production-friendly operation.",
-        image: "/products/bush-pressing-machine.jpg",
-        specs: [
-          ["Type", "Pressing machine"],
-          ["Component", "Bush"],
-          ["Function", "Insertion operation"],
-          ["Use", "Production pressing"],
-          ["Industry", "Automotive / General"],
-        ],
-      },
-      {
-        name: "Rubber Bush Pressing Machine",
+        name: "Rubber Bush Fixture",
         slug: "rubber-bush-pressing-machine",
         cardDescription:
           "Machine for controlled rubber bush pressing applications.",
@@ -759,6 +775,26 @@ export const milestones = [
   ["2016", "Brake adjuster development"],
   ["2020", "Manufacturing of new concept machine: Brake Shoe OD Grinding"],
   ["2024", "New concept conrod tightening machine for automotive company"],
+];
+
+export const clientLogos = [
+  "c1.jpg",
+  "c2.jpg",
+  "c3.jpg",
+  "c4.png",
+  "c5.jpg",
+  "c6.jpg",
+  "c7.jpg",
+  "c8.png",
+  "c9.jpg",
+  "c10.jpg",
+  "c11.jpg",
+  "c12.jpg",
+  "c13.jpg",
+  "c14.png",
+  "c15.webp",
+  "hutson.jpeg",
+  "western.jpeg",
 ];
 
 export const siteNavigationLinks: NavItem[] = [

@@ -26,14 +26,22 @@ export function ScrollShell({
     if (!scrollable) return;
 
     let lastScrollTop = 0;
+    let lastToggleScrollTop = 0;
 
     const handleScroll = () => {
       const scrollTop = scrollable.scrollTop;
+      const delta = scrollTop - lastScrollTop;
+      const distanceFromToggle = Math.abs(scrollTop - lastToggleScrollTop);
 
-      if (scrollTop > 10 && scrollTop > lastScrollTop) {
-        setHeaderHidden(true);
-      } else if (scrollTop <= 10) {
+      if (scrollTop <= 12) {
         setHeaderHidden(false);
+        lastToggleScrollTop = scrollTop;
+      } else if (delta > 8 && scrollTop > 90 && distanceFromToggle > 32) {
+        setHeaderHidden(true);
+        lastToggleScrollTop = scrollTop;
+      } else if (delta < -8 && distanceFromToggle > 32) {
+        setHeaderHidden(false);
+        lastToggleScrollTop = scrollTop;
       }
 
       lastScrollTop = scrollTop;

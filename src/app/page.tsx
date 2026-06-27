@@ -13,7 +13,7 @@ import {
 } from "./_components/Icons";
 import { SiteFrame } from "./_components/SiteFrame";
 import styles from "./_components/page-styles.module.css";
-import { createWhatsappLink, customers, productCategories } from "./siteData";
+import { clientLogos, createWhatsappLink, customers, productCategories } from "./siteData";
 import { createSeoMetadata } from "./seo";
 
 export const metadata: Metadata = createSeoMetadata({
@@ -240,19 +240,7 @@ export default function Home() {
           <h2>Trusted by Industry Leaders</h2>
         </div>
         <div className={styles.clientLogosGrid}>
-          {[
-            "c1.jpg",
-            "c2.jpg",
-            "c3.jpg",
-            "c4.png",
-            "c5.jpg",
-            "c6.jpg",
-            "c7.jpg",
-            "c8.png",
-            "c9.jpg",
-            "hutson.jpeg",
-            "western.jpeg",
-          ].map((logo, index) => (
+          {clientLogos.map((logo, index) => (
             <div
               key={index}
               className={`${styles.clientLogoItem} ${logo === "c3.jpg" || logo === "c4.png" || logo === "hutson.jpeg" || logo === "western.jpeg" ? styles.clientLogoZoom : ""}`}
