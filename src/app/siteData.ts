@@ -1,12 +1,12 @@
 export const siteInfo = {
   name: "Pritech Engineering",
   shortName: "PRITECH",
-  tagline: "Engineering - Customized Machine Tools",
+  tagline: "Customized Machine Tools",
   phone: "+91-7550112337",
   phoneHref: "tel:+917550112337",
   whatsappNumber: "917550112337",
   emails: ["pritechengg@yahoo.com", "pritecheng@gmail.com"],
-  address: "140, Tiny Sector, Karatur, Ambattur, Chennai - 600058",
+  address: "140, Tiny Sector, Karatur, Ambattur, Chennai - 600058, Tamil Nadu, India",
 };
 
 export type NavItem = {
